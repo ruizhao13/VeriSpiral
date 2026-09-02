@@ -1,0 +1,57 @@
+{
+  "append_only": true,
+  "entries": [
+    {
+      "algorithm_change": "Use an anytime UCB-style confidence index as the initial algorithmic baseline.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "assumption_status": "match",
+      "candidate_id": "ucb-like-public-certificate-v1",
+      "claim_status": "verifier_diagnosis_not_a_new_theorem",
+      "insight_id": "public-bandit-minimax-evolution-insight-001",
+      "kind": "registered_log_gap",
+      "next_search_action": "Search for an algorithmic mechanism that removes the positive log exponent without changing the target signature or assumptions.",
+      "rate_status": "log_gap",
+      "round_index": 1,
+      "search_hypothesis": "A target-compatible baseline may still pay an avoidable logarithmic factor in its distribution-free upper rate.",
+      "sequence": 1,
+      "status": "log_gap",
+      "summary": "Registered polynomial exponents match while an excess logarithmic exponent remains."
+    },
+    {
+      "algorithm_change": "Replace the full time logarithm with the horizon-budgeted MOSS exploration index.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-candidate-assumptions-v1",
+      "assumption_status": "assumption_mismatch",
+      "candidate_id": "moss-known-horizon-public-certificate-v1",
+      "claim_status": "verifier_diagnosis_not_a_new_theorem",
+      "insight_id": "public-bandit-minimax-evolution-insight-002",
+      "kind": "rate_match_on_incompatible_assumption_branch",
+      "next_search_action": "Keep the restricted branch separate and search for a registered upper certificate that restores the target assumptions.",
+      "rate_status": "minimax_rate_match",
+      "round_index": 2,
+      "search_hypothesis": "Global horizon budgeting can close the logarithmic rate gap, but it may purchase the match with terminal-horizon information.",
+      "sequence": 2,
+      "status": "not_comparable",
+      "summary": "Rate exponents match algebraically only on a non-target assumption branch; the target remains unchanged."
+    },
+    {
+      "algorithm_change": "Replace terminal-horizon calibration with the direct MOSS-anytime exploration clock.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "assumption_status": "match",
+      "candidate_id": "moss-anytime-public-certificate-v1",
+      "claim_status": "verifier_diagnosis_not_a_new_theorem",
+      "insight_id": "public-bandit-minimax-evolution-insight-003",
+      "kind": "target_scope_rate_match",
+      "next_search_action": "Freeze the rate-match packet and request human review of the certificate extraction, constants, and omitted lower-order terms.",
+      "rate_status": "minimax_rate_match",
+      "round_index": 3,
+      "search_hypothesis": "An anytime exploration clock can restore the original information interface while preserving the registered square-root rate.",
+      "sequence": 3,
+      "status": "minimax_rate_match",
+      "summary": "Registered upper and lower rate exponents match on the original target signature and assumptions."
+    }
+  ],
+  "ledger_id": "public-bandit-minimax-evolution-insight-ledger-v1",
+  "scenario_id": "public-bandit-minimax-evolution",
+  "schema_version": "1.0",
+  "verification_scope": "Checks registered certificate scope, assumptions, and polynomial/log-rate algebra only; it does not re-prove either theorem."
+}

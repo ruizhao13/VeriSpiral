@@ -1,0 +1,45 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+.venv/
+.venv-*/
+dist/
+build/
+*.egg-info/
+
+.env
+.env.*
+!.env.example
+*.local
+
+# Generated demo output is reproducible and should not be committed.
+demo/output/
+
+# Public-repository guardrails: these names belong in the private source
+# workspace, never in this repository.
+inputs/
+memory/
+projects/
+private/
+tmp/
+data/
+datasets/
+raw/
+
+# Large or third-party source artifacts are intentionally excluded.
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.csv
+*.parquet
+*.npy
+*.npz
+*.bin

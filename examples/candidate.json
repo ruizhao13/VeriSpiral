@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "id": "evidence-gated-skill-induction",
+  "title": "Evidence-gated induction of reusable research-agent skills",
+  "research_question": "Can a small deterministic pipeline block unverified self-improvement while preserving enough provenance for a human to audit promotion?",
+  "claim": {
+    "statement": "The pipeline blocks success traces and activatable skills unless structural validation, evidence integrity, a bound semantic verification receipt, explicit human acceptance, and ready lifecycle status all pass.",
+    "shape": "Executable system invariant",
+    "measurable_target": "Every promoted trace has nine passing gates, content-addressed evidence, a replayed semantic receipt, and bound human acceptance.",
+    "kill_conditions": [
+      "A success trace or activatable skill is emitted without a bound verification receipt.",
+      "A success trace or activatable skill is emitted without explicit human acceptance.",
+      "A parked candidate is promoted or emits a success trace or activatable skill."
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "A-STRUCTURED-INPUT",
+      "statement": "Candidates arrive as structured JSON rather than arbitrary prose.",
+      "classification": "engineering",
+      "cost": "A separate ingestion layer is needed for free-form research notes.",
+      "weakening": "Add a schema-producing parser whose output still passes the same gates."
+    },
+    {
+      "id": "A-LOCAL-EVIDENCE",
+      "statement": "Public demo evidence is represented by repository-local artifacts.",
+      "classification": "scope",
+      "cost": "The demo does not fetch or authenticate remote literature sources.",
+      "weakening": "Introduce signed remote evidence adapters without changing packet semantics."
+    }
+  ],
+  "proof_route": [
+    "Validate the candidate against a versioned machine-readable schema.",
+    "Resolve evidence inside the repository and bind each file by SHA-256.",
+    "Evaluate assumption, comparison, falsifiability, and induction structural gates.",
+    "Replay a registered executable verifier and bind its receipt to the semantic subject.",
+    "Require an explicit human acceptance record bound to that exact receipt.",
+    "Emit a decision packet before creating any success trace.",
+    "Create a trace and reusable skill only for an all-pass decision."
+  ],
+  "novelty": {
+    "scope": "system_demo",
+    "contribution": "A compact executable illustration of evidence-gated external agent evolution.",
+    "collision_status": "No field-level novelty claim is made.",
+    "coverage": "Comparison is limited to two common workflow alternatives; it is not a literature review."
+  },
+  "comparators": [
+    {
+      "name": "Free-form reflection log",
+      "difference": "Retains narrative lessons without a typed decision packet or promotion gate.",
+      "tradeoff": "Simpler to write, but harder to validate or replay automatically."
+    },
+    {
+      "name": "Ungated trace retention",
+      "difference": "Stores every attempted workflow as reusable memory regardless of verifier status.",
+      "tradeoff": "Collects more traces, but can turn failed self-output into future policy."
+    }
+  ],
+  "expected_value": {
+    "audience": "Agent-system engineers and research-tooling reviewers",
+    "story": "Show the smallest auditable path from a candidate proposal to a provenance-linked skill.",
+    "success_metric": "A clean Python environment reproduces byte-identical artifacts across runs."
+  },
+  "evidence": [
+    {
+      "id": "E-SCHEMA",
+      "kind": "artifact",
+      "locator": "schemas/candidate.schema.json",
+      "status": "declared",
+      "summary": "The public candidate contract used before any promotion decision."
+    },
+    {
+      "id": "E-TESTS",
+      "kind": "test",
+      "locator": "tests/test_pipeline.py",
+      "status": "declared",
+      "summary": "Determinism and negative-path tests for the candidate-to-skill pipeline."
+    },
+    {
+      "id": "E-ENTRYPOINT",
+      "kind": "artifact",
+      "locator": "Makefile",
+      "status": "declared",
+      "summary": "One-command entry points for the demo, tests, and public-release audit."
+    }
+  ],
+  "semantic_verification": {
+    "status": "receipt_attached",
+    "receipt_locator": "examples/verification/pipeline_contract_receipt.json"
+  },
+  "human_acceptance": {
+    "status": "pending",
+    "record_locator": ""
+  },
+  "risks": [
+    "Structural gates cannot establish that a scientific theorem is true.",
+    "Repository-local evidence can be incomplete even when all referenced files exist.",
+    "A fixed policy may need domain-specific verifiers for real research decisions."
+  ],
+  "limitations": [
+    "This public demo is deterministic and offline; it is not a production multi-agent runtime.",
+    "The comparison gate checks declared scope, not exhaustive scholarly novelty.",
+    "Human reviewers remain responsible for scientific and deployment decisions."
+  ],
+  "reward_questions": [
+    "Are these gates sufficient to justify retaining this workflow as a reusable skill?",
+    "Which additional domain verifier would be required before using the pattern on a theorem claim?"
+  ],
+  "skill_blueprint": {
+    "name": "evidence-gated-skill-induction",
+    "description": "Promote a successful research workflow into a reusable skill only after explicit evidence and policy gates pass.",
+    "trigger": "A research-agent workflow appears reusable and is being considered for persistent memory.",
+    "inputs": [
+      "Structured candidate",
+      "Repository-local evidence artifacts",
+      "Gate policy"
+    ],
+    "workflow": [
+      "Validate the candidate against the declared schema.",
+      "Resolve and hash every evidence locator without leaving the repository.",
+      "Classify assumptions and record their costs and weakening routes.",
+      "Check comparison scope, measurable target, kill conditions, risks, and limitations.",
+      "Replay the registered verifier and bind its result to the complete semantic subject.",
+      "Write a decision packet before assigning a success signal.",
+      "Require explicit human acceptance bound to the same receipt.",
+      "Induce the reusable skill only when every required gate passes."
+    ],
+    "outputs": [
+      "Decision packet",
+      "Verified success trace only after receipt replay and human acceptance",
+      "Activation-eligible reusable skill only after receipt replay and human acceptance"
+    ],
+    "validation": [
+      "Structural, evidence-integrity, semantic-verification, and human-acceptance states remain distinct.",
+      "Every evidence artifact has a repository-relative locator and SHA-256 digest.",
+      "The success trace binds the exact decision packet, verification receipt, and human acceptance record.",
+      "A failed gate prevents both success trace and skill emission."
+    ],
+    "failure_modes": [
+      "Treating schema validity as evidence that the scientific claim is correct.",
+      "Assigning reward from model confidence without a verifier or human signal.",
+      "Losing the linkage between evidence, decision packet, trace, and induced skill."
+    ]
+  },
+  "status": "ready_for_verification"
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Minimax verifier evolution trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trace_id",
+    "scenario_id",
+    "verification_scope",
+    "source_verification_boundary",
+    "source_review_status",
+    "source_registry",
+    "certificate_inventory",
+    "problem_signature",
+    "target_assumptions",
+    "lower_certificate_id",
+    "rounds",
+    "final"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "trace_id": {"type": "string", "minLength": 3},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "verification_scope": {"type": "string", "minLength": 20},
+    "source_verification_boundary": {"type": "string", "minLength": 20},
+    "source_review_status": {"type": "string", "const": "human_review_required"},
+    "source_registry": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "title", "url", "locator", "registration_status", "proof_status"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 3},
+          "title": {"type": "string", "minLength": 8},
+          "url": {"type": "string", "pattern": "^https://"},
+          "locator": {"type": "string", "minLength": 3},
+          "registration_status": {"type": "string", "const": "registered_public_extract"},
+          "proof_status": {"type": "string", "const": "cited_not_reproved"}
+        }
+      }
+    },
+    "certificate_inventory": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["certificate_id", "kind", "source_id", "theorem_locator", "extraction_note"],
+        "properties": {
+          "certificate_id": {"type": "string", "minLength": 3},
+          "kind": {"type": "string", "enum": ["lower", "upper"]},
+          "source_id": {"type": "string", "minLength": 3},
+          "theorem_locator": {"type": "string", "minLength": 3},
+          "extraction_note": {"type": "string", "minLength": 12}
+        }
+      }
+    },
+    "problem_signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_model", "parameter_class", "loss", "algorithm_class", "regime"],
+      "properties": {
+        "observation_model": {"type": "string", "minLength": 3},
+        "parameter_class": {"type": "string", "minLength": 3},
+        "loss": {"type": "string", "minLength": 3},
+        "algorithm_class": {"type": "string", "minLength": 3},
+        "regime": {"type": "string", "minLength": 3}
+      }
+    },
+    "target_assumptions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": ["string", "integer", "boolean"]}
+    },
+    "lower_certificate_id": {"type": "string", "minLength": 3},
+    "rounds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "round_index",
+          "candidate_id",
+          "candidate_label",
+          "algorithm_change",
+          "search_hypothesis",
+          "upper_certificate_id",
+          "lower_certificate_id",
+          "signature_check",
+          "assumption_check",
+          "certificate_status",
+          "comparability",
+          "rate_check",
+          "rate_algebra_applicable_to_target",
+          "assumption_branch_id",
+          "assumption_patch_id",
+          "branch_transition",
+          "status"
+        ],
+        "properties": {
+          "round_index": {"type": "integer"},
+          "candidate_id": {"type": "string", "minLength": 3},
+          "candidate_label": {"type": "string", "minLength": 3},
+          "algorithm_change": {"type": "string", "minLength": 8},
+          "search_hypothesis": {"type": "string", "minLength": 8},
+          "upper_certificate_id": {"type": "string", "minLength": 3},
+          "lower_certificate_id": {"type": "string", "minLength": 3},
+          "signature_check": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["status", "target_vs_lower", "target_vs_upper", "lower_vs_upper"],
+            "properties": {
+              "status": {"type": "string", "enum": ["match", "signature_mismatch"]},
+              "target_vs_lower": {"type": "array", "items": {"type": "object"}},
+              "target_vs_upper": {"type": "array", "items": {"type": "object"}},
+              "lower_vs_upper": {"type": "array", "items": {"type": "object"}}
+            }
+          },
+          "assumption_check": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["status", "target_vs_lower", "target_vs_upper", "lower_vs_upper"],
+            "properties": {
+              "status": {"type": "string", "enum": ["match", "assumption_mismatch"]},
+              "target_vs_lower": {"type": "array", "items": {"type": "object"}},
+              "target_vs_upper": {"type": "array", "items": {"type": "object"}},
+              "lower_vs_upper": {"type": "array", "items": {"type": "object"}}
+            }
+          },
+          "certificate_status": {
+            "type": "string",
+            "enum": ["consistent", "scope_incompatible", "rate_incomparable", "certificate_conflict"]
+          },
+          "comparability": {"type": "string", "enum": ["comparable", "not_comparable"]},
+          "rate_check": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["status", "reason", "upper", "lower", "delta_upper_minus_lower"],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": ["minimax_rate_match", "log_gap", "polynomial_gap", "not_comparable", "certificate_conflict"]
+              },
+              "reason": {"type": "string", "minLength": 8},
+              "upper": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["polynomial_exponents", "log_exponents"],
+                "properties": {
+                  "polynomial_exponents": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+                  "log_exponents": {"type": "object", "additionalProperties": {"type": "string"}}
+                }
+              },
+              "lower": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["polynomial_exponents", "log_exponents"],
+                "properties": {
+                  "polynomial_exponents": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+                  "log_exponents": {"type": "object", "additionalProperties": {"type": "string"}}
+                }
+              },
+              "delta_upper_minus_lower": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "polynomial_exponents": {"type": "object", "additionalProperties": {"type": "string"}},
+                  "log_exponents": {"type": "object", "additionalProperties": {"type": "string"}}
+                }
+              }
+            }
+          },
+          "rate_algebra_applicable_to_target": {"type": "boolean"},
+          "assumption_branch_id": {"type": "string", "minLength": 3},
+          "assumption_patch_id": {"type": ["string", "null"]},
+          "branch_transition": {
+            "type": "string",
+            "enum": ["stayed_on_target", "branched_without_target_mutation", "returned_to_target"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["minimax_rate_match", "log_gap", "polynomial_gap", "not_comparable", "certificate_conflict"]
+          }
+        }
+      }
+    },
+    "final": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["round_index", "candidate_id", "status", "assumption_branch_id", "original_target_preserved", "human_review_required", "claim_boundary"],
+      "properties": {
+        "round_index": {"type": "integer"},
+        "candidate_id": {"type": "string", "minLength": 3},
+        "status": {
+          "type": "string",
+          "enum": ["minimax_rate_match", "log_gap", "polynomial_gap", "not_comparable", "certificate_conflict"]
+        },
+        "assumption_branch_id": {"type": "string", "minLength": 3},
+        "original_target_preserved": {"type": "boolean", "const": true},
+        "human_review_required": {"type": "boolean", "const": true},
+        "claim_boundary": {"type": "string", "minLength": 20}
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human-governed research specification co-evolution trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "scenario_sha256",
+    "initial_branch_id",
+    "initial_specification_id",
+    "initial_specification_sha256",
+    "events",
+    "event_chain_head_sha256",
+    "rounds",
+    "branches",
+    "candidates",
+    "invariants",
+    "scientific_claim_status",
+    "final_status"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "scenario_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "initial_branch_id": {"type": "string", "minLength": 3},
+    "initial_specification_id": {"type": "string", "minLength": 3},
+    "initial_specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "events": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "event_index",
+          "actor",
+          "event_type",
+          "round_id",
+          "branch_id",
+          "specification_id",
+          "specification_sha256",
+          "previous_event_sha256",
+          "consumes",
+          "emits",
+          "source_payload_sha256",
+          "details",
+          "event_sha256"
+        ],
+        "properties": {
+          "event_id": {"type": "string", "minLength": 3},
+          "event_index": {"type": "integer"},
+          "actor": {"type": "string", "enum": ["ai", "human", "system"]},
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "specification_registered",
+              "ai_solution_submission",
+              "control_verifier_diagnosis",
+              "ai_spec_revision_discussion",
+              "human_spec_decision",
+              "human_solution_judgment"
+            ]
+          },
+          "round_id": {"type": "string", "minLength": 3},
+          "branch_id": {"type": "string", "minLength": 3},
+          "specification_id": {"type": "string", "minLength": 3},
+          "specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "previous_event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "consumes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["event_id", "event_sha256", "response_code"],
+              "properties": {
+                "event_id": {"type": "string", "minLength": 3},
+                "event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "response_code": {"type": "string", "minLength": 3}
+              }
+            }
+          },
+          "emits": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 3}
+          },
+          "source_payload_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["subject_id", "status", "summary", "authorization", "parent_progress_credit"],
+            "properties": {
+              "subject_id": {"type": "string", "minLength": 3},
+              "status": {"type": "string", "minLength": 3},
+              "summary": {"type": "string", "minLength": 20},
+              "authorization": {"type": "string", "minLength": 8},
+              "parent_progress_credit": {"type": "boolean", "const": false}
+            }
+          },
+          "event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "event_chain_head_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rounds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "round_index",
+          "round_id",
+          "branch_id",
+          "submission_kind",
+          "submission_event_id",
+          "terminal_event_id",
+          "consumed_preceding_terminal_event_id",
+          "outcome"
+        ],
+        "properties": {
+          "round_index": {"type": "integer"},
+          "round_id": {"type": "string", "minLength": 3},
+          "branch_id": {"type": "string", "minLength": 3},
+          "submission_kind": {"type": "string", "enum": ["solution_candidate", "revision_discussion"]},
+          "submission_event_id": {"type": "string", "minLength": 3},
+          "terminal_event_id": {"type": "string", "minLength": 3},
+          "consumed_preceding_terminal_event_id": {"type": "string", "minLength": 3},
+          "outcome": {"type": "string", "minLength": 3}
+        }
+      }
+    },
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "branch_id",
+          "parent_branch_id",
+          "specification_id",
+          "specification_sha256",
+          "specification_version",
+          "created_by_event_id",
+          "target_lineage_id",
+          "lineage_relation",
+          "status",
+          "parent_progress_credit"
+        ],
+        "properties": {
+          "branch_id": {"type": "string", "minLength": 3},
+          "parent_branch_id": {"type": ["string", "null"], "minLength": 3},
+          "specification_id": {"type": "string", "minLength": 3},
+          "specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "specification_version": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)$"},
+          "created_by_event_id": {"type": "string", "minLength": 3},
+          "target_lineage_id": {"type": "string", "minLength": 3},
+          "lineage_relation": {"type": "string", "enum": ["root", "accepted_successor", "separate_model_branch"]},
+          "status": {"type": "string", "enum": ["researching", "candidate_ready_for_semantic_review", "superseded"]},
+          "parent_progress_credit": {"type": "boolean", "const": false}
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_id",
+          "branch_id",
+          "specification_id",
+          "specification_sha256",
+          "target_lineage_id",
+          "control_status",
+          "verifier_results",
+          "diagnosis_event_id",
+          "human_judgment_event_id",
+          "parent_progress_credit",
+          "scientific_claim_status"
+        ],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 3},
+          "branch_id": {"type": "string", "minLength": 3},
+          "specification_id": {"type": "string", "minLength": 3},
+          "specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "target_lineage_id": {"type": "string", "minLength": 3},
+          "control_status": {"type": "string", "enum": ["failed_control_checks", "target_compatible_control_pass"]},
+          "verifier_results": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["verifier_id", "type", "status", "diagnostic_code", "semantic_scope", "limitation"],
+              "properties": {
+                "verifier_id": {"type": "string", "minLength": 3},
+                "type": {"type": "string", "enum": ["assumption_exact_match", "information_interface_exact_match", "rate_signature_exact_match"]},
+                "status": {"type": "string", "enum": ["pass", "fail"]},
+                "diagnostic_code": {"type": "string", "minLength": 3},
+                "semantic_scope": {"type": "string", "minLength": 20},
+                "limitation": {"type": "string", "minLength": 20}
+              }
+            }
+          },
+          "diagnosis_event_id": {"type": "string", "minLength": 3},
+          "human_judgment_event_id": {"type": ["string", "null"], "minLength": 3},
+          "parent_progress_credit": {"type": "boolean", "const": false},
+          "scientific_claim_status": {"type": "string", "const": "not_established"}
+        }
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ai_changed_specification",
+        "all_specification_changes_human_authorized",
+        "all_specification_changes_created_new_branches",
+        "parent_progress_inherited_from_child",
+        "initial_specification_preserved",
+        "every_later_round_consumed_preceding_terminal_event",
+        "superseded_specification_reused"
+      ],
+      "properties": {
+        "ai_changed_specification": {"type": "boolean", "const": false},
+        "all_specification_changes_human_authorized": {"type": "boolean", "const": true},
+        "all_specification_changes_created_new_branches": {"type": "boolean", "const": true},
+        "parent_progress_inherited_from_child": {"type": "boolean", "const": false},
+        "initial_specification_preserved": {"type": "boolean", "const": true},
+        "every_later_round_consumed_preceding_terminal_event": {"type": "boolean", "const": true},
+        "superseded_specification_reused": {"type": "boolean", "const": false}
+      }
+    },
+    "scientific_claim_status": {"type": "string", "const": "not_established_by_control_loop"},
+    "final_status": {
+      "type": "string",
+      "enum": ["target_compatible_candidate_awaiting_semantic_verification", "no_target_compatible_candidate"]
+    }
+  }
+}

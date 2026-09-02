@@ -1,0 +1,21 @@
+{
+  "artifacts": [
+    {
+      "path": "evolution_trace.json",
+      "sha256": "06b715afd23f2a7d99ed6fb10027725170ea761a34141cda6b95fa648c651471"
+    },
+    {
+      "path": "assumption_branches.json",
+      "sha256": "d9e29a6a186ac648279d1b130c7dfc36f6de84713273dab034cc207d02231f75"
+    },
+    {
+      "path": "insight_ledger.json",
+      "sha256": "b7ea28ad9aa7c66811497c92b7e109a938fd92c208b8100e489123ac87b94d63"
+    }
+  ],
+  "final_status": "minimax_rate_match",
+  "scenario_id": "public-bandit-minimax-evolution",
+  "scenario_sha256": "be02a17d10185a64faa45c89f51a456660564a5953bd427fd15254067221f509",
+  "schema_version": "1.0",
+  "verification_scope": "Checks registered certificate scope, assumptions, and polynomial/log-rate algebra only; it does not re-prove either theorem."
+}

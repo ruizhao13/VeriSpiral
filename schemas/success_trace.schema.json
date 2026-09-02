@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Verified success trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trace_id",
+    "source_candidate_id",
+    "source_packet_id",
+    "source_packet_sha256",
+    "outcome",
+    "reward_signal",
+    "verification_receipt",
+    "human_acceptance",
+    "skill_name",
+    "trigger",
+    "workflow",
+    "validation",
+    "failure_modes"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "trace_id": {"type": "string", "pattern": "^trace-[a-f0-9]{12}$"},
+    "source_candidate_id": {"type": "string", "minLength": 3},
+    "source_packet_id": {"type": "string", "pattern": "^packet-[a-f0-9]{12}$"},
+    "source_packet_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "outcome": {"type": "string", "const": "verified_success"},
+    "reward_signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "value", "basis"],
+      "properties": {
+        "type": {"type": "string", "const": "bound_verification_and_human_acceptance"},
+        "value": {"type": "integer", "const": 1},
+        "basis": {"type": "array", "minItems": 9, "items": {"type": "string"}}
+      }
+    },
+    "verification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_id", "sha256", "semantic_sha256", "skill_blueprint_sha256", "method", "verifier_id"],
+      "properties": {
+        "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "semantic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "method": {"type": "string", "const": "executable_check"},
+        "verifier_id": {"type": "string", "minLength": 3}
+      }
+    },
+    "human_acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acceptance_id", "sha256", "scope", "reviewer_role", "skill_blueprint_sha256", "acceptance_registry_id", "acceptance_registry_sha256"],
+      "properties": {
+        "acceptance_id": {"type": "string", "pattern": "^acceptance-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "scope": {"type": "string", "const": "prototype_skill_activation"},
+        "reviewer_role": {"type": "string", "const": "human_reviewer"},
+        "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "acceptance_registry_id": {"type": "string", "pattern": "^acceptance-registry-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "acceptance_registry_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "skill_name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "trigger": {"type": "string", "minLength": 8},
+    "workflow": {"type": "array", "minItems": 2},
+    "validation": {"type": "array", "minItems": 1},
+    "failure_modes": {"type": "array", "minItems": 1}
+  }
+}

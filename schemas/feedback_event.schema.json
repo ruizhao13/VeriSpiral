@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit feedback event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "feedback_id",
+    "actor",
+    "privacy_class",
+    "signal_type",
+    "feedback_kind",
+    "feedback_scope",
+    "feedback_summary",
+    "control_source",
+    "target_component",
+    "single_change",
+    "acceptance_checks",
+    "rollback_rule",
+    "non_goals",
+    "authorization_boundary"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "feedback_id": {"type": "string", "pattern": "^feedback-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "actor": {"type": "string", "const": "user"},
+    "privacy_class": {"type": "string", "const": "synthetic_public_demo"},
+    "signal_type": {"type": "string", "const": "user_feedback_signal"},
+    "feedback_kind": {"type": "string", "const": "workflow_preference"},
+    "feedback_scope": {"type": "string", "const": "single_component_single_change"},
+    "feedback_summary": {"type": "string", "minLength": 16, "pattern": "^[^\\r\\n]+$"},
+    "control_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "allowed_use",
+        "human_acceptance_status",
+        "scientific_conclusion_allowed",
+        "candidate",
+        "decision_packet",
+        "verification_receipt",
+        "manifest"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^source-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "source_type": {"type": "string", "const": "bound_executable_verification_control"},
+        "allowed_use": {"type": "string", "const": "process_only_unapplied_policy_proposal"},
+        "human_acceptance_status": {"type": "string", "const": "pending"},
+        "scientific_conclusion_allowed": {"type": "boolean", "const": false},
+        "candidate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "file_sha256", "object_sha256", "candidate_id"],
+          "properties": {
+            "path": {"type": "string", "minLength": 3},
+            "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+            "object_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+            "candidate_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}
+          }
+        },
+        "decision_packet": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "packet_id"],
+          "properties": {
+            "path": {"type": "string", "minLength": 3},
+            "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+            "packet_id": {"type": "string", "pattern": "^packet-[a-f0-9]{12}$"}
+          }
+        },
+        "verification_receipt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "receipt_id"],
+          "properties": {
+            "path": {"type": "string", "minLength": 3},
+            "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+            "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"}
+          }
+        },
+        "manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {"type": "string", "minLength": 3},
+            "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          }
+        }
+      }
+    },
+    "target_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "component_type", "path", "current_version", "current_sha256"],
+      "properties": {
+        "component_id": {"type": "string", "pattern": "^component-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "component_type": {"type": "string", "enum": ["prompt", "skill", "schema", "verifier"]},
+        "path": {"type": "string", "minLength": 3},
+        "current_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "current_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "single_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "target_location", "policy_action", "proposed_version", "rationale", "requested_effect"],
+      "properties": {
+        "operation": {"type": "string", "const": "append_instruction"},
+        "target_location": {"type": "string", "minLength": 3, "pattern": "^[^\\r\\n,;|]+$"},
+        "policy_action": {"type": "string", "const": "require_registered_control_receipt_replay"},
+        "proposed_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "rationale": {"type": "string", "minLength": 16, "pattern": "^[^\\r\\n]+$"},
+        "requested_effect": {"type": "string", "const": "process_instruction_only"}
+      }
+    },
+    "acceptance_checks": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "check_type", "expected"],
+        "properties": {
+          "check_id": {"type": "string", "pattern": "^check-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "check_type": {
+            "type": "string",
+            "enum": ["source_linkage", "target_hash_unchanged", "deterministic_replay", "manual_content_check"]
+          },
+          "expected": {"type": "string", "minLength": 12}
+        }
+      }
+    },
+    "rollback_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trigger", "action", "restore_version", "restore_sha256"],
+      "properties": {
+        "trigger": {"type": "string", "minLength": 16},
+        "action": {"type": "string", "minLength": 16},
+        "restore_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "restore_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "non_goals": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 12}
+    },
+    "authorization_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires_human_approval",
+        "human_review_status",
+        "apply_status",
+        "automatic_application",
+        "verifier_bypass_allowed",
+        "scientific_conclusion_allowed",
+        "source_authority",
+        "source_human_acceptance_status"
+      ],
+      "properties": {
+        "requires_human_approval": {"type": "boolean", "const": true},
+        "human_review_status": {"type": "string", "const": "required"},
+        "apply_status": {"type": "string", "const": "not_applied"},
+        "automatic_application": {"type": "boolean", "const": false},
+        "verifier_bypass_allowed": {"type": "boolean", "const": false},
+        "scientific_conclusion_allowed": {"type": "boolean", "const": false},
+        "source_authority": {"type": "string", "const": "process_only_unapplied_policy_proposal"},
+        "source_human_acceptance_status": {"type": "string", "const": "pending"}
+      }
+    }
+  }
+}

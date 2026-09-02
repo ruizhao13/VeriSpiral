@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evolution run manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "registry_id",
+    "registry_sha256",
+    "input_feedback_sha256",
+    "decision_status",
+    "apply_status",
+    "human_review_status",
+    "source_id",
+    "source_type",
+    "source_use",
+    "source_human_acceptance_status",
+    "scientific_conclusion_status",
+    "source_revalidation",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^proposal-[a-f0-9]{12}$"},
+    "registry_id": {"type": "string", "pattern": "^registry-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "registry_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "input_feedback_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "decision_status": {"type": "string", "const": "proposed_for_human_review"},
+    "apply_status": {"type": "string", "const": "not_applied"},
+    "human_review_status": {"type": "string", "const": "required"},
+    "source_id": {"type": "string", "pattern": "^source-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "source_type": {"type": "string", "const": "bound_executable_verification_control"},
+    "source_use": {"type": "string", "const": "process_only_unapplied_policy_proposal"},
+    "source_human_acceptance_status": {"type": "string", "const": "pending"},
+    "scientific_conclusion_status": {"type": "string", "const": "no_scientific_conclusion_generated"},
+    "source_revalidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_registry_binding",
+        "current_evidence_hashes",
+        "registered_verifier_artifact",
+        "executable_verifier_replay",
+        "recomputed_packet_identity"
+      ],
+      "properties": {
+        "candidate_registry_binding": {"type": "string", "const": "pass"},
+        "current_evidence_hashes": {"type": "string", "const": "pass"},
+        "registered_verifier_artifact": {"type": "string", "const": "pass"},
+        "executable_verifier_replay": {"type": "string", "const": "pass"},
+        "recomputed_packet_identity": {"type": "string", "const": "pass"}
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "enum": ["evolution_proposal.json", "evolution_patch.json"]},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    }
+  }
+}

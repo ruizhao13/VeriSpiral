@@ -1,0 +1,12 @@
+{
+  "artifacts": [
+    {
+      "path": "decision_packet.json",
+      "sha256": "f6edf0904ae84c60b4be5bf12ae7d578b5cfa63d5470a7ac7c2a23852840ab80"
+    }
+  ],
+  "candidate_sha256": "9814e75db275d4dc75122783d6c4958c0b0e0b2c6c40985bf27fcca9242f5966",
+  "decision": "await_human_acceptance",
+  "run_id": "packet-9814e75db275",
+  "schema_version": "1.0"
+}

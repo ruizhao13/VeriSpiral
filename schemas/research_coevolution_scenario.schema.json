@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human-governed research specification co-evolution scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scenario_id", "specification_registry", "initial_state", "rounds"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "specification_registry": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["specification_id", "path", "file_sha256", "specification_sha256"],
+        "properties": {
+          "specification_id": {"type": "string", "minLength": 3},
+          "path": {"type": "string", "minLength": 3},
+          "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "initial_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branch_id", "specification_id"],
+      "properties": {
+        "branch_id": {"type": "string", "minLength": 3},
+        "specification_id": {"type": "string", "minLength": 3}
+      }
+    },
+    "rounds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "round_index",
+          "round_id",
+          "branch_id",
+          "submission",
+          "human_spec_decision",
+          "human_solution_judgment"
+        ],
+        "properties": {
+          "round_index": {"type": "integer"},
+          "round_id": {"type": "string", "minLength": 3},
+          "branch_id": {"type": "string", "minLength": 3},
+          "submission": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "consumes", "solution_candidate", "revision_discussion"],
+            "properties": {
+              "kind": {"type": "string", "enum": ["solution_candidate", "revision_discussion"]},
+              "consumes": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["event_id", "response_code"],
+                  "properties": {
+                    "event_id": {"type": "string", "minLength": 3},
+                    "response_code": {"type": "string", "minLength": 3}
+                  }
+                }
+              },
+              "solution_candidate": {
+                "type": ["object", "null"],
+                "additionalProperties": false,
+                "required": [
+                  "candidate_id",
+                  "proposal_summary",
+                  "assumptions",
+                  "information_interface",
+                  "rate_signature",
+                  "public_evidence_scope",
+                  "scientific_claim_status"
+                ],
+                "properties": {
+                  "candidate_id": {"type": "string", "minLength": 3},
+                  "proposal_summary": {"type": "string", "minLength": 20},
+                  "assumptions": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {"type": ["string", "integer", "boolean"]}
+                  },
+                  "information_interface": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["horizon_knowledge"],
+                    "properties": {
+                      "horizon_knowledge": {"type": "string", "enum": ["known", "unknown"]}
+                    }
+                  },
+                  "rate_signature": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["polynomial_exponents", "log_exponents"],
+                    "properties": {
+                      "polynomial_exponents": {
+                        "type": "object",
+                        "minProperties": 1,
+                        "additionalProperties": {"type": "string"}
+                      },
+                      "log_exponents": {
+                        "type": "object",
+                        "additionalProperties": {"type": "string"}
+                      }
+                    }
+                  },
+                  "public_evidence_scope": {"type": "string", "minLength": 30},
+                  "scientific_claim_status": {"type": "string", "const": "proposal_not_evidence"}
+                }
+              },
+              "revision_discussion": {
+                "type": ["object", "null"],
+                "additionalProperties": false,
+                "required": [
+                  "discussion_id",
+                  "base_specification_id",
+                  "base_specification_sha256",
+                  "proposed_specification_id",
+                  "revision_kind",
+                  "question_for_human",
+                  "trigger_evidence",
+                  "expected_benefit",
+                  "costs",
+                  "problem_identity_effect",
+                  "ai_authorization"
+                ],
+                "properties": {
+                  "discussion_id": {"type": "string", "minLength": 3},
+                  "base_specification_id": {"type": "string", "minLength": 3},
+                  "base_specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                  "proposed_specification_id": {"type": "string", "minLength": 3},
+                  "revision_kind": {
+                    "type": "string",
+                    "enum": ["model_revision", "verifier_revision", "model_and_verifier_revision"]
+                  },
+                  "question_for_human": {"type": "string", "minLength": 20},
+                  "trigger_evidence": {"type": "string", "minLength": 20},
+                  "expected_benefit": {"type": "string", "minLength": 20},
+                  "costs": {"type": "string", "minLength": 20},
+                  "problem_identity_effect": {
+                    "type": "string",
+                    "enum": ["preserves_problem", "creates_new_target_lineage"]
+                  },
+                  "ai_authorization": {"type": "string", "const": "proposal_only_not_applied"}
+                }
+              }
+            }
+          },
+          "human_spec_decision": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": [
+              "decision_id",
+              "action",
+              "discussion_event_id",
+              "proposed_specification_id",
+              "proposed_specification_sha256",
+              "child_branch_id",
+              "selected_specification_id",
+              "selected_revision_kind",
+              "continuation_response_code",
+              "decision_note",
+              "scientific_claim_status"
+            ],
+            "properties": {
+              "decision_id": {"type": "string", "minLength": 3},
+              "action": {"type": "string", "enum": ["accept", "reject", "modify", "branch"]},
+              "discussion_event_id": {"type": "string", "minLength": 3},
+              "proposed_specification_id": {"type": "string", "minLength": 3},
+              "proposed_specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+              "child_branch_id": {"type": ["string", "null"], "minLength": 3},
+              "selected_specification_id": {"type": ["string", "null"], "minLength": 3},
+              "selected_revision_kind": {
+                "type": ["string", "null"],
+                "enum": ["model_revision", "verifier_revision", "model_and_verifier_revision", null]
+              },
+              "continuation_response_code": {"type": "string", "minLength": 3},
+              "decision_note": {"type": "string", "minLength": 20},
+              "scientific_claim_status": {"type": "string", "const": "no_scientific_claim_accepted"}
+            }
+          },
+          "human_solution_judgment": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["judgment_id", "action", "diagnosis_event_id", "judgment_note", "scientific_claim_status"],
+            "properties": {
+              "judgment_id": {"type": "string", "minLength": 3},
+              "action": {
+                "type": "string",
+                "enum": ["accept_for_semantic_review", "reject_candidate", "request_revision"]
+              },
+              "diagnosis_event_id": {"type": "string", "minLength": 3},
+              "judgment_note": {"type": "string", "minLength": 20},
+              "scientific_claim_status": {"type": "string", "const": "not_established"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

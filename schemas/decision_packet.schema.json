@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "candidate_id",
+    "candidate_sha256",
+    "claim",
+    "assumptions",
+    "proof_route",
+    "novelty",
+    "comparators",
+    "expected_value",
+    "risks",
+    "limitations",
+    "evidence_manifest",
+    "verification_receipts",
+    "human_acceptance_records",
+    "gate_results",
+    "stage_status",
+    "decision",
+    "gate_recommendation",
+    "human_review_boundary",
+    "semantic_verification_boundary",
+    "reward_questions"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "packet_id": {"type": "string", "pattern": "^packet-[a-f0-9]{12}$"},
+    "candidate_id": {"type": "string", "minLength": 3},
+    "candidate_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "claim": {"type": "object", "minProperties": 4},
+    "assumptions": {"type": "array", "minItems": 1},
+    "proof_route": {"type": "array", "minItems": 2},
+    "novelty": {"type": "object", "minProperties": 4},
+    "comparators": {"type": "array", "minItems": 2},
+    "expected_value": {"type": "object", "minProperties": 3},
+    "risks": {"type": "array", "minItems": 1},
+    "limitations": {"type": "array", "minItems": 1},
+    "evidence_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "locator", "sha256"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"type": "string"},
+          "locator": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "verification_receipts": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "receipt_id",
+          "locator",
+          "sha256",
+          "semantic_sha256",
+          "skill_blueprint_sha256",
+          "method",
+          "verifier_id",
+          "verifier_artifact_locator",
+          "verifier_artifact_sha256",
+          "result"
+        ],
+        "properties": {
+          "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "locator": {"type": "string", "minLength": 3},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "semantic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "method": {"type": "string", "const": "executable_check"},
+          "verifier_id": {"type": "string", "minLength": 3},
+          "verifier_artifact_locator": {"type": "string", "minLength": 3},
+          "verifier_artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "result": {"type": "string", "const": "passed"}
+        }
+      }
+    },
+    "human_acceptance_records": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "acceptance_id",
+          "locator",
+          "sha256",
+          "semantic_sha256",
+          "skill_blueprint_sha256",
+          "receipt_id",
+          "receipt_sha256",
+          "decision",
+          "scope",
+          "reviewer_role",
+          "acceptance_registry_id",
+          "acceptance_registry_sha256"
+        ],
+        "properties": {
+          "acceptance_id": {"type": "string", "pattern": "^acceptance-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "locator": {"type": "string", "minLength": 3},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "semantic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "receipt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "decision": {"type": "string", "const": "accepted"},
+          "scope": {"type": "string", "const": "prototype_skill_activation"},
+          "reviewer_role": {"type": "string", "const": "human_reviewer"},
+          "acceptance_registry_id": {"type": "string", "pattern": "^acceptance-registry-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "acceptance_registry_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "gate_results": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gate", "verdict", "summary", "evidence_ids"],
+        "properties": {
+          "gate": {"type": "string", "minLength": 3},
+          "verdict": {"type": "string", "enum": ["pass", "fail", "pending", "blocked"]},
+          "summary": {"type": "string", "minLength": 8},
+          "evidence_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "stage_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structural_validation",
+        "evidence_integrity",
+        "semantic_verification",
+        "human_acceptance",
+        "candidate_lifecycle"
+      ],
+      "properties": {
+        "structural_validation": {"type": "string", "enum": ["pass", "fail"]},
+        "evidence_integrity": {"type": "string", "enum": ["pass", "fail"]},
+        "semantic_verification": {"type": "string", "enum": ["verified", "pending", "invalid"]},
+        "human_acceptance": {"type": "string", "enum": ["accepted", "pending", "rejected", "invalid"]},
+        "candidate_lifecycle": {"type": "string", "enum": ["ready_for_verification", "parked"]}
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "promote_to_prototype",
+        "revise",
+        "await_semantic_verification",
+        "await_human_acceptance",
+        "parked"
+      ]
+    },
+    "gate_recommendation": {
+      "type": "string",
+      "enum": [
+        "promote_to_prototype",
+        "revise",
+        "await_semantic_verification",
+        "await_human_acceptance",
+        "keep_parked"
+      ]
+    },
+    "human_review_boundary": {"type": "string", "minLength": 16},
+    "semantic_verification_boundary": {"type": "string", "minLength": 32},
+    "reward_questions": {"type": "array", "minItems": 1}
+  }
+}

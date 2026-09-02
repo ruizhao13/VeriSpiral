@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bound semantic verification receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "candidate_id",
+    "semantic_sha256",
+    "skill_blueprint_sha256",
+    "subject_fields",
+    "method",
+    "verifier",
+    "evidence_bindings",
+    "result",
+    "scope",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "candidate_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "semantic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "subject_fields": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 2}
+    },
+    "method": {"type": "string", "const": "executable_check"},
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "artifact_locator", "artifact_sha256", "command"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "artifact_locator": {"type": "string", "minLength": 3},
+        "artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "command": {"type": "string", "minLength": 8}
+      }
+    },
+    "evidence_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sha256"],
+        "properties": {
+          "id": {"type": "string", "minLength": 2},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "exit_code", "summary", "output_sha256", "checks"],
+      "properties": {
+        "status": {"type": "string", "const": "passed"},
+        "exit_code": {"type": "integer", "const": 0},
+        "summary": {"type": "string", "minLength": 16},
+        "output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "checks": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 8}
+        }
+      }
+    },
+    "scope": {"type": "string", "minLength": 16},
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 12}
+    }
+  }
+}

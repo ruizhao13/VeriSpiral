@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Append-only theory insight ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "scenario_id", "verification_scope", "append_only", "entries"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "ledger_id": {"type": "string", "minLength": 3},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "verification_scope": {"type": "string", "minLength": 20},
+    "append_only": {"type": "boolean", "const": true},
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sequence", "insight_id", "round_index", "candidate_id", "kind", "status", "rate_status", "assumption_status", "assumption_branch_id", "algorithm_change", "search_hypothesis", "summary", "next_search_action", "claim_status"],
+        "properties": {
+          "sequence": {"type": "integer"},
+          "insight_id": {"type": "string", "minLength": 3},
+          "round_index": {"type": "integer"},
+          "candidate_id": {"type": "string", "minLength": 3},
+          "kind": {
+            "type": "string",
+            "enum": ["certificate_conflict", "rate_match_on_incompatible_assumption_branch", "registered_log_gap", "target_scope_rate_match", "registered_polynomial_gap", "not_comparable"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["minimax_rate_match", "log_gap", "polynomial_gap", "not_comparable", "certificate_conflict"]
+          },
+          "rate_status": {
+            "type": "string",
+            "enum": ["minimax_rate_match", "log_gap", "polynomial_gap", "not_comparable", "certificate_conflict"]
+          },
+          "assumption_status": {"type": "string", "enum": ["match", "assumption_mismatch"]},
+          "assumption_branch_id": {"type": "string", "minLength": 3},
+          "algorithm_change": {"type": "string", "minLength": 8},
+          "search_hypothesis": {"type": "string", "minLength": 8},
+          "summary": {"type": "string", "minLength": 8},
+          "next_search_action": {"type": "string", "minLength": 8},
+          "claim_status": {"type": "string", "const": "verifier_diagnosis_not_a_new_theorem"}
+        }
+      }
+    }
+  }
+}

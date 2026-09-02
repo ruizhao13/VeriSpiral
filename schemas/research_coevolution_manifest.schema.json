@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research specification co-evolution manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "scenario_file_sha256",
+    "scenario_object_sha256",
+    "initial_specification_sha256",
+    "event_chain_head_sha256",
+    "trace_sha256",
+    "final_status",
+    "scientific_claim_status"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "scenario_file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "scenario_object_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "initial_specification_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "event_chain_head_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "trace_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "final_status": {
+      "type": "string",
+      "enum": ["target_compatible_candidate_awaiting_semantic_verification", "no_target_compatible_candidate"]
+    },
+    "scientific_claim_status": {"type": "string", "const": "not_established_by_control_loop"}
+  }
+}

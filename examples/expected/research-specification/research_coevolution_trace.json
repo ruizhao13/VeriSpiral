@@ -1,0 +1,604 @@
+{
+  "branches": [
+    {
+      "branch_id": "known-horizon-exploration",
+      "created_by_event_id": "round-04.human-spec-decision",
+      "lineage_relation": "separate_model_branch",
+      "parent_branch_id": "unknown-horizon-target-verifier-v2",
+      "parent_progress_credit": false,
+      "specification_id": "minimax-known-horizon-v1",
+      "specification_sha256": "533b994ba02f8708951f058ed3d776afbe33ca97e362d2786cd0cab0cb4b03eb",
+      "specification_version": "1.2.0",
+      "status": "researching",
+      "target_lineage_id": "known-horizon-exploration:target-lineage"
+    },
+    {
+      "branch_id": "unknown-horizon-target",
+      "created_by_event_id": "specification.registered",
+      "lineage_relation": "root",
+      "parent_branch_id": null,
+      "parent_progress_credit": false,
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36",
+      "specification_version": "1.0.0",
+      "status": "superseded",
+      "target_lineage_id": "unknown-horizon-target:target-lineage"
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "created_by_event_id": "round-02.human-spec-decision",
+      "lineage_relation": "accepted_successor",
+      "parent_branch_id": "unknown-horizon-target",
+      "parent_progress_credit": false,
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f",
+      "specification_version": "1.1.0",
+      "status": "candidate_ready_for_semantic_review",
+      "target_lineage_id": "unknown-horizon-target:target-lineage"
+    }
+  ],
+  "candidates": [
+    {
+      "branch_id": "unknown-horizon-target",
+      "candidate_id": "horizon-tuned-declared-certificate",
+      "control_status": "target_compatible_control_pass",
+      "diagnosis_event_id": "round-01.diagnosis",
+      "human_judgment_event_id": "round-01.human-solution-judgment",
+      "parent_progress_credit": false,
+      "scientific_claim_status": "not_established",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36",
+      "target_lineage_id": "unknown-horizon-target:target-lineage",
+      "verifier_results": [
+        {
+          "diagnostic_code": "assumption_scope_match",
+          "limitation": "Does not establish that an algorithm or cited theorem truly satisfies those declarations.",
+          "semantic_scope": "Checks exact equality of declared candidate and target assumption fields.",
+          "status": "pass",
+          "type": "assumption_exact_match",
+          "verifier_id": "declared-assumption-interface"
+        },
+        {
+          "diagnostic_code": "target_rate_signature_match",
+          "limitation": "Does not prove a regret bound, constants, uniformity, or applicability of a source theorem.",
+          "semantic_scope": "Checks exact equality of registered polynomial and logarithmic rate signatures.",
+          "status": "pass",
+          "type": "rate_signature_exact_match",
+          "verifier_id": "declared-rate-signature"
+        }
+      ]
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "candidate_id": "horizon-tuned-declared-certificate-replay",
+      "control_status": "failed_control_checks",
+      "diagnosis_event_id": "round-03.diagnosis",
+      "human_judgment_event_id": null,
+      "parent_progress_credit": false,
+      "scientific_claim_status": "not_established",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f",
+      "target_lineage_id": "unknown-horizon-target:target-lineage",
+      "verifier_results": [
+        {
+          "diagnostic_code": "assumption_scope_match",
+          "limitation": "Does not establish that an algorithm or cited theorem truly satisfies those declarations.",
+          "semantic_scope": "Checks exact equality of declared candidate and target assumption fields.",
+          "status": "pass",
+          "type": "assumption_exact_match",
+          "verifier_id": "declared-assumption-interface"
+        },
+        {
+          "diagnostic_code": "information_interface_mismatch",
+          "limitation": "Checks a declared interface field only and does not inspect executable algorithm code or theorem assumptions.",
+          "semantic_scope": "Compares the candidate's separately declared horizon-information interface with the branch assumption.",
+          "status": "fail",
+          "type": "information_interface_exact_match",
+          "verifier_id": "declared-horizon-information-interface"
+        },
+        {
+          "diagnostic_code": "target_rate_signature_match",
+          "limitation": "Does not prove a regret bound, constants, uniformity, or applicability of a source theorem.",
+          "semantic_scope": "Checks exact equality of registered polynomial and logarithmic rate signatures.",
+          "status": "pass",
+          "type": "rate_signature_exact_match",
+          "verifier_id": "declared-rate-signature"
+        }
+      ]
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "candidate_id": "anytime-square-root-declared-certificate",
+      "control_status": "target_compatible_control_pass",
+      "diagnosis_event_id": "round-05.diagnosis",
+      "human_judgment_event_id": "round-05.human-solution-judgment",
+      "parent_progress_credit": false,
+      "scientific_claim_status": "not_established",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f",
+      "target_lineage_id": "unknown-horizon-target:target-lineage",
+      "verifier_results": [
+        {
+          "diagnostic_code": "assumption_scope_match",
+          "limitation": "Does not establish that an algorithm or cited theorem truly satisfies those declarations.",
+          "semantic_scope": "Checks exact equality of declared candidate and target assumption fields.",
+          "status": "pass",
+          "type": "assumption_exact_match",
+          "verifier_id": "declared-assumption-interface"
+        },
+        {
+          "diagnostic_code": "information_interface_match",
+          "limitation": "Checks a declared interface field only and does not inspect executable algorithm code or theorem assumptions.",
+          "semantic_scope": "Compares the candidate's separately declared horizon-information interface with the branch assumption.",
+          "status": "pass",
+          "type": "information_interface_exact_match",
+          "verifier_id": "declared-horizon-information-interface"
+        },
+        {
+          "diagnostic_code": "target_rate_signature_match",
+          "limitation": "Does not prove a regret bound, constants, uniformity, or applicability of a source theorem.",
+          "semantic_scope": "Checks exact equality of registered polynomial and logarithmic rate signatures.",
+          "status": "pass",
+          "type": "rate_signature_exact_match",
+          "verifier_id": "declared-rate-signature"
+        }
+      ]
+    }
+  ],
+  "event_chain_head_sha256": "4c9717fb4e831944b4fe2dcd33e032397d462e7eb1c698746af6f516fba1ff5f",
+  "events": [
+    {
+      "actor": "human",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [],
+      "details": {
+        "authorization": "human_specification_authority",
+        "parent_progress_credit": false,
+        "status": "active",
+        "subject_id": "minimax-unknown-horizon-v1",
+        "summary": "The human registered the initial model, target, assumptions, and verifier suite."
+      },
+      "emits": [
+        "begin_research_under_registered_specification"
+      ],
+      "event_id": "specification.registered",
+      "event_index": 0,
+      "event_sha256": "45d12a4f713a7897cda0302b979e43ecb07e955be63dd13bdad8429f76a2e1a7",
+      "event_type": "specification_registered",
+      "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "round_id": "setup",
+      "source_payload_sha256": "dcbf1bca15483739f6a3f321034c3950ea49a24a7dd532e9d73a2817ff097be7",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "ai",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [
+        {
+          "event_id": "specification.registered",
+          "event_sha256": "45d12a4f713a7897cda0302b979e43ecb07e955be63dd13bdad8429f76a2e1a7",
+          "response_code": "begin_research_under_registered_specification"
+        }
+      ],
+      "details": {
+        "authorization": "ai_proposal_only_not_evidence",
+        "parent_progress_credit": false,
+        "status": "proposal_received",
+        "subject_id": "horizon-tuned-declared-certificate",
+        "summary": "Replay a horizon-tuned declared certificate whose rate matches while its information interface is recorded separately."
+      },
+      "emits": [
+        "run_registered_control_verifiers"
+      ],
+      "event_id": "round-01.submission",
+      "event_index": 1,
+      "event_sha256": "3e2bb9b73bea09e86e0014d6d3c6997a33c527ec533537d06256792b3cc31f67",
+      "event_type": "ai_solution_submission",
+      "previous_event_sha256": "45d12a4f713a7897cda0302b979e43ecb07e955be63dd13bdad8429f76a2e1a7",
+      "round_id": "round-01",
+      "source_payload_sha256": "ee9138e96ec3292c3192a335fd52b80cd3dc96f8c46bd260ee741a836463aef2",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "system",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [
+        {
+          "event_id": "round-01.submission",
+          "event_sha256": "3e2bb9b73bea09e86e0014d6d3c6997a33c527ec533537d06256792b3cc31f67",
+          "response_code": "run_registered_control_verifiers"
+        }
+      ],
+      "details": {
+        "authorization": "control_check_only_not_scientific_verification",
+        "parent_progress_credit": false,
+        "status": "target_compatible_control_pass",
+        "subject_id": "horizon-tuned-declared-certificate",
+        "summary": "The candidate matches the registered assumptions and target rate signature; semantic truth remains outside this control check."
+      },
+      "emits": [
+        "present_target_compatible_candidate_for_human_judgment"
+      ],
+      "event_id": "round-01.diagnosis",
+      "event_index": 2,
+      "event_sha256": "be4d3f8bb8d7da9fe82f564983c4a385b83f1e2420263dbbaeeeda4a02b847bd",
+      "event_type": "control_verifier_diagnosis",
+      "previous_event_sha256": "3e2bb9b73bea09e86e0014d6d3c6997a33c527ec533537d06256792b3cc31f67",
+      "round_id": "round-01",
+      "source_payload_sha256": "6b91e0336c0287686f9ac452bc38e8a7718068276fbfd5833b125f08c56529a5",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "human",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [
+        {
+          "event_id": "round-01.diagnosis",
+          "event_sha256": "be4d3f8bb8d7da9fe82f564983c4a385b83f1e2420263dbbaeeeda4a02b847bd",
+          "response_code": "present_target_compatible_candidate_for_human_judgment"
+        }
+      ],
+      "details": {
+        "authorization": "human_judgment_without_theorem_acceptance",
+        "parent_progress_credit": false,
+        "status": "candidate_revision_requested",
+        "subject_id": "horizon-tuned-declared-certificate",
+        "summary": "The control pass missed that the separately declared algorithm interface uses a known horizon; revise the verifier before promotion."
+      },
+      "emits": [
+        "candidate_revision_requested"
+      ],
+      "event_id": "round-01.human-solution-judgment",
+      "event_index": 3,
+      "event_sha256": "0acd277f5a713ec265fe044115d101205f972ef68afc5590eb1fe43f1c948de6",
+      "event_type": "human_solution_judgment",
+      "previous_event_sha256": "be4d3f8bb8d7da9fe82f564983c4a385b83f1e2420263dbbaeeeda4a02b847bd",
+      "round_id": "round-01",
+      "source_payload_sha256": "6117a84e248376653b41f8503f7a6c5b5e2beb57d3b701216f9126ab17a67882",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "ai",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [
+        {
+          "event_id": "round-01.human-solution-judgment",
+          "event_sha256": "0acd277f5a713ec265fe044115d101205f972ef68afc5590eb1fe43f1c948de6",
+          "response_code": "candidate_revision_requested"
+        }
+      ],
+      "details": {
+        "authorization": "ai_may_discuss_but_cannot_change_specification",
+        "parent_progress_credit": false,
+        "status": "proposal_not_applied",
+        "subject_id": "horizon-interface-verifier-question",
+        "summary": "Should the verifier explicitly compare the candidate's declared horizon-information interface with the target assumption?"
+      },
+      "emits": [
+        "human_spec_decision_required"
+      ],
+      "event_id": "round-02.submission",
+      "event_index": 4,
+      "event_sha256": "8b8b9bae0c672877f70b9f6c119f989b5a9be8310933a5332cca2e3eaa892ce1",
+      "event_type": "ai_spec_revision_discussion",
+      "previous_event_sha256": "0acd277f5a713ec265fe044115d101205f972ef68afc5590eb1fe43f1c948de6",
+      "round_id": "round-02",
+      "source_payload_sha256": "ed750d418b73cacc6fc4bd6f04cf143ac2ef9c47df2630b50f40e6c0a9228011",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "human",
+      "branch_id": "unknown-horizon-target",
+      "consumes": [
+        {
+          "event_id": "round-02.submission",
+          "event_sha256": "8b8b9bae0c672877f70b9f6c119f989b5a9be8310933a5332cca2e3eaa892ce1",
+          "response_code": "human_spec_decision_required"
+        }
+      ],
+      "details": {
+        "authorization": "human_specification_authority",
+        "parent_progress_credit": false,
+        "status": "revision_accepted_as_immutable_successor",
+        "subject_id": "horizon-interface-verifier-question",
+        "summary": "Accept the verifier revision as an immutable successor, supersede V1 for future work, and rerun the same candidate."
+      },
+      "emits": [
+        "continue_under_accepted_verifier_v2"
+      ],
+      "event_id": "round-02.human-spec-decision",
+      "event_index": 5,
+      "event_sha256": "bcc4554511fd362769d84ad5997eb4f897198182fc94d3ada1dc7ebf1be1937b",
+      "event_type": "human_spec_decision",
+      "previous_event_sha256": "8b8b9bae0c672877f70b9f6c119f989b5a9be8310933a5332cca2e3eaa892ce1",
+      "round_id": "round-02",
+      "source_payload_sha256": "7742967268a585d868098f2fcd3b4042a1e7a18959ba5332f195abbbbf41cb4f",
+      "specification_id": "minimax-unknown-horizon-v1",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "actor": "ai",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-02.human-spec-decision",
+          "event_sha256": "bcc4554511fd362769d84ad5997eb4f897198182fc94d3ada1dc7ebf1be1937b",
+          "response_code": "continue_under_accepted_verifier_v2"
+        }
+      ],
+      "details": {
+        "authorization": "ai_proposal_only_not_evidence",
+        "parent_progress_credit": false,
+        "status": "proposal_received",
+        "subject_id": "horizon-tuned-declared-certificate-replay",
+        "summary": "Replay the same horizon-tuned declared certificate under the human-approved verifier-revision branch."
+      },
+      "emits": [
+        "run_registered_control_verifiers"
+      ],
+      "event_id": "round-03.submission",
+      "event_index": 6,
+      "event_sha256": "f6530399501ba524cd0f6e25200f5e562b10550a06283d90a176d155c6d01a8a",
+      "event_type": "ai_solution_submission",
+      "previous_event_sha256": "bcc4554511fd362769d84ad5997eb4f897198182fc94d3ada1dc7ebf1be1937b",
+      "round_id": "round-03",
+      "source_payload_sha256": "787b537f91ddd5b655e89485c4e415f2b2053747681e259120a7c417b14bacc1",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "system",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-03.submission",
+          "event_sha256": "f6530399501ba524cd0f6e25200f5e562b10550a06283d90a176d155c6d01a8a",
+          "response_code": "run_registered_control_verifiers"
+        }
+      ],
+      "details": {
+        "authorization": "control_check_only_not_scientific_verification",
+        "parent_progress_credit": false,
+        "status": "failed_control_checks",
+        "subject_id": "horizon-tuned-declared-certificate-replay",
+        "summary": "The candidate changes the declared assumption scope and cannot count as progress on this branch."
+      },
+      "emits": [
+        "preserve_target_or_request_model_branch"
+      ],
+      "event_id": "round-03.diagnosis",
+      "event_index": 7,
+      "event_sha256": "7645e14c8951536599a9760bb20f9915f4beeb1d55995d33071b707c9c04c597",
+      "event_type": "control_verifier_diagnosis",
+      "previous_event_sha256": "f6530399501ba524cd0f6e25200f5e562b10550a06283d90a176d155c6d01a8a",
+      "round_id": "round-03",
+      "source_payload_sha256": "d0308fdeba6e1298c27b0eed952af1704e280aacf70453453d814f901612fde5",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "ai",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-03.diagnosis",
+          "event_sha256": "7645e14c8951536599a9760bb20f9915f4beeb1d55995d33071b707c9c04c597",
+          "response_code": "preserve_target_or_request_model_branch"
+        }
+      ],
+      "details": {
+        "authorization": "ai_may_discuss_but_cannot_change_specification",
+        "parent_progress_credit": false,
+        "status": "proposal_not_applied",
+        "subject_id": "known-horizon-model-branch-question",
+        "summary": "Should known terminal-horizon information be explored as a separate model branch while preserving the original target?"
+      },
+      "emits": [
+        "human_spec_decision_required"
+      ],
+      "event_id": "round-04.submission",
+      "event_index": 8,
+      "event_sha256": "c75018539fb94566a6f4b89290978a878d4f4aae8705945b2950f119dd6b87f0",
+      "event_type": "ai_spec_revision_discussion",
+      "previous_event_sha256": "7645e14c8951536599a9760bb20f9915f4beeb1d55995d33071b707c9c04c597",
+      "round_id": "round-04",
+      "source_payload_sha256": "977eccf882a26fa38c3080d5ec93da25c3e52e154a28a8cbc485c48da4270626",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "human",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-04.submission",
+          "event_sha256": "c75018539fb94566a6f4b89290978a878d4f4aae8705945b2950f119dd6b87f0",
+          "response_code": "human_spec_decision_required"
+        }
+      ],
+      "details": {
+        "authorization": "human_specification_authority",
+        "parent_progress_credit": false,
+        "status": "revision_created_separate_branch",
+        "subject_id": "known-horizon-model-branch-question",
+        "summary": "Create the known-horizon model branch for insight only, preserve verifier V2 on the accepted target lineage, and continue that target."
+      },
+      "emits": [
+        "continue_accepted_unknown_horizon_target"
+      ],
+      "event_id": "round-04.human-spec-decision",
+      "event_index": 9,
+      "event_sha256": "ff6524e40d69ce27bce322a9d8ca8628fe8358a36c5336c6efcca6bf921bd6e3",
+      "event_type": "human_spec_decision",
+      "previous_event_sha256": "c75018539fb94566a6f4b89290978a878d4f4aae8705945b2950f119dd6b87f0",
+      "round_id": "round-04",
+      "source_payload_sha256": "6d954975dddb82316099940680e853bd9540e463c7648952cf02b1c8d7276af1",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "ai",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-04.human-spec-decision",
+          "event_sha256": "ff6524e40d69ce27bce322a9d8ca8628fe8358a36c5336c6efcca6bf921bd6e3",
+          "response_code": "continue_accepted_unknown_horizon_target"
+        }
+      ],
+      "details": {
+        "authorization": "ai_proposal_only_not_evidence",
+        "parent_progress_credit": false,
+        "status": "proposal_received",
+        "subject_id": "anytime-square-root-declared-certificate",
+        "summary": "Replay an anytime declared certificate that returns to the original information interface and target rate signature."
+      },
+      "emits": [
+        "run_registered_control_verifiers"
+      ],
+      "event_id": "round-05.submission",
+      "event_index": 10,
+      "event_sha256": "03959d2febb05d851ca6b962df463b1f38670eeae57f02293861e5c190a06231",
+      "event_type": "ai_solution_submission",
+      "previous_event_sha256": "ff6524e40d69ce27bce322a9d8ca8628fe8358a36c5336c6efcca6bf921bd6e3",
+      "round_id": "round-05",
+      "source_payload_sha256": "56d87a2f0a979ef178ff2ca1739cf98f4ab5ff774aa282ea0770ec07a867ab9d",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "system",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-05.submission",
+          "event_sha256": "03959d2febb05d851ca6b962df463b1f38670eeae57f02293861e5c190a06231",
+          "response_code": "run_registered_control_verifiers"
+        }
+      ],
+      "details": {
+        "authorization": "control_check_only_not_scientific_verification",
+        "parent_progress_credit": false,
+        "status": "target_compatible_control_pass",
+        "subject_id": "anytime-square-root-declared-certificate",
+        "summary": "The candidate matches the registered assumptions and target rate signature; semantic truth remains outside this control check."
+      },
+      "emits": [
+        "present_target_compatible_candidate_for_human_judgment"
+      ],
+      "event_id": "round-05.diagnosis",
+      "event_index": 11,
+      "event_sha256": "94c21cb53f6ea800d72d8e9c79c166aa9e3a90c2605a5b38bc8019c640552c30",
+      "event_type": "control_verifier_diagnosis",
+      "previous_event_sha256": "03959d2febb05d851ca6b962df463b1f38670eeae57f02293861e5c190a06231",
+      "round_id": "round-05",
+      "source_payload_sha256": "a5b0e988c69771310aee54ea5ad67988cf5dfe959be1c26a7b6cd5d50bcab94e",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "actor": "human",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumes": [
+        {
+          "event_id": "round-05.diagnosis",
+          "event_sha256": "94c21cb53f6ea800d72d8e9c79c166aa9e3a90c2605a5b38bc8019c640552c30",
+          "response_code": "present_target_compatible_candidate_for_human_judgment"
+        }
+      ],
+      "details": {
+        "authorization": "human_judgment_without_theorem_acceptance",
+        "parent_progress_credit": false,
+        "status": "candidate_ready_for_semantic_review",
+        "subject_id": "anytime-square-root-declared-certificate",
+        "summary": "The control-compatible candidate may proceed to independent semantic verification; no theorem is accepted by this decision."
+      },
+      "emits": [
+        "candidate_ready_for_semantic_review"
+      ],
+      "event_id": "round-05.human-solution-judgment",
+      "event_index": 12,
+      "event_sha256": "4c9717fb4e831944b4fe2dcd33e032397d462e7eb1c698746af6f516fba1ff5f",
+      "event_type": "human_solution_judgment",
+      "previous_event_sha256": "94c21cb53f6ea800d72d8e9c79c166aa9e3a90c2605a5b38bc8019c640552c30",
+      "round_id": "round-05",
+      "source_payload_sha256": "0c66d41f28c407508cb8a2fdc5a8843660be4a02367056e5a5e2e65c1d78b032",
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    }
+  ],
+  "final_status": "target_compatible_candidate_awaiting_semantic_verification",
+  "initial_branch_id": "unknown-horizon-target",
+  "initial_specification_id": "minimax-unknown-horizon-v1",
+  "initial_specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36",
+  "invariants": {
+    "ai_changed_specification": false,
+    "all_specification_changes_created_new_branches": true,
+    "all_specification_changes_human_authorized": true,
+    "every_later_round_consumed_preceding_terminal_event": true,
+    "initial_specification_preserved": true,
+    "parent_progress_inherited_from_child": false,
+    "superseded_specification_reused": false
+  },
+  "rounds": [
+    {
+      "branch_id": "unknown-horizon-target",
+      "consumed_preceding_terminal_event_id": "specification.registered",
+      "outcome": "target_compatible_control_pass",
+      "round_id": "round-01",
+      "round_index": 1,
+      "submission_event_id": "round-01.submission",
+      "submission_kind": "solution_candidate",
+      "terminal_event_id": "round-01.human-solution-judgment"
+    },
+    {
+      "branch_id": "unknown-horizon-target",
+      "consumed_preceding_terminal_event_id": "round-01.human-solution-judgment",
+      "outcome": "revision_accepted_as_immutable_successor",
+      "round_id": "round-02",
+      "round_index": 2,
+      "submission_event_id": "round-02.submission",
+      "submission_kind": "revision_discussion",
+      "terminal_event_id": "round-02.human-spec-decision"
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumed_preceding_terminal_event_id": "round-02.human-spec-decision",
+      "outcome": "failed_control_checks",
+      "round_id": "round-03",
+      "round_index": 3,
+      "submission_event_id": "round-03.submission",
+      "submission_kind": "solution_candidate",
+      "terminal_event_id": "round-03.diagnosis"
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumed_preceding_terminal_event_id": "round-03.diagnosis",
+      "outcome": "revision_created_separate_branch",
+      "round_id": "round-04",
+      "round_index": 4,
+      "submission_event_id": "round-04.submission",
+      "submission_kind": "revision_discussion",
+      "terminal_event_id": "round-04.human-spec-decision"
+    },
+    {
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "consumed_preceding_terminal_event_id": "round-04.human-spec-decision",
+      "outcome": "target_compatible_control_pass",
+      "round_id": "round-05",
+      "round_index": 5,
+      "submission_event_id": "round-05.submission",
+      "submission_kind": "solution_candidate",
+      "terminal_event_id": "round-05.human-solution-judgment"
+    }
+  ],
+  "scenario_id": "human-governed-minimax-research-specification-loop",
+  "scenario_sha256": "f52ad2b7673a5223f85a0851d075dc49ae3538adfcca0c614d3ae91f3a946048",
+  "schema_version": "1.0",
+  "scientific_claim_status": "not_established_by_control_loop"
+}

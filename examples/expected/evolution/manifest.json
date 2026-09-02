@@ -1,0 +1,32 @@
+{
+  "apply_status": "not_applied",
+  "artifacts": [
+    {
+      "path": "evolution_proposal.json",
+      "sha256": "cd95b3361afaa49d9db4237ffe0073bcd5f2db12e483eed94c75ccee92a911db"
+    },
+    {
+      "path": "evolution_patch.json",
+      "sha256": "1da74b27b1955993197835a5d36eafe05fd5936ed5f0a17cab0fb446d64c6ace"
+    }
+  ],
+  "decision_status": "proposed_for_human_review",
+  "human_review_status": "required",
+  "input_feedback_sha256": "99a429f5a840232a7f0200a70def8e9581570db07f8739073159b8fb91638d0f",
+  "registry_id": "registry-public-evolution-v1",
+  "registry_sha256": "3b2a1bba10b935be78cbc388c2afac1abac365c08517e1c99877a43ab1899d83",
+  "run_id": "proposal-9b0c9fd70b74",
+  "schema_version": "1.0",
+  "scientific_conclusion_status": "no_scientific_conclusion_generated",
+  "source_human_acceptance_status": "pending",
+  "source_id": "source-public-control-receipt",
+  "source_revalidation": {
+    "candidate_registry_binding": "pass",
+    "current_evidence_hashes": "pass",
+    "executable_verifier_replay": "pass",
+    "recomputed_packet_identity": "pass",
+    "registered_verifier_artifact": "pass"
+  },
+  "source_type": "bound_executable_verification_control",
+  "source_use": "process_only_unapplied_policy_proposal"
+}

@@ -1,0 +1,261 @@
+{
+  "certificate_inventory": [
+    {
+      "certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+      "extraction_note": "Only the square-root order and declared public scope are registered; the proof is not reproduced.",
+      "kind": "lower",
+      "source_id": "audibert-bubeck-2009",
+      "theorem_locator": "Theorem 1 distribution-free lower bound"
+    },
+    {
+      "certificate_id": "ucb-like-upper-rate-public-extract-v1",
+      "extraction_note": "The public fixture registers the worst-case square-root rate with its excess log factor; it does not rederive the bound.",
+      "kind": "upper",
+      "source_id": "audibert-bubeck-2009",
+      "theorem_locator": "Theorem 2 and the displayed worst-case consequence"
+    },
+    {
+      "certificate_id": "moss-upper-rate-public-extract-v1",
+      "extraction_note": "The square-root upper rate and known-horizon algorithm interface are registered from the public source.",
+      "kind": "upper",
+      "source_id": "audibert-bubeck-2009",
+      "theorem_locator": "Theorem 5"
+    },
+    {
+      "certificate_id": "moss-anytime-upper-rate-public-extract-v1",
+      "extraction_note": "The square-root upper rate and anytime interface are registered; constants and the proof remain outside machine verification and require human review.",
+      "kind": "upper",
+      "source_id": "degenne-perchet-2016",
+      "theorem_locator": "Theorem 3"
+    }
+  ],
+  "final": {
+    "assumption_branch_id": "public-bandit-minimax-evolution-target-v1",
+    "candidate_id": "moss-anytime-public-certificate-v1",
+    "claim_boundary": "Rate match under registered certificates; theorem proofs, source extraction, constants, and omitted lower-order terms are not machine-verified.",
+    "human_review_required": true,
+    "original_target_preserved": true,
+    "round_index": 3,
+    "status": "minimax_rate_match"
+  },
+  "lower_certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+  "problem_signature": {
+    "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+    "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+    "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+    "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+    "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+  },
+  "rounds": [
+    {
+      "algorithm_change": "Use an anytime UCB-style confidence index as the initial algorithmic baseline.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "assumption_check": {
+        "lower_vs_upper": [],
+        "status": "match",
+        "target_vs_lower": [],
+        "target_vs_upper": []
+      },
+      "assumption_patch_id": null,
+      "branch_transition": "stayed_on_target",
+      "candidate_id": "ucb-like-public-certificate-v1",
+      "candidate_label": "UCB-like distribution-free upper-rate extract",
+      "certificate_status": "consistent",
+      "comparability": "comparable",
+      "lower_certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+      "rate_algebra_applicable_to_target": true,
+      "rate_check": {
+        "delta_upper_minus_lower": {
+          "log_exponents": {
+            "horizon": "1/2"
+          },
+          "polynomial_exponents": {
+            "arms": "0",
+            "horizon": "0"
+          }
+        },
+        "lower": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        },
+        "reason": "polynomial exponents match but the upper certificate has an excess log factor",
+        "status": "log_gap",
+        "upper": {
+          "log_exponents": {
+            "horizon": "1/2"
+          },
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        }
+      },
+      "round_index": 1,
+      "search_hypothesis": "A target-compatible baseline may still pay an avoidable logarithmic factor in its distribution-free upper rate.",
+      "signature_check": {
+        "lower_vs_upper": [],
+        "status": "match",
+        "target_vs_lower": [],
+        "target_vs_upper": []
+      },
+      "status": "log_gap",
+      "upper_certificate_id": "ucb-like-upper-rate-public-extract-v1"
+    },
+    {
+      "algorithm_change": "Replace the full time logarithm with the horizon-budgeted MOSS exploration index.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-candidate-assumptions-v1",
+      "assumption_check": {
+        "lower_vs_upper": [
+          {
+            "field": "horizon_knowledge",
+            "lower_present": true,
+            "lower_value": "unknown",
+            "upper_present": true,
+            "upper_value": "known"
+          }
+        ],
+        "status": "assumption_mismatch",
+        "target_vs_lower": [],
+        "target_vs_upper": [
+          {
+            "field": "horizon_knowledge",
+            "target_present": true,
+            "target_value": "unknown",
+            "upper_present": true,
+            "upper_value": "known"
+          }
+        ]
+      },
+      "assumption_patch_id": "public-bandit-minimax-evolution-assumption-patch-v1",
+      "branch_transition": "branched_without_target_mutation",
+      "candidate_id": "moss-known-horizon-public-certificate-v1",
+      "candidate_label": "MOSS known-horizon upper-rate extract",
+      "certificate_status": "scope_incompatible",
+      "comparability": "not_comparable",
+      "lower_certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+      "rate_algebra_applicable_to_target": false,
+      "rate_check": {
+        "delta_upper_minus_lower": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "0",
+            "horizon": "0"
+          }
+        },
+        "lower": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        },
+        "reason": "registered upper and lower polynomial/log exponents match exactly",
+        "status": "minimax_rate_match",
+        "upper": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        }
+      },
+      "round_index": 2,
+      "search_hypothesis": "Global horizon budgeting can close the logarithmic rate gap, but it may purchase the match with terminal-horizon information.",
+      "signature_check": {
+        "lower_vs_upper": [],
+        "status": "match",
+        "target_vs_lower": [],
+        "target_vs_upper": []
+      },
+      "status": "not_comparable",
+      "upper_certificate_id": "moss-upper-rate-public-extract-v1"
+    },
+    {
+      "algorithm_change": "Replace terminal-horizon calibration with the direct MOSS-anytime exploration clock.",
+      "assumption_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "assumption_check": {
+        "lower_vs_upper": [],
+        "status": "match",
+        "target_vs_lower": [],
+        "target_vs_upper": []
+      },
+      "assumption_patch_id": null,
+      "branch_transition": "returned_to_target",
+      "candidate_id": "moss-anytime-public-certificate-v1",
+      "candidate_label": "MOSS-anytime upper-rate extract",
+      "certificate_status": "consistent",
+      "comparability": "comparable",
+      "lower_certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+      "rate_algebra_applicable_to_target": true,
+      "rate_check": {
+        "delta_upper_minus_lower": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "0",
+            "horizon": "0"
+          }
+        },
+        "lower": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        },
+        "reason": "registered upper and lower polynomial/log exponents match exactly",
+        "status": "minimax_rate_match",
+        "upper": {
+          "log_exponents": {},
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          }
+        }
+      },
+      "round_index": 3,
+      "search_hypothesis": "An anytime exploration clock can restore the original information interface while preserving the registered square-root rate.",
+      "signature_check": {
+        "lower_vs_upper": [],
+        "status": "match",
+        "target_vs_lower": [],
+        "target_vs_upper": []
+      },
+      "status": "minimax_rate_match",
+      "upper_certificate_id": "moss-anytime-upper-rate-public-extract-v1"
+    }
+  ],
+  "scenario_id": "public-bandit-minimax-evolution",
+  "schema_version": "1.0",
+  "source_registry": [
+    {
+      "locator": "Theorems 1, 2, and 5",
+      "proof_status": "cited_not_reproved",
+      "registration_status": "registered_public_extract",
+      "source_id": "audibert-bubeck-2009",
+      "title": "Minimax Policies for Adversarial and Stochastic Bandits",
+      "url": "https://www.microsoft.com/en-us/research/publication/minimax-policies-adversarial-stochastic-bandits/"
+    },
+    {
+      "locator": "Theorem 3",
+      "proof_status": "cited_not_reproved",
+      "registration_status": "registered_public_extract",
+      "source_id": "degenne-perchet-2016",
+      "title": "Anytime optimal algorithms in stochastic multi-armed bandits",
+      "url": "https://proceedings.mlr.press/v48/degenne16.html"
+    }
+  ],
+  "source_review_status": "human_review_required",
+  "source_verification_boundary": "Source metadata and certificate extracts are registered public-demo records; source text and proofs are not fetched or verified by this program, and human review remains required.",
+  "target_assumptions": {
+    "arms_known": true,
+    "feedback": "selected_arm_reward_only",
+    "horizon_knowledge": "unknown",
+    "reward_process": "iid_within_each_arm",
+    "reward_support": "unit_interval"
+  },
+  "trace_id": "public-bandit-minimax-evolution-evolution-trace-v1",
+  "verification_scope": "Checks registered certificate scope, assumptions, and polynomial/log-rate algebra only; it does not re-prove either theorem."
+}

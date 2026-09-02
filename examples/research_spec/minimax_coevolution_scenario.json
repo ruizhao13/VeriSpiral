@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "human-governed-minimax-research-specification-loop",
+  "specification_registry": [
+    {
+      "specification_id": "minimax-unknown-horizon-v1",
+      "path": "examples/research_spec/minimax_unknown_horizon_spec.json",
+      "file_sha256": "1212ccd769711b791c16f54c8c5e8b022f383bcde056d78bb1903df7644257d3",
+      "specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36"
+    },
+    {
+      "specification_id": "minimax-unknown-horizon-verifier-v2",
+      "path": "examples/research_spec/minimax_unknown_horizon_verifier_v2_spec.json",
+      "file_sha256": "6f550ffc42851a031007dcb877fd29fa88adb84a424ac8d8f514304f53662d63",
+      "specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f"
+    },
+    {
+      "specification_id": "minimax-known-horizon-v1",
+      "path": "examples/research_spec/minimax_known_horizon_spec.json",
+      "file_sha256": "ad937c28b1018777b938f3a0adcbe6e0abb8fad567c97a138c63c2956681f421",
+      "specification_sha256": "533b994ba02f8708951f058ed3d776afbe33ca97e362d2786cd0cab0cb4b03eb"
+    },
+    {
+      "specification_id": "minimax-unknown-horizon-human-modified-verifier-v3",
+      "path": "examples/research_spec/minimax_unknown_horizon_human_modified_verifier_spec.json",
+      "file_sha256": "b318e7287f888ac350415464b9b83714db2207f1740a99d1139c8936aef7b2a4",
+      "specification_sha256": "17ee89caecd375a6158048f8c0e233173cf1362b786df8479f45c6b0b76b5cfa"
+    }
+  ],
+  "initial_state": {
+    "branch_id": "unknown-horizon-target",
+    "specification_id": "minimax-unknown-horizon-v1"
+  },
+  "rounds": [
+    {
+      "round_index": 1,
+      "round_id": "round-01",
+      "branch_id": "unknown-horizon-target",
+      "submission": {
+        "kind": "solution_candidate",
+        "consumes": [{
+          "event_id": "specification.registered",
+          "response_code": "begin_research_under_registered_specification"
+        }],
+        "solution_candidate": {
+          "candidate_id": "horizon-tuned-declared-certificate",
+          "proposal_summary": "Replay a horizon-tuned declared certificate whose rate matches while its information interface is recorded separately.",
+          "assumptions": {
+            "arms_known": true,
+            "feedback": "selected_arm_reward_only",
+            "horizon_knowledge": "unknown",
+            "reward_process": "iid_within_each_arm",
+            "reward_support": "unit_interval"
+          },
+          "information_interface": {"horizon_knowledge": "known"},
+          "rate_signature": {
+            "polynomial_exponents": {"arms": "1/2", "horizon": "1/2"},
+            "log_exponents": {}
+          },
+          "public_evidence_scope": "A deterministic declared-certificate fixture only; no theorem or source extraction is verified here.",
+          "scientific_claim_status": "proposal_not_evidence"
+        },
+        "revision_discussion": null
+      },
+      "human_spec_decision": null,
+      "human_solution_judgment": {
+        "judgment_id": "detect-missing-information-interface-gate",
+        "action": "request_revision",
+        "diagnosis_event_id": "round-01.diagnosis",
+        "judgment_note": "The control pass missed that the separately declared algorithm interface uses a known horizon; revise the verifier before promotion.",
+        "scientific_claim_status": "not_established"
+      }
+    },
+    {
+      "round_index": 2,
+      "round_id": "round-02",
+      "branch_id": "unknown-horizon-target",
+      "submission": {
+        "kind": "revision_discussion",
+        "consumes": [{
+          "event_id": "round-01.human-solution-judgment",
+          "response_code": "candidate_revision_requested"
+        }],
+        "solution_candidate": null,
+        "revision_discussion": {
+          "discussion_id": "horizon-interface-verifier-question",
+          "base_specification_id": "minimax-unknown-horizon-v1",
+          "base_specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36",
+          "proposed_specification_id": "minimax-unknown-horizon-verifier-v2",
+          "revision_kind": "verifier_revision",
+          "question_for_human": "Should the verifier explicitly compare the candidate's declared horizon-information interface with the target assumption?",
+          "trigger_evidence": "Human review caught a false control pass caused by an uninspected information-interface field.",
+          "expected_benefit": "The additional gate makes a known-horizon dependency observable even when candidate assumptions claim unknown horizon.",
+          "costs": "The gate still trusts declared interface metadata and cannot inspect algorithm code or theorem text.",
+          "problem_identity_effect": "preserves_problem",
+          "ai_authorization": "proposal_only_not_applied"
+        }
+      },
+      "human_spec_decision": {
+        "decision_id": "approve-horizon-interface-verifier-branch",
+        "action": "accept",
+        "discussion_event_id": "round-02.submission",
+        "proposed_specification_id": "minimax-unknown-horizon-verifier-v2",
+        "proposed_specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f",
+        "child_branch_id": "unknown-horizon-target-verifier-v2",
+        "selected_specification_id": "minimax-unknown-horizon-verifier-v2",
+        "selected_revision_kind": "verifier_revision",
+        "continuation_response_code": "continue_under_accepted_verifier_v2",
+        "decision_note": "Accept the verifier revision as an immutable successor, supersede V1 for future work, and rerun the same candidate.",
+        "scientific_claim_status": "no_scientific_claim_accepted"
+      },
+      "human_solution_judgment": null
+    },
+    {
+      "round_index": 3,
+      "round_id": "round-03",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "submission": {
+        "kind": "solution_candidate",
+        "consumes": [{
+          "event_id": "round-02.human-spec-decision",
+          "response_code": "continue_under_accepted_verifier_v2"
+        }],
+        "solution_candidate": {
+          "candidate_id": "horizon-tuned-declared-certificate-replay",
+          "proposal_summary": "Replay the same horizon-tuned declared certificate under the human-approved verifier-revision branch.",
+          "assumptions": {
+            "arms_known": true,
+            "feedback": "selected_arm_reward_only",
+            "horizon_knowledge": "unknown",
+            "reward_process": "iid_within_each_arm",
+            "reward_support": "unit_interval"
+          },
+          "information_interface": {"horizon_knowledge": "known"},
+          "rate_signature": {
+            "polynomial_exponents": {"arms": "1/2", "horizon": "1/2"},
+            "log_exponents": {}
+          },
+          "public_evidence_scope": "A deterministic replay for observing verifier behavior; theorem validity and code behavior remain unverified.",
+          "scientific_claim_status": "proposal_not_evidence"
+        },
+        "revision_discussion": null
+      },
+      "human_spec_decision": null,
+      "human_solution_judgment": null
+    },
+    {
+      "round_index": 4,
+      "round_id": "round-04",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "submission": {
+        "kind": "revision_discussion",
+        "consumes": [{
+          "event_id": "round-03.diagnosis",
+          "response_code": "preserve_target_or_request_model_branch"
+        }],
+        "solution_candidate": null,
+        "revision_discussion": {
+          "discussion_id": "known-horizon-model-branch-question",
+          "base_specification_id": "minimax-unknown-horizon-verifier-v2",
+          "base_specification_sha256": "ea0bb7f9d17dc1f3d4d49968b43711411f6b4ffb79c641589b7443046b7dec1f",
+          "proposed_specification_id": "minimax-known-horizon-v1",
+          "revision_kind": "model_revision",
+          "question_for_human": "Should known terminal-horizon information be explored as a separate model branch while preserving the original target?",
+          "trigger_evidence": "The revised verifier exposed the known-horizon information interface of the rate-matching candidate.",
+          "expected_benefit": "The branch can isolate whether terminal-horizon information explains the declared rate match.",
+          "costs": "Known horizon changes the information interface and therefore cannot solve the original unknown-horizon target.",
+          "problem_identity_effect": "creates_new_target_lineage",
+          "ai_authorization": "proposal_only_not_applied"
+        }
+      },
+      "human_spec_decision": {
+        "decision_id": "approve-known-horizon-exploration-branch",
+        "action": "branch",
+        "discussion_event_id": "round-04.submission",
+        "proposed_specification_id": "minimax-known-horizon-v1",
+        "proposed_specification_sha256": "533b994ba02f8708951f058ed3d776afbe33ca97e362d2786cd0cab0cb4b03eb",
+        "child_branch_id": "known-horizon-exploration",
+        "selected_specification_id": "minimax-known-horizon-v1",
+        "selected_revision_kind": "model_revision",
+        "continuation_response_code": "continue_accepted_unknown_horizon_target",
+        "decision_note": "Create the known-horizon model branch for insight only, preserve verifier V2 on the accepted target lineage, and continue that target.",
+        "scientific_claim_status": "no_scientific_claim_accepted"
+      },
+      "human_solution_judgment": null
+    },
+    {
+      "round_index": 5,
+      "round_id": "round-05",
+      "branch_id": "unknown-horizon-target-verifier-v2",
+      "submission": {
+        "kind": "solution_candidate",
+        "consumes": [{
+          "event_id": "round-04.human-spec-decision",
+          "response_code": "continue_accepted_unknown_horizon_target"
+        }],
+        "solution_candidate": {
+          "candidate_id": "anytime-square-root-declared-certificate",
+          "proposal_summary": "Replay an anytime declared certificate that returns to the original information interface and target rate signature.",
+          "assumptions": {
+            "arms_known": true,
+            "feedback": "selected_arm_reward_only",
+            "horizon_knowledge": "unknown",
+            "reward_process": "iid_within_each_arm",
+            "reward_support": "unit_interval"
+          },
+          "information_interface": {"horizon_knowledge": "unknown"},
+          "rate_signature": {
+            "polynomial_exponents": {"arms": "1/2", "horizon": "1/2"},
+            "log_exponents": {}
+          },
+          "public_evidence_scope": "A deterministic declared-certificate fixture only; semantic validity and theorem applicability remain unverified.",
+          "scientific_claim_status": "proposal_not_evidence"
+        },
+        "revision_discussion": null
+      },
+      "human_spec_decision": null,
+      "human_solution_judgment": {
+        "judgment_id": "send-anytime-candidate-to-semantic-review",
+        "action": "accept_for_semantic_review",
+        "diagnosis_event_id": "round-05.diagnosis",
+        "judgment_note": "The control-compatible candidate may proceed to independent semantic verification; no theorem is accepted by this decision.",
+        "scientific_claim_status": "not_established"
+      }
+    }
+  ]
+}

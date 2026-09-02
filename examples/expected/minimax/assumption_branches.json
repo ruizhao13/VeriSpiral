@@ -1,0 +1,83 @@
+{
+  "branches": [
+    {
+      "active_target": true,
+      "assumptions": {
+        "arms_known": true,
+        "feedback": "selected_arm_reward_only",
+        "horizon_knowledge": "unknown",
+        "reward_process": "iid_within_each_arm",
+        "reward_support": "unit_interval"
+      },
+      "branch_id": "public-bandit-minimax-evolution-target-v1",
+      "kind": "target",
+      "merge_status": "authoritative_target",
+      "parent_branch_id": null,
+      "version": 1
+    },
+    {
+      "active_target": false,
+      "assumptions": {
+        "arms_known": true,
+        "feedback": "selected_arm_reward_only",
+        "horizon_knowledge": "known",
+        "reward_process": "iid_within_each_arm",
+        "reward_support": "unit_interval"
+      },
+      "branch_id": "public-bandit-minimax-evolution-candidate-assumptions-v1",
+      "created_by_patch": "public-bandit-minimax-evolution-assumption-patch-v1",
+      "kind": "candidate_assumption_branch",
+      "merge_status": "not_merged",
+      "parent_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "round_index": 2,
+      "version": 1
+    }
+  ],
+  "invariants": {
+    "candidate_branch_auto_merged": false,
+    "strengthening_requires_new_branch": true,
+    "target_mutated": false
+  },
+  "patches": [
+    {
+      "base_branch_id": "public-bandit-minimax-evolution-target-v1",
+      "candidate_certificate_sha256": "763fc02d11d834d4aefa1f23c7eb16def3a85a27ef6a74aa3830f62d1ecd6389",
+      "candidate_id": "moss-known-horizon-public-certificate-v1",
+      "changes": [
+        {
+          "field": "horizon_knowledge",
+          "from_present": true,
+          "from_value": "unknown",
+          "relation": "strengthening",
+          "to_present": true,
+          "to_value": "known"
+        }
+      ],
+      "classification": "strengthening",
+      "human_review_required": true,
+      "invalidated_target_conclusions": [
+        "A rate match on this branch cannot certify minimax rate matching for the authoritative target."
+      ],
+      "merge_status": "not_merged",
+      "new_branch_id": "public-bandit-minimax-evolution-candidate-assumptions-v1",
+      "new_obligations": [
+        "Supply a target-compatible upper certificate before any target-branch promotion; bridge inputs are outside this public runner."
+      ],
+      "operation": "create_candidate_branch",
+      "patch_id": "public-bandit-minimax-evolution-assumption-patch-v1",
+      "round_index": 2,
+      "target_mutated": false,
+      "unchanged_assumptions": {
+        "arms_known": true,
+        "feedback": "selected_arm_reward_only",
+        "reward_process": "iid_within_each_arm",
+        "reward_support": "unit_interval"
+      },
+      "version": 1
+    }
+  ],
+  "scenario_id": "public-bandit-minimax-evolution",
+  "schema_version": "1.0",
+  "target_branch_id": "public-bandit-minimax-evolution-target-v1",
+  "verification_scope": "Checks registered certificate scope, assumptions, and polynomial/log-rate algebra only; it does not re-prove either theorem."
+}

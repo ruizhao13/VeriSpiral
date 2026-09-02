@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verispiral"
+version = "0.3.0"
+description = "A user-governed control layer for research-specification co-evolution and solution search."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+verispiral = "verispiral.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/verispiral" = ["Makefile"]
+"share/verispiral/schemas" = ["schemas/*.json"]
+"share/verispiral/examples" = ["examples/*.json"]
+"share/verispiral/examples/evolution" = ["examples/evolution/*.json"]
+"share/verispiral/examples/evolution/components" = ["examples/evolution/components/*.md"]
+"share/verispiral/examples/expected" = ["examples/expected/*.json"]
+"share/verispiral/examples/expected/evolution" = ["examples/expected/evolution/*.json"]
+"share/verispiral/examples/expected/minimax" = ["examples/expected/minimax/*.json"]
+"share/verispiral/examples/expected/research-specification" = ["examples/expected/research-specification/*.json"]
+"share/verispiral/examples/research_spec" = ["examples/research_spec/*.json"]
+"share/verispiral/examples/verification" = ["examples/verification/*.json"]
+"share/verispiral/examples/verifiers" = ["examples/verifiers/*.py"]
+"share/verispiral/tests" = ["tests/test_pipeline.py"]

@@ -1,0 +1,60 @@
+{
+  "model": {
+    "model_id": "bounded-stochastic-bandit-known-horizon",
+    "research_question": "When the evaluation horizon is supplied to the policy, can a nonanticipating bandit policy attain the registered distribution-free target rate?",
+    "observation_model": "Independent rewards supported on the unit interval with selected-arm feedback.",
+    "loss": "Worst-case expected cumulative pseudo-regret through the supplied terminal horizon."
+  },
+  "target": {
+    "target_id": "known-horizon-square-root-rate",
+    "objective": "Match the square-root order in arms and horizon without a logarithmic factor on a separate known-horizon problem branch.",
+    "required_rate_signature": {
+      "polynomial_exponents": {
+        "arms": "1/2",
+        "horizon": "1/2"
+      },
+      "log_exponents": {}
+    }
+  },
+  "assumptions": {
+    "arms_known": true,
+    "feedback": "selected_arm_reward_only",
+    "horizon_knowledge": "known",
+    "reward_process": "iid_within_each_arm",
+    "reward_support": "unit_interval"
+  },
+  "verifier_suite": [
+    {
+      "verifier_id": "declared-assumption-interface",
+      "type": "assumption_exact_match",
+      "semantic_scope": "Checks exact equality of declared candidate and target assumption fields.",
+      "limitation": "Does not establish that an algorithm or cited theorem truly satisfies those declarations."
+    },
+    {
+      "verifier_id": "declared-horizon-information-interface",
+      "type": "information_interface_exact_match",
+      "semantic_scope": "Compares the candidate's separately declared horizon-information interface with the branch assumption.",
+      "limitation": "Checks a declared interface field only and does not inspect executable algorithm code or theorem assumptions."
+    },
+    {
+      "verifier_id": "declared-rate-signature",
+      "type": "rate_signature_exact_match",
+      "semantic_scope": "Checks exact equality of registered polynomial and logarithmic rate signatures.",
+      "limitation": "Does not prove a regret bound, constants, uniformity, or applicability of a source theorem."
+    }
+  ],
+  "human_judgment_boundary": {
+    "ai_may_propose": [
+      "solution candidates under the registered specification",
+      "versioned model or verifier revisions with explicit costs",
+      "questions that expose a possible mismatch in problem identity"
+    ],
+    "human_must_decide": [
+      "whether any model or verifier revision creates a new branch",
+      "whether a control-compatible candidate deserves semantic review",
+      "whether scientific evidence supports a theorem-level conclusion"
+    ],
+    "scientific_claim_rule": "A deterministic control pass is not scientific evidence and cannot establish a theorem without an independent semantic verifier or explicit human review of the evidence."
+  },
+  "version": "1.2.0"
+}

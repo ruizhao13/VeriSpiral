@@ -1,0 +1,170 @@
+{
+  "acceptance_checks": [
+    {
+      "check_id": "check-source-linkage",
+      "check_type": "source_linkage",
+      "expected": "The registered decision packet, executable verification receipt, and manifest retain their recorded SHA-256 values.",
+      "status": "not_run"
+    },
+    {
+      "check_id": "check-target-hash",
+      "check_type": "target_hash_unchanged",
+      "expected": "The target remains at version 1.0.0 and its registered hash before any manual application.",
+      "status": "not_run"
+    },
+    {
+      "check_id": "check-deterministic-replay",
+      "check_type": "deterministic_replay",
+      "expected": "Two runs from the same registered inputs produce byte-identical proposal artifacts.",
+      "status": "not_run"
+    },
+    {
+      "check_id": "check-manual-content",
+      "check_type": "manual_content_check",
+      "expected": "After approval and manual application, exactly one instruction is appended under the feedback gate.",
+      "status": "not_run"
+    }
+  ],
+  "acceptance_status": "not_run_patch_not_applied",
+  "actor": "user",
+  "authorization_boundary": {
+    "apply_status": "not_applied",
+    "automatic_application": false,
+    "human_review_status": "required",
+    "requires_human_approval": true,
+    "scientific_conclusion_status": "no_scientific_conclusion_generated",
+    "single_feedback_scope": "workflow_preference_only",
+    "source_authority": "process_only_unapplied_policy_proposal",
+    "source_human_acceptance_status": "pending",
+    "verifier_bypass_allowed": false
+  },
+  "control_source": {
+    "allowed_use": "process_only_unapplied_policy_proposal",
+    "candidate_file_sha256": "d3a6e7cf296b490261a2e4362ee0e915f1fa7c95595d89aa6c37c8259e44334a",
+    "candidate_id": "evidence-gated-skill-induction",
+    "candidate_object_sha256": "9814e75db275d4dc75122783d6c4958c0b0e0b2c6c40985bf27fcca9242f5966",
+    "candidate_path": "examples/candidate.json",
+    "decision_packet_path": "examples/expected/decision_packet.json",
+    "decision_packet_sha256": "f6edf0904ae84c60b4be5bf12ae7d578b5cfa63d5470a7ac7c2a23852840ab80",
+    "human_acceptance_status": "pending",
+    "manifest_path": "examples/expected/manifest.json",
+    "manifest_sha256": "e869859b631cab622d27f5fc1d02de9713a71f0e99aa19b4db7aa07426aff79c",
+    "packet_id": "packet-9814e75db275",
+    "receipt_id": "receipt-pipeline-contract-v1",
+    "scientific_conclusion_allowed": false,
+    "source_id": "source-public-control-receipt",
+    "source_type": "bound_executable_verification_control",
+    "verification_receipt_path": "examples/verification/pipeline_contract_receipt.json",
+    "verification_receipt_sha256": "e80a0143da4aaa8911799b9ca160ccdc8aaa911165b8da922dad6db04c3680aa"
+  },
+  "feedback_id": "feedback-public-replay-gate",
+  "feedback_sha256": "99a429f5a840232a7f0200a70def8e9581570db07f8739073159b8fb91638d0f",
+  "feedback_summary": "Require replay of the bound executable control receipt before a feedback-derived process policy patch can be manually accepted.",
+  "non_goals": [
+    "Do not create or strengthen any scientific claim from this preference event.",
+    "Do not bypass, disable, or weaken any verifier or evidence gate.",
+    "Do not modify a prompt, skill, schema, verifier, or registry automatically.",
+    "Do not treat a bound control receipt as scientific success or human acceptance."
+  ],
+  "proposal_id": "proposal-9b0c9fd70b74",
+  "provenance_checks": [
+    {
+      "check": "control_source_registry_match",
+      "detail": "Packet, receipt, manifest identities and hashes match the control-source registry.",
+      "status": "pass"
+    },
+    {
+      "check": "repository_local_control_source",
+      "detail": "The decision packet, executable receipt, and manifest resolve within the repository.",
+      "status": "pass"
+    },
+    {
+      "check": "packet_receipt_manifest_binding",
+      "detail": "The manifest binds the packet and the packet binds the exact replayed executable receipt.",
+      "status": "pass"
+    },
+    {
+      "check": "bounded_control_stage",
+      "detail": "Structural, integrity, and executable verification passed while human acceptance remains pending.",
+      "status": "pass"
+    },
+    {
+      "check": "process_only_authority",
+      "detail": "The source authorizes only an unapplied process proposal and no scientific conclusion.",
+      "status": "pass"
+    },
+    {
+      "check": "candidate_registry_binding",
+      "detail": "Candidate bytes and canonical object digest match the registry and decision packet.",
+      "status": "pass"
+    },
+    {
+      "check": "current_evidence_hash_revalidation",
+      "detail": "Every current repository-local evidence artifact matches its receipt-bound SHA-256.",
+      "status": "pass"
+    },
+    {
+      "check": "registered_verifier_artifact_revalidation",
+      "detail": "Verifier identity, command, artifact path, and current artifact hash match the trusted registration.",
+      "status": "pass"
+    },
+    {
+      "check": "executable_verifier_replay",
+      "detail": "The currently registered executable verifier passed over the bound candidate and reproduced the receipt output.",
+      "status": "pass"
+    },
+    {
+      "check": "decision_packet_recomputation",
+      "detail": "A fresh evaluation reproduced the complete registered decision packet while human acceptance remained pending.",
+      "status": "pass"
+    },
+    {
+      "check": "target_registry_match",
+      "detail": "Target path, type, current version, and SHA-256 match the registry.",
+      "status": "pass"
+    },
+    {
+      "check": "single_change_scope",
+      "detail": "One process-only instruction targets one location and one patch version.",
+      "status": "pass"
+    },
+    {
+      "check": "rollback_and_acceptance_contract",
+      "detail": "Required acceptance checks and exact rollback bytes are declared.",
+      "status": "pass"
+    }
+  ],
+  "rollback_rule": {
+    "action": "Restore the registered target bytes and replay the bound executable control verifier before reconsideration.",
+    "restore_sha256": "9098771e0ecf8f95d324989666220eb22da416017931ebdfc1c981991f92c151",
+    "restore_version": "1.0.0",
+    "trigger": "Any declared acceptance check fails after a human-approved manual application."
+  },
+  "rollback_status": "not_needed_patch_not_applied",
+  "schema_version": "1.0",
+  "signal_type": "user_feedback_signal",
+  "single_change": {
+    "change_sha256": "196b4e063716a515e9618c629b4afabace959e72dfaab1dfd258fb0d8b8c1b9b",
+    "operation": "append_instruction",
+    "policy_action": "require_registered_control_receipt_replay",
+    "proposed_value": "Before any manual application, replay the registered executable control verifier and revalidate the bound packet, receipt, and manifest hashes; reject the proposal if any binding changes.",
+    "proposed_version": "1.0.1",
+    "rationale": "The explicit user preference asks for replayable control-source linkage before any workflow policy proposal is manually applied.",
+    "requested_effect": "process_instruction_only",
+    "target_location": "## Feedback gate"
+  },
+  "source_revalidation": {
+    "candidate_registry_binding": "pass",
+    "current_evidence_hashes": "pass",
+    "executable_verifier_replay": "pass",
+    "recomputed_packet_identity": "pass",
+    "registered_verifier_artifact": "pass"
+  },
+  "target_component": {
+    "component_id": "component-research-loop-policy",
+    "component_type": "prompt",
+    "current_sha256": "9098771e0ecf8f95d324989666220eb22da416017931ebdfc1c981991f92c151",
+    "current_version": "1.0.0",
+    "path": "examples/evolution/components/research-loop-policy.md"
+  }
+}

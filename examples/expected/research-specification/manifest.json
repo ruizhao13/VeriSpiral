@@ -1,0 +1,11 @@
+{
+  "event_chain_head_sha256": "4c9717fb4e831944b4fe2dcd33e032397d462e7eb1c698746af6f516fba1ff5f",
+  "final_status": "target_compatible_candidate_awaiting_semantic_verification",
+  "initial_specification_sha256": "c586a0f066535135ab582ed77485512b1b68bc6327b114de2cac80fcdd2b9d36",
+  "scenario_file_sha256": "6c8d1ced4d31e8ac48624f73cebff43004dc0e165764040b3393e7a3e239d656",
+  "scenario_id": "human-governed-minimax-research-specification-loop",
+  "scenario_object_sha256": "f52ad2b7673a5223f85a0851d075dc49ae3538adfcca0c614d3ae91f3a946048",
+  "schema_version": "1.0",
+  "scientific_claim_status": "not_established_by_control_loop",
+  "trace_sha256": "50c457d5401715d2de293b8adf160fe3f6490f3882fd66eb2cced81bb0bac10f"
+}

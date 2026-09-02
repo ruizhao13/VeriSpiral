@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Versioned minimax assumption branches",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scenario_id", "verification_scope", "target_branch_id", "branches", "patches", "invariants"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "scenario_id": {"type": "string", "minLength": 3},
+    "verification_scope": {"type": "string", "minLength": 20},
+    "target_branch_id": {"type": "string", "minLength": 3},
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["branch_id", "version", "kind", "parent_branch_id", "assumptions", "active_target", "merge_status"],
+        "properties": {
+          "branch_id": {"type": "string", "minLength": 3},
+          "version": {"type": "integer"},
+          "kind": {"type": "string", "enum": ["target", "candidate_assumption_branch"]},
+          "parent_branch_id": {"type": ["string", "null"]},
+          "assumptions": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {"type": ["string", "integer", "boolean"]}
+          },
+          "active_target": {"type": "boolean"},
+          "merge_status": {"type": "string", "enum": ["authoritative_target", "not_merged"]},
+          "created_by_patch": {"type": "string", "minLength": 3},
+          "round_index": {"type": "integer"}
+        }
+      }
+    },
+    "patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "patch_id",
+          "version",
+          "operation",
+          "classification",
+          "round_index",
+          "candidate_id",
+          "base_branch_id",
+          "new_branch_id",
+          "changes",
+          "unchanged_assumptions",
+          "candidate_certificate_sha256",
+          "invalidated_target_conclusions",
+          "new_obligations",
+          "human_review_required",
+          "target_mutated",
+          "merge_status"
+        ],
+        "properties": {
+          "patch_id": {"type": "string", "minLength": 3},
+          "version": {"type": "integer"},
+          "operation": {"type": "string", "const": "create_candidate_branch"},
+          "classification": {"type": "string", "enum": ["strengthening", "weakening", "unclassified_change", "mixed_change"]},
+          "round_index": {"type": "integer"},
+          "candidate_id": {"type": "string", "minLength": 3},
+          "base_branch_id": {"type": "string", "minLength": 3},
+          "new_branch_id": {"type": "string", "minLength": 3},
+          "changes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["field", "from_present", "from_value", "to_present", "to_value", "relation"],
+              "properties": {
+                "field": {"type": "string", "minLength": 1},
+                "from_present": {"type": "boolean"},
+                "from_value": {"type": ["string", "integer", "boolean", "null"]},
+                "to_present": {"type": "boolean"},
+                "to_value": {"type": ["string", "integer", "boolean", "null"]},
+                "relation": {"type": "string", "enum": ["strengthening", "weakening", "unclassified_change", "unchanged"]}
+              }
+            }
+          },
+          "unchanged_assumptions": {
+            "type": "object",
+            "additionalProperties": {"type": ["string", "integer", "boolean"]}
+          },
+          "candidate_certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "invalidated_target_conclusions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 8}
+          },
+          "new_obligations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 8}
+          },
+          "human_review_required": {"type": "boolean", "const": true},
+          "target_mutated": {"type": "boolean", "const": false},
+          "merge_status": {"type": "string", "const": "not_merged"}
+        }
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_mutated", "strengthening_requires_new_branch", "candidate_branch_auto_merged"],
+      "properties": {
+        "target_mutated": {"type": "boolean", "const": false},
+        "strengthening_requires_new_branch": {"type": "boolean", "const": true},
+        "candidate_branch_auto_merged": {"type": "boolean", "const": false}
+      }
+    }
+  }
+}

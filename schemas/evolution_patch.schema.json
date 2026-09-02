@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human-gated evolution patch decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "patch_id",
+    "proposal_id",
+    "feedback_id",
+    "feedback_sha256",
+    "actor",
+    "signal_type",
+    "decision_status",
+    "target_component",
+    "single_change",
+    "acceptance_checks",
+    "rollback_rule",
+    "non_goals",
+    "bound_control_provenance",
+    "source_revalidation",
+    "authorization_boundary"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "patch_id": {"type": "string", "pattern": "^patch-[a-f0-9]{12}$"},
+    "proposal_id": {"type": "string", "pattern": "^proposal-[a-f0-9]{12}$"},
+    "feedback_id": {"type": "string", "pattern": "^feedback-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "feedback_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "actor": {"type": "string", "const": "user"},
+    "signal_type": {"type": "string", "const": "user_feedback_signal"},
+    "decision_status": {"type": "string", "const": "proposed_for_human_review"},
+    "target_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "component_type", "path", "current_version", "current_sha256"],
+      "properties": {
+        "component_id": {"type": "string"},
+        "component_type": {"type": "string", "enum": ["prompt", "skill", "schema", "verifier"]},
+        "path": {"type": "string", "minLength": 3},
+        "current_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "current_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "single_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "target_location", "policy_action", "proposed_value", "proposed_version", "rationale", "requested_effect", "change_sha256"],
+      "properties": {
+        "operation": {"type": "string", "const": "append_instruction"},
+        "target_location": {"type": "string", "minLength": 3},
+        "policy_action": {"type": "string", "const": "require_registered_control_receipt_replay"},
+        "proposed_value": {"type": "string", "minLength": 16},
+        "proposed_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "rationale": {"type": "string", "minLength": 16},
+        "requested_effect": {"type": "string", "const": "process_instruction_only"},
+        "change_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "acceptance_checks": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "check_type", "expected", "status"],
+        "properties": {
+          "check_id": {"type": "string"},
+          "check_type": {"type": "string", "enum": ["source_linkage", "target_hash_unchanged", "deterministic_replay", "manual_content_check"]},
+          "expected": {"type": "string", "minLength": 12},
+          "status": {"type": "string", "const": "not_run"}
+        }
+      }
+    },
+    "rollback_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trigger", "action", "restore_version", "restore_sha256", "status"],
+      "properties": {
+        "trigger": {"type": "string", "minLength": 16},
+        "action": {"type": "string", "minLength": 16},
+        "restore_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "restore_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "status": {"type": "string", "const": "not_needed_patch_not_applied"}
+      }
+    },
+    "non_goals": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string", "minLength": 12}},
+    "bound_control_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "allowed_use",
+        "human_acceptance_status",
+        "scientific_conclusion_allowed",
+        "candidate_path",
+        "candidate_file_sha256",
+        "candidate_object_sha256",
+        "candidate_id",
+        "decision_packet_path",
+        "decision_packet_sha256",
+        "packet_id",
+        "verification_receipt_path",
+        "verification_receipt_sha256",
+        "receipt_id",
+        "manifest_path",
+        "manifest_sha256"
+      ],
+      "properties": {
+        "source_id": {"type": "string"},
+        "source_type": {"type": "string", "const": "bound_executable_verification_control"},
+        "allowed_use": {"type": "string", "const": "process_only_unapplied_policy_proposal"},
+        "human_acceptance_status": {"type": "string", "const": "pending"},
+        "scientific_conclusion_allowed": {"type": "boolean", "const": false},
+        "candidate_path": {"type": "string", "minLength": 3},
+        "candidate_file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "candidate_object_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "candidate_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "decision_packet_path": {"type": "string", "minLength": 3},
+        "decision_packet_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "packet_id": {"type": "string", "pattern": "^packet-[a-f0-9]{12}$"},
+        "verification_receipt_path": {"type": "string", "minLength": 3},
+        "verification_receipt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "manifest_path": {"type": "string", "minLength": 3},
+        "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "source_revalidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_registry_binding",
+        "current_evidence_hashes",
+        "registered_verifier_artifact",
+        "executable_verifier_replay",
+        "recomputed_packet_identity"
+      ],
+      "properties": {
+        "candidate_registry_binding": {"type": "string", "const": "pass"},
+        "current_evidence_hashes": {"type": "string", "const": "pass"},
+        "registered_verifier_artifact": {"type": "string", "const": "pass"},
+        "executable_verifier_replay": {"type": "string", "const": "pass"},
+        "recomputed_packet_identity": {"type": "string", "const": "pass"}
+      }
+    },
+    "authorization_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires_human_approval",
+        "human_review_status",
+        "apply_status",
+        "automatic_application",
+        "verifier_bypass_allowed",
+        "scientific_conclusion_status",
+        "source_authority",
+        "source_human_acceptance_status"
+      ],
+      "properties": {
+        "requires_human_approval": {"type": "boolean", "const": true},
+        "human_review_status": {"type": "string", "const": "required"},
+        "apply_status": {"type": "string", "const": "not_applied"},
+        "automatic_application": {"type": "boolean", "const": false},
+        "verifier_bypass_allowed": {"type": "boolean", "const": false},
+        "scientific_conclusion_status": {"type": "string", "const": "no_scientific_conclusion_generated"},
+        "source_authority": {"type": "string", "const": "process_only_unapplied_policy_proposal"},
+        "source_human_acceptance_status": {"type": "string", "const": "pending"}
+      }
+    }
+  }
+}

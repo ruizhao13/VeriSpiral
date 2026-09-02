@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trusted human acceptance registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "registry_id", "accepted_records"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "registry_id": {"type": "string", "pattern": "^acceptance-registry-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "accepted_records": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "acceptance_id",
+          "record_locator",
+          "record_sha256",
+          "candidate_id",
+          "semantic_sha256",
+          "skill_blueprint_sha256",
+          "receipt_id",
+          "receipt_sha256"
+        ],
+        "properties": {
+          "acceptance_id": {"type": "string", "pattern": "^acceptance-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "record_locator": {"type": "string", "minLength": 3},
+          "record_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "candidate_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "semantic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "skill_blueprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "receipt_id": {"type": "string", "pattern": "^receipt-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "receipt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    }
+  }
+}

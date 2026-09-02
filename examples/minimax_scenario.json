@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "public-bandit-minimax-evolution",
+  "source_registry": [
+    {
+      "source_id": "audibert-bubeck-2009",
+      "title": "Minimax Policies for Adversarial and Stochastic Bandits",
+      "url": "https://www.microsoft.com/en-us/research/publication/minimax-policies-adversarial-stochastic-bandits/",
+      "locator": "Theorems 1, 2, and 5",
+      "registration_status": "registered_public_extract",
+      "proof_status": "cited_not_reproved"
+    },
+    {
+      "source_id": "degenne-perchet-2016",
+      "title": "Anytime optimal algorithms in stochastic multi-armed bandits",
+      "url": "https://proceedings.mlr.press/v48/degenne16.html",
+      "locator": "Theorem 3",
+      "registration_status": "registered_public_extract",
+      "proof_status": "cited_not_reproved"
+    }
+  ],
+  "problem_signature": {
+    "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+    "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+    "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+    "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+    "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+  },
+  "target_assumptions": {
+    "arms_known": true,
+    "feedback": "selected_arm_reward_only",
+    "horizon_knowledge": "unknown",
+    "reward_process": "iid_within_each_arm",
+    "reward_support": "unit_interval"
+  },
+  "assumption_order": {
+    "horizon_knowledge": [
+      "unknown",
+      "known"
+    ]
+  },
+  "lower_certificate": {
+    "certificate_id": "audibert-bubeck-lower-rate-public-extract-v1",
+    "kind": "lower",
+    "registered": true,
+    "source_id": "audibert-bubeck-2009",
+    "theorem_locator": "Theorem 1 distribution-free lower bound",
+    "extraction_note": "Only the square-root order and declared public scope are registered; the proof is not reproduced.",
+    "problem_signature": {
+      "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+      "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+      "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+      "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+      "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+    },
+    "assumptions": {
+      "arms_known": true,
+      "feedback": "selected_arm_reward_only",
+      "horizon_knowledge": "unknown",
+      "reward_process": "iid_within_each_arm",
+      "reward_support": "unit_interval"
+    },
+    "rate": {
+      "polynomial_exponents": {
+        "arms": "1/2",
+        "horizon": "1/2"
+      },
+      "log_exponents": {}
+    }
+  },
+  "rounds": [
+    {
+      "round_index": 1,
+      "candidate_id": "ucb-like-public-certificate-v1",
+      "candidate_label": "UCB-like distribution-free upper-rate extract",
+      "algorithm_change": "Use an anytime UCB-style confidence index as the initial algorithmic baseline.",
+      "search_hypothesis": "A target-compatible baseline may still pay an avoidable logarithmic factor in its distribution-free upper rate.",
+      "upper_certificate": {
+        "certificate_id": "ucb-like-upper-rate-public-extract-v1",
+        "kind": "upper",
+        "registered": true,
+        "source_id": "audibert-bubeck-2009",
+        "theorem_locator": "Theorem 2 and the displayed worst-case consequence",
+        "extraction_note": "The public fixture registers the worst-case square-root rate with its excess log factor; it does not rederive the bound.",
+        "problem_signature": {
+          "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+          "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+          "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+          "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+          "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+        },
+        "assumptions": {
+          "arms_known": true,
+          "feedback": "selected_arm_reward_only",
+          "horizon_knowledge": "unknown",
+          "reward_process": "iid_within_each_arm",
+          "reward_support": "unit_interval"
+        },
+        "rate": {
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          },
+          "log_exponents": {
+            "horizon": "1/2"
+          }
+        }
+      }
+    },
+    {
+      "round_index": 2,
+      "candidate_id": "moss-known-horizon-public-certificate-v1",
+      "candidate_label": "MOSS known-horizon upper-rate extract",
+      "algorithm_change": "Replace the full time logarithm with the horizon-budgeted MOSS exploration index.",
+      "search_hypothesis": "Global horizon budgeting can close the logarithmic rate gap, but it may purchase the match with terminal-horizon information.",
+      "upper_certificate": {
+        "certificate_id": "moss-upper-rate-public-extract-v1",
+        "kind": "upper",
+        "registered": true,
+        "source_id": "audibert-bubeck-2009",
+        "theorem_locator": "Theorem 5",
+        "extraction_note": "The square-root upper rate and known-horizon algorithm interface are registered from the public source.",
+        "problem_signature": {
+          "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+          "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+          "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+          "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+          "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+        },
+        "assumptions": {
+          "arms_known": true,
+          "feedback": "selected_arm_reward_only",
+          "horizon_knowledge": "known",
+          "reward_process": "iid_within_each_arm",
+          "reward_support": "unit_interval"
+        },
+        "rate": {
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          },
+          "log_exponents": {}
+        }
+      }
+    },
+    {
+      "round_index": 3,
+      "candidate_id": "moss-anytime-public-certificate-v1",
+      "candidate_label": "MOSS-anytime upper-rate extract",
+      "algorithm_change": "Replace terminal-horizon calibration with the direct MOSS-anytime exploration clock.",
+      "search_hypothesis": "An anytime exploration clock can restore the original information interface while preserving the registered square-root rate.",
+      "upper_certificate": {
+        "certificate_id": "moss-anytime-upper-rate-public-extract-v1",
+        "kind": "upper",
+        "registered": true,
+        "source_id": "degenne-perchet-2016",
+        "theorem_locator": "Theorem 3",
+        "extraction_note": "The square-root upper rate and anytime interface are registered; constants and the proof remain outside machine verification and require human review.",
+        "problem_signature": {
+          "observation_model": "stochastic K-armed bandit with independent rewards supported on [0,1]",
+          "parameter_class": "all K-tuples of reward distributions in the registered bounded class",
+          "loss": "worst-case expected cumulative pseudo-regret through the evaluation horizon",
+          "algorithm_class": "nonanticipating bandit policies with information access recorded in assumptions",
+          "regime": "distribution-free order in K and horizon for K >= 2 and horizon >= K"
+        },
+        "assumptions": {
+          "arms_known": true,
+          "feedback": "selected_arm_reward_only",
+          "horizon_knowledge": "unknown",
+          "reward_process": "iid_within_each_arm",
+          "reward_support": "unit_interval"
+        },
+        "rate": {
+          "polynomial_exponents": {
+            "arms": "1/2",
+            "horizon": "1/2"
+          },
+          "log_exponents": {}
+        }
+      }
+    }
+  ]
+}

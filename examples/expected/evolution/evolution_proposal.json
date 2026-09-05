@@ -45,20 +45,20 @@
     "candidate_object_sha256": "9814e75db275d4dc75122783d6c4958c0b0e0b2c6c40985bf27fcca9242f5966",
     "candidate_path": "examples/candidate.json",
     "decision_packet_path": "examples/expected/decision_packet.json",
-    "decision_packet_sha256": "f6edf0904ae84c60b4be5bf12ae7d578b5cfa63d5470a7ac7c2a23852840ab80",
+    "decision_packet_sha256": "2bd2d472d9a9572fce9f8f5f43d5d58f68ab83b1ecb244f4d990916150996996",
     "human_acceptance_status": "pending",
     "manifest_path": "examples/expected/manifest.json",
-    "manifest_sha256": "e869859b631cab622d27f5fc1d02de9713a71f0e99aa19b4db7aa07426aff79c",
+    "manifest_sha256": "a759c26e1c96b0482d3c539d673fb52bb44f2714fc09c0b7e511179aa6753175",
     "packet_id": "packet-9814e75db275",
     "receipt_id": "receipt-pipeline-contract-v1",
     "scientific_conclusion_allowed": false,
     "source_id": "source-public-control-receipt",
     "source_type": "bound_executable_verification_control",
     "verification_receipt_path": "examples/verification/pipeline_contract_receipt.json",
-    "verification_receipt_sha256": "e80a0143da4aaa8911799b9ca160ccdc8aaa911165b8da922dad6db04c3680aa"
+    "verification_receipt_sha256": "7f6b2f3e5581d59e83209cb7f9fee8d31a5d167019537c27ddf1ffce15346d3c"
   },
   "feedback_id": "feedback-public-replay-gate",
-  "feedback_sha256": "99a429f5a840232a7f0200a70def8e9581570db07f8739073159b8fb91638d0f",
+  "feedback_sha256": "eff502dcac23d0cf42ff40dacf459107c5d598220aefc6374b960da7254f3911",
   "feedback_summary": "Require replay of the bound executable control receipt before a feedback-derived process policy patch can be manually accepted.",
   "non_goals": [
     "Do not create or strengthen any scientific claim from this preference event.",
@@ -66,7 +66,7 @@
     "Do not modify a prompt, skill, schema, verifier, or registry automatically.",
     "Do not treat a bound control receipt as scientific success or human acceptance."
   ],
-  "proposal_id": "proposal-9b0c9fd70b74",
+  "proposal_id": "proposal-7c522466441c",
   "provenance_checks": [
     {
       "check": "control_source_registry_match",

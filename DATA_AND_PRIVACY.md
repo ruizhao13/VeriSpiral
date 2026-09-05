@@ -8,6 +8,9 @@ claims.
 
 - source code and tests for the public demonstrations;
 - small synthetic fixtures created for this repository;
+- finite public loss tables, planted diagnostic faults, and illustrative costs;
+- public small-graph inputs and connected-workflow outputs with explicitly
+  synthetic specification decisions;
 - one synthetic explicit-feedback event and a registry of public-demo source
   and target hashes;
 - registered public research specifications plus synthetic discussion and
@@ -58,6 +61,13 @@ The feedback demo reads one checked-in event labeled
 research-specification demo reads a checked-in event whose actor is `human`;
 the repository validates its references and hashes but cannot establish that a
 real person supplied it.
+
+The connected workflow can also read caller-supplied documents, graph data, and
+decision files. It does not copy the prose into reports, but does persist typed
+setup data, candidate results, decision hashes, and check receipts. External
+inputs require output outside this public repository; keep private inputs and
+outputs in their own workspace. `user_record` is a declared actor type, not
+identity verification. See the [workflow guide](docs/connected-workflow.md).
 
 Any separate system that collects live interactions should define, before
 collection:

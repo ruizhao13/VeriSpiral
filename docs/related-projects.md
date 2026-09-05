@@ -31,12 +31,16 @@ evaluated under a shared protocol.
 | --- | --- | --- | --- | --- |
 | [LeanDojo-v2](https://github.com/lean-dojo/LeanDojo-v2) ([original LeanDojo paper](https://arxiv.org/abs/2306.15626)) | Trains, evaluates, and deploys AI-assisted Lean 4 theorem provers, using Lean proof states and a proof-assistant runtime to check candidate proofs. | Both place a checking layer downstream of generated or registered mathematical content. | VeriSpiral's public minimax path is a certificate-field compatibility checker: it compares declared scope, assumptions, and exact rate exponents before issuing a bounded machine status. This is research bookkeeping rather than proof checking. | It is not a formal verifier or theorem prover. It does not check proof steps, re-prove cited theorems, infer class containment, or validate unregistered constants and lower-order terms. |
 
-## The defensible distinction
+## Research direction and current evidence
 
 VeriSpiral does not introduce evidence gates, reusable-Skill designs, human
 feedback, workflow evolution, or mathematical verification individually. All
-have clear precedents above. Its narrower focus is a research-specification
-control problem:
+have clear precedents above. The [research agenda](research-agenda.md) now
+centers Goal–Setup–Verifier–Algorithm co-design: constructing affordable
+verifiers, diagnosing failure across layers, and choosing the next experiment
+under a budget. This is a proposed research direction, not a verified novelty
+or superiority claim. The existing control mechanisms address supporting
+questions:
 
 1. How can verifier results guide the next research iteration without allowing
    a stronger assumption to masquerade as progress on the original problem?
@@ -56,8 +60,10 @@ generate the next algorithm. The feedback-to-patch workflow must likewise be
 described according to the transitions that are executable in the current
 release.
 
-This supports a narrow positioning: **a user-governed control layer for
-research-specification co-evolution and solution search**. It does not
-support claims that VeriSpiral is the first or only self-evolving research
-agent, that it autonomously discovers algorithms, or that it is more reliable
-than the systems above.
+The [finite diagnosis demo](diagnosis-demo.md) adds a supplied-signature test
+selector and a prewritten-verifier comparison. Together these artifacts support
+mechanism claims only. Testing joint design requires the proposed equal-budget
+comparisons and independent target evaluations. The project cannot claim to be
+first or unique, to discover algorithms autonomously, or to be more reliable
+than the systems above; a dedicated literature review of the new research
+question remains necessary.

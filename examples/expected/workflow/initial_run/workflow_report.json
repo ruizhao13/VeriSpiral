@@ -1,0 +1,506 @@
+{
+  "budget_limit": 1000,
+  "budget_spent": 145,
+  "cost_ledger": [
+    {
+      "actual_cost": 13,
+      "kind": "candidate_generation",
+      "remaining": 987,
+      "reservation": 16
+    },
+    {
+      "actual_cost": 6,
+      "kind": "path_feasible",
+      "remaining": 981,
+      "reservation": 6
+    },
+    {
+      "actual_cost": 10,
+      "kind": "certificate_valid",
+      "remaining": 971,
+      "reservation": 10
+    },
+    {
+      "actual_cost": 18,
+      "kind": "path_optimal",
+      "remaining": 953,
+      "reservation": 21
+    },
+    {
+      "actual_cost": 26,
+      "kind": "screen_agrees_with_reference",
+      "remaining": 927,
+      "reservation": 31
+    },
+    {
+      "actual_cost": 12,
+      "kind": "solution_repair",
+      "remaining": 915,
+      "reservation": 12
+    },
+    {
+      "actual_cost": 6,
+      "kind": "path_feasible",
+      "remaining": 909,
+      "reservation": 6
+    },
+    {
+      "actual_cost": 10,
+      "kind": "certificate_valid",
+      "remaining": 899,
+      "reservation": 10
+    },
+    {
+      "actual_cost": 18,
+      "kind": "path_optimal",
+      "remaining": 881,
+      "reservation": 21
+    },
+    {
+      "actual_cost": 26,
+      "kind": "screen_agrees_with_reference",
+      "remaining": 855,
+      "reservation": 31
+    }
+  ],
+  "human_acceptance": "pending",
+  "human_identity_authenticated": false,
+  "kind": "connected_research_workflow",
+  "limitations": [
+    "One explicit small-DAG adapter; no general prose understanding or LLM-generated algorithms.",
+    "Failed checks are concurrent scoped indicators, not exhaustive causal diagnoses.",
+    "The budget counts declared edge operations; parsing, I/O, node work and controller time are excluded.",
+    "Separate implementations share model authorship; public fixtures are not hidden final tests."
+  ],
+  "prior_evidence_applicable": null,
+  "remaining_budget": 855,
+  "retained_candidate_status": "not_applicable",
+  "rounds": [
+    {
+      "candidate": {
+        "content_sha256": "2b56ff0b53863bc7047da87eeb8705aac4c79d6227ca6e3577335cbc0e6eab85",
+        "origin": "generated",
+        "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+        "value": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            1,
+            0,
+            10
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 2
+        }
+      },
+      "diagnosis": {
+        "cleared_factors": [
+          "candidate_infeasible"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "candidate_not_optimal",
+          "certificate_invalid",
+          "screen_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "observations": {
+        "certificate_valid": false,
+        "path_feasible": true,
+        "path_optimal": false,
+        "screen_agrees_with_reference": false
+      },
+      "receipts": [
+        {
+          "candidate_sha256": "2b56ff0b53863bc7047da87eeb8705aac4c79d6227ca6e3577335cbc0e6eab85",
+          "receipt_sha256": "55bfb4bee4ee7cef126f857743fd01ab31b62927d7e5bc8a4af044390d054287",
+          "remaining_budget": 981,
+          "result": {
+            "cost": 6,
+            "evidence": {
+              "actual_cost": 10,
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "supported_factor_on_failure": "candidate_infeasible",
+              "test_id": "path_feasible"
+            },
+            "passed": true
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "path_feasible"
+        },
+        {
+          "candidate_sha256": "2b56ff0b53863bc7047da87eeb8705aac4c79d6227ca6e3577335cbc0e6eab85",
+          "receipt_sha256": "b3e17c7214697bacf512c292dc68028e831999329186a04d09e66997153f2c40",
+          "remaining_budget": 971,
+          "result": {
+            "cost": 10,
+            "evidence": {
+              "certified": false,
+              "check_cost": 10,
+              "check_status": "unverified",
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "checker_edge_checks": 6,
+                "checker_graph_validation_edges": 4
+              },
+              "screen_accepted": false,
+              "supported_factor_on_failure": "certificate_invalid",
+              "test_id": "certificate_valid",
+              "verifier": "all_edges_certificate",
+              "violated_edge": [
+                2,
+                3,
+                1
+              ]
+            },
+            "passed": false
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "certificate_valid"
+        },
+        {
+          "candidate_sha256": "2b56ff0b53863bc7047da87eeb8705aac4c79d6227ca6e3577335cbc0e6eab85",
+          "receipt_sha256": "6a289ab6d0995a62e6290033a0699677c85c83219138570be9a3e14b1f819e0a",
+          "remaining_budget": 953,
+          "result": {
+            "cost": 18,
+            "evidence": {
+              "actual_cost": 10,
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "reference_dfs_edge_visits": 4,
+                "reference_graph_validation_edges": 4,
+                "reference_indexing_edges": 4,
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "path_optimal": false,
+              "reference_cost": 3,
+              "reference_path": [
+                0,
+                2,
+                3
+              ],
+              "regret": 7,
+              "supported_factor_on_failure": "candidate_not_optimal",
+              "test_id": "path_optimal"
+            },
+            "passed": false
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "path_optimal"
+        },
+        {
+          "candidate_sha256": "2b56ff0b53863bc7047da87eeb8705aac4c79d6227ca6e3577335cbc0e6eab85",
+          "receipt_sha256": "7e976ee40e7b9eccca88c0eb78e3e0e7487d7d23220ed7f2a8173b941f2645fc",
+          "remaining_budget": 927,
+          "result": {
+            "cost": 26,
+            "evidence": {
+              "actual_cost": 10,
+              "certified": false,
+              "check_cost": 10,
+              "check_status": "accepted_by_weak_gate",
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "checker_edge_checks": 4,
+                "checker_graph_validation_edges": 4,
+                "reference_dfs_edge_visits": 4,
+                "reference_graph_validation_edges": 4,
+                "reference_indexing_edges": 4,
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "path_optimal": false,
+              "reference_cost": 3,
+              "reference_path": [
+                0,
+                2,
+                3
+              ],
+              "regret": 7,
+              "screen_accepted": true,
+              "supported_factor_on_failure": "screen_disagreement",
+              "test_id": "screen_agrees_with_reference",
+              "verifier": "path_edges_only",
+              "violated_edge": null
+            },
+            "passed": false
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "screen_agrees_with_reference"
+        }
+      ],
+      "repair": {
+        "cost": 12,
+        "kind": "candidate_replacement",
+        "next_content_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02"
+      },
+      "round": 1
+    },
+    {
+      "candidate": {
+        "content_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02",
+        "origin": "candidate_replacement",
+        "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+        "value": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 0
+        }
+      },
+      "diagnosis": {
+        "cleared_factors": [
+          "candidate_infeasible",
+          "candidate_not_optimal",
+          "certificate_invalid",
+          "screen_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [],
+        "unresolved_factors": []
+      },
+      "observations": {
+        "certificate_valid": true,
+        "path_feasible": true,
+        "path_optimal": true,
+        "screen_agrees_with_reference": true
+      },
+      "receipts": [
+        {
+          "candidate_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02",
+          "receipt_sha256": "a370961c56d3e43bec82172df7442b1a4b3b3fbd00992a5cf01fbec4efa462b2",
+          "remaining_budget": 909,
+          "result": {
+            "cost": 6,
+            "evidence": {
+              "actual_cost": 3,
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "supported_factor_on_failure": "candidate_infeasible",
+              "test_id": "path_feasible"
+            },
+            "passed": true
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "path_feasible"
+        },
+        {
+          "candidate_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02",
+          "receipt_sha256": "79716f0345332834b5c9279a2c8e4f7b7dc99671c1a690df57bb10544ae02daf",
+          "remaining_budget": 899,
+          "result": {
+            "cost": 10,
+            "evidence": {
+              "certified": true,
+              "check_cost": 3,
+              "check_status": "certified_optimal",
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "checker_edge_checks": 6,
+                "checker_graph_validation_edges": 4
+              },
+              "screen_accepted": true,
+              "supported_factor_on_failure": "certificate_invalid",
+              "test_id": "certificate_valid",
+              "verifier": "all_edges_certificate",
+              "violated_edge": null
+            },
+            "passed": true
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "certificate_valid"
+        },
+        {
+          "candidate_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02",
+          "receipt_sha256": "0877650aa03fa0d713cad39ae70deb896d74b8727f9b99293759ef9721b8bde0",
+          "remaining_budget": 881,
+          "result": {
+            "cost": 18,
+            "evidence": {
+              "actual_cost": 3,
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "reference_dfs_edge_visits": 4,
+                "reference_graph_validation_edges": 4,
+                "reference_indexing_edges": 4,
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "path_optimal": true,
+              "reference_cost": 3,
+              "reference_path": [
+                0,
+                2,
+                3
+              ],
+              "regret": 0,
+              "supported_factor_on_failure": "candidate_not_optimal",
+              "test_id": "path_optimal"
+            },
+            "passed": true
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "path_optimal"
+        },
+        {
+          "candidate_sha256": "8b2641c09c2ba1850a34978ef1cfe85457df8ab60c5fa0cd39ba994eeabd2a02",
+          "receipt_sha256": "44cafcf4532af0f3b6a2ea0e9ce6ced4ff12511f8193a8307d12a39bcefd0777",
+          "remaining_budget": 855,
+          "result": {
+            "cost": 26,
+            "evidence": {
+              "actual_cost": 3,
+              "certified": false,
+              "check_cost": 3,
+              "check_status": "accepted_by_weak_gate",
+              "interpretation": "This observation is not an exclusive root-cause claim.",
+              "operation_counts": {
+                "checker_edge_checks": 4,
+                "checker_graph_validation_edges": 4,
+                "reference_dfs_edge_visits": 4,
+                "reference_graph_validation_edges": 4,
+                "reference_indexing_edges": 4,
+                "scoring_graph_validation_edges": 4,
+                "scoring_path_edges": 2
+              },
+              "path_feasible": true,
+              "path_optimal": true,
+              "reference_cost": 3,
+              "reference_path": [
+                0,
+                2,
+                3
+              ],
+              "regret": 0,
+              "screen_accepted": true,
+              "supported_factor_on_failure": "screen_disagreement",
+              "test_id": "screen_agrees_with_reference",
+              "verifier": "path_edges_only",
+              "violated_edge": null
+            },
+            "passed": true
+          },
+          "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+          "test": "screen_agrees_with_reference"
+        }
+      ],
+      "round": 2
+    }
+  ],
+  "schema_version": "1.0",
+  "scientific_claim_accepted": false,
+  "specification": {
+    "decision_sha256": "716c682e3b57a03129a29ba71e925be6e0521e63a952749e0466f94ac14d12ca",
+    "goal": {
+      "acceptance": "feasible path with an all-edges optimality certificate",
+      "objective": "minimum_path_weight",
+      "source": 0,
+      "target": 3
+    },
+    "implementation": {
+      "diagnosis.py": "40b91fbb049b9f2f5187c5a4e6a4acbe5bdf1c6a4d27db57bd13fa8f4707ffb5",
+      "path_adapter.py": "635350250a7e8547690730ef09eb6feea80caa864c1f4114b0e3020875537798",
+      "path_reference.py": "0022c97b5c36c160a483cf486bb1e960361aea16225f30b4dbe6ca55c56b60e3",
+      "path_workflow.py": "1ee805b10f8ecc22cbd560f2bba845389caf2b54150bc3c996c963d01b017008",
+      "pipeline.py": "c253b7a83b736635ec97deb8c59f4a3d901211f6d5b8363f5ab69d20fe684fa2",
+      "research_workflow.py": "cf779e5be974be3b4f7415a6f0b8f97171f8390f6ee241e175f2373d02813765",
+      "schema.py": "f8e714d971675015fa96e911bb627a23cdbf8eff0d975000cff29e7951ce6adb"
+    },
+    "initial_algorithm": "greedy_edge",
+    "proposal_sha256": "c16d09b9f5f96567d1b4d77a575423f15804c988af60b97c608223b487ce5ca0",
+    "screen_verifier": "path_edges_only",
+    "setup": {
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          9
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ]
+      ],
+      "node_count": 4
+    },
+    "source_sha256": "c5591cd6ea34dba3a5f7a07c016152770d6d5220a209e57a3d061bd718845f81",
+    "target_lineage": "56785672176d57eb885a40700f4a97751ab6522d38a07f06eeda5f2c595e1cc4",
+    "version": 1
+  },
+  "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+  "stages": [
+    "ingest",
+    "charter",
+    "adapter_frontier",
+    "recorded_specification_decision",
+    "freeze",
+    "candidate_execution",
+    "budgeted_checks",
+    "multiple_factor_diagnosis",
+    "repair_or_stop"
+  ],
+  "status": "awaiting_verifier_decision"
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verispiral"
 version = "0.3.0"
-description = "A user-governed control layer for research-specification co-evolution and solution search."
+description = "A user-governed research workflow for goal, setup, verifier and algorithm co-design."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
@@ -29,6 +29,14 @@ where = ["src"]
 "share/verispiral/examples/expected/evolution" = ["examples/expected/evolution/*.json"]
 "share/verispiral/examples/expected/minimax" = ["examples/expected/minimax/*.json"]
 "share/verispiral/examples/expected/research-specification" = ["examples/expected/research-specification/*.json"]
+"share/verispiral/examples/expected/diagnosis" = ["examples/expected/diagnosis/*.json"]
+"share/verispiral/examples/expected/path-trial" = ["examples/expected/path-trial/*.json"]
+"share/verispiral/examples/expected/workflow" = ["examples/expected/workflow/*.json"]
+"share/verispiral/examples/expected/workflow/proposal" = ["examples/expected/workflow/proposal/*.json"]
+"share/verispiral/examples/expected/workflow/initial_run" = ["examples/expected/workflow/initial_run/*.json"]
+"share/verispiral/examples/expected/workflow/successor_run" = ["examples/expected/workflow/successor_run/*.json"]
+"share/verispiral/examples/path" = ["examples/path/*.json"]
+"share/verispiral/examples/workflow" = ["examples/workflow/*.md", "examples/workflow/*.json"]
 "share/verispiral/examples/research_spec" = ["examples/research_spec/*.json"]
 "share/verispiral/examples/verification" = ["examples/verification/*.json"]
 "share/verispiral/examples/verifiers" = ["examples/verifiers/*.py"]

@@ -1,0 +1,11 @@
+{
+  "action": "pending",
+  "actor": "user_record",
+  "budget_edge_operations": 1000,
+  "max_rounds": 3,
+  "proposal_sha256": "c16d09b9f5f96567d1b4d77a575423f15804c988af60b97c608223b487ce5ca0",
+  "selection": {
+    "initial_algorithm": "greedy_edge",
+    "screen_verifier": "all_edges_certificate"
+  }
+}

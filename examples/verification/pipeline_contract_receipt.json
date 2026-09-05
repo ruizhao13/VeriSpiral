@@ -1,7 +1,41 @@
 {
-  "schema_version": "1.0",
-  "receipt_id": "receipt-pipeline-contract-v1",
   "candidate_id": "evidence-gated-skill-induction",
+  "evidence_bindings": [
+    {
+      "id": "E-SCHEMA",
+      "sha256": "c7c2e1d86fbb69f861826c6642cb3bcdfe29458acee8c73db2d52d7799d441ee"
+    },
+    {
+      "id": "E-TESTS",
+      "sha256": "d2971f0889e2d74be350558d2371fbadebe0ff922a244a22629ae7dead47276b"
+    },
+    {
+      "id": "E-ENTRYPOINT",
+      "sha256": "790181d03ec6da80511c7662f72da571d6fd70da1e5c38db94f7c4b660015223"
+    }
+  ],
+  "limitations": [
+    "This receipt does not establish the truth of an arbitrary scientific claim.",
+    "Human acceptance remains pending and this receipt cannot activate a skill by itself."
+  ],
+  "method": "executable_check",
+  "receipt_id": "receipt-pipeline-contract-v1",
+  "result": {
+    "checks": [
+      "claim_matches_pipeline_policy",
+      "success_trace_rejects_missing_receipt",
+      "success_trace_rejects_missing_human_acceptance",
+      "parked_candidate_cannot_promote",
+      "skill_blueprint_matches_reviewed_contract",
+      "skill_blueprint_preserves_gate_and_human_boundaries"
+    ],
+    "exit_code": 0,
+    "output_sha256": "29144a67e1074eac227411c37111797127453b13c120d19dd08b2dc7a2f2423e",
+    "status": "passed",
+    "summary": "The registered executable verifier replayed the declared pipeline promotion contract."
+  },
+  "schema_version": "1.0",
+  "scope": "Pipeline promotion policy and artifact emission invariants only.",
   "semantic_sha256": "32ef2e5b38bfab564bf67c6c4532df0998ead4c463004717f2c957d39b42eea3",
   "skill_blueprint_sha256": "0bdb31138cfb81e08b190f124921cd6351cca8aaba481113fa69de0d1d150906",
   "subject_fields": [
@@ -17,45 +51,11 @@
     "limitations",
     "skill_blueprint"
   ],
-  "method": "executable_check",
   "verifier": {
-    "id": "verispiral.pipeline-contract",
-    "version": "1.0.0",
     "artifact_locator": "examples/verifiers/pipeline_contract.py",
     "artifact_sha256": "d7083fdacfef609907181797613a79d3bb69019d3de6f2b3e47275a072f3ccc3",
-    "command": "python -B examples/verifiers/pipeline_contract.py"
-  },
-  "evidence_bindings": [
-    {
-      "id": "E-SCHEMA",
-      "sha256": "c7c2e1d86fbb69f861826c6642cb3bcdfe29458acee8c73db2d52d7799d441ee"
-    },
-    {
-      "id": "E-TESTS",
-      "sha256": "d2971f0889e2d74be350558d2371fbadebe0ff922a244a22629ae7dead47276b"
-    },
-    {
-      "id": "E-ENTRYPOINT",
-      "sha256": "737d75a15a12fd1bc46839f44baa788e627745fc47d44d7abb459613aed9e2cb"
-    }
-  ],
-  "result": {
-    "status": "passed",
-    "exit_code": 0,
-    "summary": "The registered executable verifier replayed the declared pipeline promotion contract.",
-    "output_sha256": "29144a67e1074eac227411c37111797127453b13c120d19dd08b2dc7a2f2423e",
-    "checks": [
-      "claim_matches_pipeline_policy",
-      "success_trace_rejects_missing_receipt",
-      "success_trace_rejects_missing_human_acceptance",
-      "parked_candidate_cannot_promote",
-      "skill_blueprint_matches_reviewed_contract",
-      "skill_blueprint_preserves_gate_and_human_boundaries"
-    ]
-  },
-  "scope": "Pipeline promotion policy and artifact emission invariants only.",
-  "limitations": [
-    "This receipt does not establish the truth of an arbitrary scientific claim.",
-    "Human acceptance remains pending and this receipt cannot activate a skill by itself."
-  ]
+    "command": "python -B examples/verifiers/pipeline_contract.py",
+    "id": "verispiral.pipeline-contract",
+    "version": "1.0.0"
+  }
 }

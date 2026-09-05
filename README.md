@@ -1,7 +1,27 @@
 # VeriSpiral
 
-**A user-governed, verifier-guided workflow for research-specification
-co-evolution and solution search.**
+**Goal–Setup–Verifier–Algorithm co-design through multi-fidelity evidence,
+failure diagnosis, and user-governed revision.**
+
+When a candidate fails a more faithful evaluation, what experiment should the
+system buy next? VeriSpiral studies how to distinguish algorithm weakness from
+verifier failure, setup omissions, and goal ambiguity, then direct work to the
+right layer. Verifier construction and budgeted diagnostic experiments are the
+research focus; user authority and versioned evidence support that work.
+
+```text
+real problem -> goal/setup choices -> verifier frontier -> freeze -> algorithm search
+                     ^                    ^                            |
+                     +--- diagnosis and higher-fidelity evaluation ----+
+```
+
+The first approximation turns a real need into a tractable problem. The second
+turns an expensive goal assessment into a reusable check. Both need transfer
+tests on selected candidates, with construction, invocation, and revalidation
+costs counted. See the [research agenda](docs/research-agenda.md) for proposed
+hypotheses, equal-budget baselines, metrics, and stopping criteria. Use the
+[problem compilation protocol](prompts/protocols/problem_compilation.md) to begin
+with a paragraph or document and an explicit domain adapter.
 
 VeriSpiral separates two loops. In the inner loop, AI may search literature,
 generate solution candidates, develop proof routes, seek counterexamples, and
@@ -14,19 +34,26 @@ scientific judgment boundary. “Co-evolution” means that explicit evidence an
 user decision can produce a new version of that specification. It does not mean
 automatic personalization, long-term learning, or silent self-modification.
 
-The current repository is a deterministic reference implementation of four
-small artifact paths. It does not run the complete research loops described
-above.
+The current repository provides seven deterministic demonstrations. The
+[connected workflow](docs/connected-workflow.md) executes intake, recorded
+decisions, solving, concurrent failure checks, repair, and verifier succession
+for one explicit small-DAG adapter. General prose understanding and the broader
+research loops described above remain unimplemented.
+
+The latest [shortest-path workflow trial](docs/path-workflow-study.md) executes
+two candidate algorithms, separately scores their paths, and tests certificate
+repairs prompted by observed failures. Its negative efficiency result remains
+part of the evidence.
 
 ## 60-second view
 
 | Question | Answer |
 | --- | --- |
-| What problem does it address? | Research agents can generate plausible solutions while silently changing the problem, target, or test used to judge them. |
+| What problem does it study? | Jointly designing the problem, evaluator, and algorithm, while choosing informative next experiments under a budget. |
 | What does the user control? | The accepted model, target, verifier, and boundary of scientific interpretation. |
-| What may AI do? | Literature work, candidate generation, proof routes, counterexamples, experiments, and model/verifier revision proposals. These are target responsibilities, not capabilities implemented by this demo. |
+| What may AI do? | Goal/setup proposals, verifier synthesis, candidate search, counterexamples, diagnostic experiments, and revision proposals. These are target responsibilities, not a complete implemented research agent. |
 | What is the core separation? | Inner-loop solution search versus outer-loop research-specification revision. A solution delta never shares a patch with model or verifier deltas; a coupled model/verifier revision must expose both. |
-| What runs today? | Four deterministic replays: a five-stage candidate review that stops at pending human acceptance, synthetic feedback to an unapplied process patch, bandit certificate compatibility, and user-governed research-specification succession and branching. |
+| What runs today? | A connected DAG workflow, a shortest-path/witness-repair trial, concurrent finite diagnosis, candidate review, unapplied feedback, bandit certificate compatibility, and specification succession/branching. |
 
 ## Two loops, one authority boundary
 
@@ -176,6 +203,42 @@ revision class; that requires a new proposal and discussion. The runner does
 not capture live user input, establish that the recorded actor is a real
 person, generate an algorithm or proof, or make a scientific claim true.
 
+### 5. Finite diagnosis and verifier comparison
+
+`make diagnosis-demo` computes seven registered checks on ten public finite
+cases, including a no-fault control and two concurrent-failure cases. The
+controller executes affordable pending checks in cost order, retaining every
+observed failure and all untested factors. Completion requires every registered
+check; it does not imply exhaustive causal identification. Planted labels are
+used only afterward for scoring. Proposed revisions remain unapplied.
+
+Two prewritten verifiers compare a cheap prefix screen with exact enumeration,
+showing a selected-candidate false promotion and illustrative build/call
+amortization. This is a finite mechanism test, not independent calibration,
+hidden testing, or a measured research benefit. See the
+[diagnosis guide](docs/diagnosis-demo.md) for artifacts and limits.
+
+### 6. Problem-driven certificate repair
+
+`make path-trial` runs two methods on 26 public DAGs and compares three verifier
+variants. Complete edge checking removes weak-gate false acceptance but leaves
+some optimal paths with invalid certificates. A follow-up preserves those paths,
+repairs their witnesses, and charges the full construction cost. It establishes
+no speed advantage over direct DAG solving. See the
+[study and evidence](docs/path-workflow-study.md); no LLM runtime is involved.
+
+### 7. Connected problem-to-recheck workflow
+
+`make workflow-demo` reads a public problem document and explicit DAG data,
+prepares a specification, and executes it after a matching decision. It finds
+three concurrent failure indicators, repairs the candidate, and rechecks all
+four registered obligations. An exposed weak screen triggers a revision
+proposal; accepting it preserves the target lineage but invalidates previous
+evidence and requires fresh checks. The demo uses synthetic decisions and ends
+with candidate acceptance still pending. The
+[entry-point guide](docs/connected-workflow.md) describes caller-supplied decision
+files, costs, unsupported inputs, and the absence of general prose extraction.
+
 ## Run the demos
 
 Prerequisites: Python 3.10 or newer and `make`. No API key or network access is
@@ -186,6 +249,9 @@ make demo
 make evolution-demo
 make minimax-demo
 make research-loop-demo
+make diagnosis-demo
+make path-trial
+make workflow-demo
 make test
 make golden-check
 make audit
@@ -197,6 +263,18 @@ byte-identical replay of the fixtures, not scientific correctness.
 
 ## Repository map
 
+- [Connected workflow](docs/connected-workflow.md): document intake, explicit
+  decisions, concurrent checks, repairs, and successor revalidation.
+- [Problem trial and two repair steps](docs/path-workflow-study.md): executable
+  shortest paths, certificate coverage, and the negative cost result.
+- [Problem-driven iteration](prompts/protocols/problem_driven_iteration.md):
+  fixed comparisons, observed deficiencies, repairs, and regression checks.
+- [Research agenda](docs/research-agenda.md): joint design, falsifiable hypotheses,
+  equal-budget comparisons, and selected-candidate transfer metrics.
+- [Problem compilation protocol](prompts/protocols/problem_compilation.md): enter
+  the workflow from a paragraph or document with an explicit domain adapter.
+- [Finite diagnosis guide](docs/diagnosis-demo.md): test selection, budget,
+  verifier comparison, and evidence limits.
 - [Research-specification co-evolution](docs/research-specification-coevolution.md):
   user/AI responsibilities, inner and outer loops, change classes, and decision
   semantics.
@@ -220,12 +298,12 @@ byte-identical replay of the fixtures, not scientific correctness.
 ## Current limits
 
 - The repository does not call an LLM or search literature.
-- It does not generate real algorithms, theorem statements, proofs,
-  counterexamples, or experiments.
+- It executes and switches between prewritten DAG methods; it does not invent
+  algorithms, theorem statements, proofs, or general research experiments.
 - It can validate checked-in discussion and human-decision fixtures, continue a
   target under an accepted verifier successor, and isolate a changed model on a
-  separate lineage. It does not capture live decisions or prove the
-  decision-maker's identity.
+  separate lineage. The connected DAG workflow also reads caller-supplied
+  decision files; neither path authenticates the decision-maker's identity.
 - It does not automatically authorize model or verifier changes, apply the
   process-feedback patch, execute rollback, personalize a system, maintain a
   user model, or learn over time.
@@ -235,8 +313,7 @@ byte-identical replay of the fixtures, not scientific correctness.
 - The default candidate demo stops at pending human acceptance and emits no
   success trace or Skill.
 
-See [data and privacy](DATA_AND_PRIVACY.md),
-[model and human contributions](MODEL_AND_HUMAN_CONTRIBUTIONS.md), and the
+See [data and privacy](DATA_AND_PRIVACY.md), the [license](LICENSE), and the
 [public-release checklist](PUBLIC_RELEASE_CHECKLIST.md).
 
 中文说明：[README_ZH.md](README_ZH.md)

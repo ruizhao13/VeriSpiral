@@ -184,6 +184,7 @@ horizon access:    unknown; one policy must be valid at every time t
 loss:              cumulative pseudo-regret through time t
 risk:              expected regret, worst case over the reward class
 policy class:      nonanticipating anytime policies
+comparison regime: K >= 2 and t >= K
 target rate:       Theta(sqrt(K t)), up to universal constants and O(1) terms
 ```
 

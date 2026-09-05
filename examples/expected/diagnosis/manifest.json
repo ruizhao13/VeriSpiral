@@ -1,0 +1,12 @@
+{
+  "artifact_type": "finite_diagnosis_manifest",
+  "artifacts": {
+    "diagnosis_report.json": "ac7fc005469ce7fac91f3d911a5a797061784c7bbc6be7645ce607bfa9cff8e5"
+  },
+  "schema_version": "2.0",
+  "scientific_claim_accepted": false,
+  "sources": {
+    "diagnosis.py": "40b91fbb049b9f2f5187c5a4e6a4acbe5bdf1c6a4d27db57bd13fa8f4707ffb5",
+    "diagnosis_demo.py": "42133a90a31f895eed830833aa7c6ffa332726c2008ad6c0f07d9950f73ad212"
+  }
+}

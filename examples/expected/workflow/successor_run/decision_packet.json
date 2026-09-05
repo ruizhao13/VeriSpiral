@@ -1,0 +1,11 @@
+{
+  "all_observed_factors": [],
+  "human_acceptance": "pending",
+  "next_action": "review_candidate",
+  "report_sha256": "19c65d4f640e1b998abe3d616dc45107771707209a994eb25f505befc6a0db38",
+  "scientific_claim_accepted": false,
+  "specification_sha256": "449a668988975ee41c42944768eca65cbc6ab40a01e9ed8ce784dd405a49911d",
+  "status": "candidate_ready_for_human_acceptance",
+  "supported_factors": [],
+  "unresolved_factors": []
+}

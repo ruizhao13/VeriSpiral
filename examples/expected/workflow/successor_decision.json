@@ -1,0 +1,11 @@
+{
+  "action": "accept",
+  "actor": "synthetic_fixture",
+  "budget_edge_operations": 1000,
+  "max_rounds": 3,
+  "proposal_sha256": "28b142c45755f76d7155f244247a7bb8e2aaf57bbd8e3aeb568396e72d2ef770",
+  "selection": {
+    "initial_algorithm": "greedy_edge",
+    "screen_verifier": "all_edges_certificate"
+  }
+}

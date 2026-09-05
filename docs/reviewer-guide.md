@@ -1,17 +1,20 @@
 # Reviewer guide
 
 This guide is for a fast, skeptical review of VeriSpiral's public claims. The
-central question is not whether the demo produces many artifacts. It is whether
-the artifacts preserve user authority and keep solution, model, and verifier
-changes distinguishable.
+central question is whether evidence can guide work to the right research layer
+within a budget, while preserving the user's goal and the scope of each check.
+The finite demos establish mechanisms, not research effectiveness.
 
 ## Ten-minute reading path
 
 1. Read the [README](../README.md) for the bounded claim.
-2. Read [research-specification co-evolution](research-specification-coevolution.md)
-   for the authority model and two loops.
-3. Inspect [architecture](architecture.md) for the mapping from the design to
-   the deterministic replays.
+2. Read [research agenda](research-agenda.md) for the proposed hypothesis and
+   comparable-budget evaluation, then [finite diagnosis](diagnosis-demo.md) for
+   the executable example and its limits. The [connected DAG workflow](connected-workflow.md)
+   shows the bounded execution and revision path.
+3. Inspect [architecture](architecture.md) and
+   [specification co-evolution](research-specification-coevolution.md) for the
+   authority model and its implementation boundaries.
 4. Check the [claim-evidence matrix](claim-evidence-matrix.md) before inferring
    any scientific or product capability.
 
@@ -48,6 +51,34 @@ change starts a separate lineage and cannot receive progress credit on the
 original target.
 
 ## Executable replay checks
+
+### Finite diagnosis
+
+- Do planted labels remain isolated to scoring after observations are collected?
+- Do ten public cases include seven individual patterns, a passing control, and
+  two simultaneous failures reported as nonexclusive check indicators?
+- Does supported completion require all registered checks, including zero-score
+  coverage checks in the older signature API?
+- Does insufficient budget preserve observed failures and unresolved checks,
+  while contradictory or indistinguishable signatures remain explicit?
+- Do limitation tests retain check-invisible changes, and avoid causal certainty?
+- Are the finite reference and illustrative costs distinguished from independent
+  calibration and equal-budget research evaluation?
+
+### Connected DAG workflow
+
+Inspect the [runner](../src/verispiral/research_workflow.py) and
+[summary](../examples/expected/workflow/demo_summary.json).
+
+- Does a proposal-bound recorded decision precede candidate execution?
+- Do missing checks prevent readiness, with generation, repair and rechecks
+  included in the declared edge-work budget?
+- Does a weak-screen disagreement persist after repair and require a separate
+  recorded screen-revision decision?
+- Does the successor preserve the goal/setup and recheck the retained candidate
+  without accepting old evidence as current?
+- Are prose understanding, general synthesis, identity authentication, and
+  real research effectiveness outside the demonstrated claim?
 
 ### Five-stage candidate review
 
@@ -98,6 +129,8 @@ From the repository root, run:
 
 ```bash
 make research-loop-demo
+make diagnosis-demo
+make workflow-demo
 make test
 make golden-check
 make audit

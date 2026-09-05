@@ -1,0 +1,17 @@
+{
+  "first_round_factors": [
+    "candidate_not_optimal",
+    "certificate_invalid",
+    "screen_disagreement"
+  ],
+  "initial_report_sha256": "8b5fea41db29cbfbe5f2d917199e3f4a67edcb3db71335152c3e8b192dabadfb",
+  "initial_rounds": 2,
+  "initial_status": "awaiting_verifier_decision",
+  "scientific_claim_accepted": false,
+  "scope": "Public connected workflow with synthetic specification decisions; no live human identity claim.",
+  "successor_recheck": "rechecked_under_successor",
+  "successor_report_sha256": "19c65d4f640e1b998abe3d616dc45107771707209a994eb25f505befc6a0db38",
+  "successor_status": "candidate_ready_for_human_acceptance",
+  "successor_version": 2,
+  "target_lineage_preserved": true
+}

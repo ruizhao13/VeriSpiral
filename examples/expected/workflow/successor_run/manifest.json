@@ -1,0 +1,13 @@
+{
+  "decision_packet_sha256": "f0eb6663666aa20e8df632d7ddca7c2d8f9689f5945fd46c4ba572e57d11f448",
+  "implementation": {
+    "diagnosis.py": "40b91fbb049b9f2f5187c5a4e6a4acbe5bdf1c6a4d27db57bd13fa8f4707ffb5",
+    "path_adapter.py": "635350250a7e8547690730ef09eb6feea80caa864c1f4114b0e3020875537798",
+    "path_reference.py": "0022c97b5c36c160a483cf486bb1e960361aea16225f30b4dbe6ca55c56b60e3",
+    "path_workflow.py": "1ee805b10f8ecc22cbd560f2bba845389caf2b54150bc3c996c963d01b017008",
+    "pipeline.py": "c253b7a83b736635ec97deb8c59f4a3d901211f6d5b8363f5ab69d20fe684fa2",
+    "research_workflow.py": "cf779e5be974be3b4f7415a6f0b8f97171f8390f6ee241e175f2373d02813765",
+    "schema.py": "f8e714d971675015fa96e911bb627a23cdbf8eff0d975000cff29e7951ce6adb"
+  },
+  "report_sha256": "19c65d4f640e1b998abe3d616dc45107771707209a994eb25f505befc6a0db38"
+}

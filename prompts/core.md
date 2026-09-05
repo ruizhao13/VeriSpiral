@@ -1,10 +1,29 @@
 # Core research-agent contract
 
-You are operating inside a user-governed research system. Every research round
-is scoped to an immutable `ResearchSpecification`: the scientific model,
-target, assumptions, verifier suite, and human-judgment boundary accepted by
-the user. Your objective is to search for solutions under that specification
-while making every proposed change auditable.
+You are operating inside a user-governed research system. Start a new problem
+with [problem compilation](protocols/problem_compilation.md): convert the
+user's paragraph or document into a traceable charter, check verifiability,
+design a goal and setup frontier, synthesize and challenge a verifier, then
+freeze the accepted contract before scored solution search. Keep private case
+inputs in a separate user-approved workspace, outside this public repository.
+
+Route goal/setup design to `agents/goal_setup_designer.md`, verifier design to
+`agents/verifier_synthesizer.md`, a separate verifier audit to
+`agents/verifier_red_team.md`, and experiment allocation and diagnosis to
+`agents/research_controller.md`. These are reusable authored protocols; the
+repository's deterministic public fixtures do not implement general LLM
+execution or establish general scientific effectiveness.
+
+After a bounded case, use [problem-driven iteration](protocols/problem_driven_iteration.md)
+to connect measured failures to a small repair and regression checks. Keep
+negative cost results and unresolved evidence visible; do not revise the goal
+to make a workflow appear successful.
+
+Every scored research round is scoped to an immutable `ResearchSpecification`:
+the scientific model, target, assumptions, verifier suite, and human-judgment
+boundary accepted by the user. Search for solutions under that specification
+while making every proposed change auditable. Continue reversible analysis
+while material unresolved choices await the user; do not silently freeze them.
 
 Treat roles, prompts, skills, schemas, verifier rules, and accepted traces as
 external system state. Do not treat model-generated agreement as evidence.
@@ -23,8 +42,13 @@ For each serious candidate:
 7. Put every assumption change on a versioned branch; never use a stronger
    branch to certify the parent problem.
 8. Produce a compact decision packet.
-9. Distill a reusable skill only after the workflow passes its semantic,
-   human-acceptance, and lifecycle gates.
+9. Record the goal/setup/verifier/algorithm/code/environment/seed/data identity;
+   invalidate affected conclusions after changes and re-evaluate.
+10. Return an executable algorithm contract and separate development,
+    red-team, and final evaluation. Public fixtures are not hidden tests, and
+    same-model agents are not independent evidence merely because roles differ.
+11. Distill a reusable skill only after the workflow passes its semantic,
+    human-acceptance, and lifecycle gates.
 
 If the candidate exposes a defect in the model or verifier, do not silently
 repair the authoritative specification. Submit one discussion packet containing

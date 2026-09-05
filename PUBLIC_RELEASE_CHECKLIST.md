@@ -25,6 +25,19 @@ Use this checklist before publishing VeriSpiral on GitHub.
 
 ## Reproducibility and behavior
 
+- [ ] `make verify golden-check` passes, including finite diagnosis and its
+      budget, ambiguity, source-hash, and documented blind-spot checks.
+- [ ] Diagnosis preserves concurrent observed failures and budget-limited
+      unknowns; full coverage refers only to registered checks, not exhaustive
+      causes. Finite-table costs remain illustrative.
+- [ ] `make workflow-demo` executes the public DAG adapter, repairs and rechecks
+      candidates, and requires a matching decision for a verifier successor.
+      Old evidence cannot certify the successor, and final acceptance is pending.
+- [ ] Document intake is distinguished from unimplemented prose extraction;
+      synthetic decisions and caller-supplied records do not authenticate humans.
+- [ ] `make path-trial` preserves baseline false accepts, witness abstentions,
+      follow-up plan binding, unchanged candidate paths, and full witness costs;
+      no speed advantage over direct solving is claimed.
 - [ ] `make test` passes from a clean checkout.
 - [ ] `make demo` replays the registered executable verifier, reports the five
       documented stages, ends at `await_human_acceptance`, and tracks only the
@@ -56,11 +69,11 @@ Use this checklist before publishing VeriSpiral on GitHub.
       remain covered by tests.
 - [ ] README commands have been rerun after the final edit.
 
-## Scientific and contribution boundaries
+## Scientific claims and sources
 
 - [ ] Every case-study claim is scoped as a demonstration and links to its
       public evidence or limitation.
-- [ ] The project owner has checked every minimax certificate extraction
+- [ ] Every minimax certificate extraction has been checked
       against its cited theorem locator; `registered_public_extract` has not
       been mistaken for proof verification.
 - [ ] The final minimax trace still states `human_review_required=true` and
@@ -73,8 +86,6 @@ Use this checklist before publishing VeriSpiral on GitHub.
       with matching stored exponents, not as theorem verification.
 - [ ] A checked-in `actor: human` decision is not presented as live input or
       proof of the decision-maker's identity.
-- [ ] `MODEL_AND_HUMAN_CONTRIBUTIONS.md` matches the actual contribution
-      history and has been reviewed by the project owner.
 - [ ] Third-party sources and dependencies have appropriate attribution and
       compatible licenses.
 

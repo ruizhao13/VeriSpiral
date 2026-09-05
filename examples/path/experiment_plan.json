@@ -1,0 +1,18 @@
+{
+  "plan_id": "path-workflow-development-v1",
+  "status": "public_development_plan_not_external_preregistration",
+  "problem": "Return a minimum-total-integer-weight path from node 0 to node n-1 in a small numbered DAG.",
+  "goal": "Feasibility and global optimality on the original graph; a cheaper-looking path in a modified graph does not solve this goal.",
+  "scope": "Purpose-built public graphs, 2 to 12 nodes, unique directed edges u < v; generated evaluation cases have every node reachable from source.",
+  "candidate_pool": ["greedy_edge", "topological_exact"],
+  "verifier_variants": ["feasibility_only", "path_edges_only", "all_edges_certificate"],
+  "reference": "Separately authored exhaustive path enumeration without pruning.",
+  "practical_baseline": "Direct topological shortest-path dynamic program; exhaustive enumeration is a cross-check, not the only efficiency baseline.",
+  "development_case_ids": ["greedy_trap", "negative_edge"],
+  "regression_cases": {"node_counts": [4, 6, 8], "instances_per_size": 8, "edge_rule": "Complete DAG; weight(u,v,k) = ((u+1)*17 + (v+1)*11 + k*7) % 19 - 6."},
+  "acceptance_criterion": "A candidate accepted as optimal by all_edges_certificate must have reference regret zero. Invalid certificates cannot by themselves establish algorithm suboptimality.",
+  "failure_metrics": ["false_optimality_acceptance_count", "false_rejection_of_optimal_candidate_count", "unverified_optimal_candidate_count", "maximum_regret_among_accepted_candidates"],
+  "cost_policy": "Report validation edge scans, adjacency indexing, solver edge visits, witness edge visits, verifier edge checks and reference edge visits separately. No wall-time, token, learned-controller or equal-total-budget performance claim.",
+  "stop_rule": "Keep all counterexamples; repair a demonstrated verification defect, test old and new cases, and stop at a scoped result. Do not infer general research effectiveness or continue tuning the goal.",
+  "exposure": "All cases are public development/regression inputs, not a hidden or independent final holdout. No private problem text is included."
+}

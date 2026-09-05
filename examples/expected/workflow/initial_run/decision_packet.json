@@ -1,0 +1,15 @@
+{
+  "all_observed_factors": [
+    "candidate_not_optimal",
+    "certificate_invalid",
+    "screen_disagreement"
+  ],
+  "human_acceptance": "pending",
+  "next_action": "awaiting_verifier_decision",
+  "report_sha256": "8b5fea41db29cbfbe5f2d917199e3f4a67edcb3db71335152c3e8b192dabadfb",
+  "scientific_claim_accepted": false,
+  "specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+  "status": "awaiting_verifier_decision",
+  "supported_factors": [],
+  "unresolved_factors": []
+}

@@ -1,0 +1,3899 @@
+{
+  "artifact_type": "finite_diagnosis_report",
+  "budget_limited_case": {
+    "budget_spent": 1,
+    "case_digest": "d4a2289652c7fe24a7d1db7a73b5e842457f75a6000736929e2fcca32b46e444",
+    "decision": {
+      "cleared_factors": [
+        "verifier_disagreement"
+      ],
+      "cost": 0,
+      "coverage_checked": false,
+      "limitations": [
+        "Supported factors are explicit failed-check indicators, not identified causes.",
+        "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+        "No joint outcome signature or interaction is inferred from individual factors."
+      ],
+      "pending_tests": [
+        "fresh_suite_transfer",
+        "implementation_match",
+        "metric_rank_stable",
+        "repeat_stable",
+        "search_has_support",
+        "setup_transfers"
+      ],
+      "proposed_test": null,
+      "selection_reason": null,
+      "status": "budget_exhausted",
+      "supported_factors": [],
+      "unresolved_factors": [
+        "algorithm_dominated",
+        "fresh_mean_disagreement",
+        "goal_rank_disagreement",
+        "implementation_disagreement",
+        "replicate_disagreement",
+        "setup_mean_disagreement"
+      ]
+    },
+    "next_action_proposals": [
+      "collect_evidence_for_pending_checks"
+    ],
+    "revision_applied": false,
+    "scientific_claim_accepted": false,
+    "trace": [
+      {
+        "remaining_budget": 0,
+        "result": {
+          "compared_values": [
+            "8",
+            "8"
+          ],
+          "passed": true
+        },
+        "selection": {
+          "cleared_factors": [],
+          "cost": 1,
+          "coverage_checked": false,
+          "limitations": [
+            "Supported factors are explicit failed-check indicators, not identified causes.",
+            "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+            "No joint outcome signature or interaction is inferred from individual factors."
+          ],
+          "pending_tests": [
+            "cheap_matches_exact",
+            "fresh_suite_transfer",
+            "implementation_match",
+            "metric_rank_stable",
+            "repeat_stable",
+            "search_has_support",
+            "setup_transfers"
+          ],
+          "proposed_test": "cheap_matches_exact",
+          "selection_reason": "least_cost_unobserved_check",
+          "status": "test_proposed",
+          "supported_factors": [],
+          "unresolved_factors": [
+            "algorithm_dominated",
+            "fresh_mean_disagreement",
+            "goal_rank_disagreement",
+            "implementation_disagreement",
+            "replicate_disagreement",
+            "setup_mean_disagreement",
+            "verifier_disagreement"
+          ]
+        },
+        "test": "cheap_matches_exact"
+      }
+    ]
+  },
+  "diagnostic_cases": [
+    {
+      "budget_spent": 18,
+      "case_digest": "d4a2289652c7fe24a7d1db7a73b5e842457f75a6000736929e2fcca32b46e444",
+      "case_id": "case_01",
+      "decision": {
+        "cleared_factors": [
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "algorithm_dominated"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "reference": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "continue_algorithm_search"
+      ],
+      "planted_factors_for_scoring_only": [
+        "algorithm_dominated"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "8",
+              "8"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "8",
+              "8"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "False",
+              "False"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "8",
+              "8"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": false,
+            "unanimously_dominated": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "8",
+              "8"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "algorithm_dominated"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "8",
+              "8"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "algorithm_dominated"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "b73ef41110f2e2caaa19565b9198ec49b72843b084dd1ce7b684ad626c5e726c",
+      "case_id": "case_02",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "verifier_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1
+        ],
+        "comparator": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "fresh": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "reference": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "propose_verifier_revision"
+      ],
+      "planted_factors_for_scoring_only": [
+        "verifier_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "0",
+              "3"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "False",
+              "False"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "35a9278addc38fa59d027e46bfc2a011c36643a3b2d7804e9e610b3f6f916152",
+      "case_id": "case_03",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "setup_mean_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "reference": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "propose_setup_revision"
+      ],
+      "planted_factors_for_scoring_only": [
+        "setup_mean_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "0",
+              "8"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "48c19b48712eeae582142a671523bbdfc2aba308e87689567deca0be8638a42f",
+      "case_id": "case_04",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "goal_rank_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "reference": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "request_goal_metric_review"
+      ],
+      "planted_factors_for_scoring_only": [
+        "goal_rank_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "False"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "goal_rank_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "goal_rank_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "goal_rank_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "goal_rank_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "e782471f6b1c441ed049363acce3fae69699a2ef28994044f885e80ec618db42",
+      "case_id": "case_05",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "implementation_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "reference": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": -1,
+        "setup": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "repair_and_recompute_implementation"
+      ],
+      "planted_factors_for_scoring_only": [
+        "implementation_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "1",
+              "2"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "69ff275a9b284c20aa741fa530fb06b7277f84d2e5c07b5b5713337717625ec1",
+      "case_id": "case_06",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "replicate_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "reference": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "replicate_offsets": [
+          0,
+          1
+        ],
+        "reported_offset": 0,
+        "setup": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "collect_replicates_and_quantify_uncertainty"
+      ],
+      "planted_factors_for_scoring_only": [
+        "replicate_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "2",
+              "3"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "85a48b6a740d29a0b9ca1fbee0ad8a7638191efa0f7b24a0df9a0dd4d609b4fc",
+      "case_id": "case_07",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "fresh_mean_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "reference": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "red_team_verifier_and_refresh_exposed_suite"
+      ],
+      "planted_factors_for_scoring_only": [
+        "fresh_mean_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "0",
+              "8"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "0",
+              "0"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "fresh_mean_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "efc5ec5fe8a293234302d5e9d3e5a51ca9d83a768e04127d9e6d44525a1bf89e",
+      "case_id": "case_08",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "reference": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "report_scoped_checks_only"
+      ],
+      "planted_factors_for_scoring_only": [],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "261cfb8545ef4e96580085dc43c2b4ddf64daa29e8c5c20c2e6572e0deee2440",
+      "case_id": "case_09",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "fresh_mean_disagreement",
+          "goal_rank_disagreement",
+          "setup_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "implementation_disagreement",
+          "replicate_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "comparator": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fresh": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "reference": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "replicate_offsets": [
+          0,
+          1
+        ],
+        "reported_offset": -1,
+        "setup": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "repair_and_recompute_implementation",
+        "collect_replicates_and_quantify_uncertainty"
+      ],
+      "planted_factors_for_scoring_only": [
+        "implementation_disagreement",
+        "replicate_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "1",
+              "2"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "True",
+              "True"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "2",
+              "3"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "2",
+              "2"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "verifier_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    },
+    {
+      "budget_spent": 18,
+      "case_digest": "8e8b95f61bb1337807a90537e8be4bd8c28711b791adfa56f286627f564449fa",
+      "case_id": "case_10",
+      "decision": {
+        "cleared_factors": [
+          "algorithm_dominated",
+          "goal_rank_disagreement",
+          "implementation_disagreement",
+          "replicate_disagreement",
+          "setup_mean_disagreement"
+        ],
+        "cost": 0,
+        "coverage_checked": true,
+        "limitations": [
+          "Supported factors are explicit failed-check indicators, not identified causes.",
+          "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+          "No joint outcome signature or interaction is inferred from individual factors."
+        ],
+        "pending_tests": [],
+        "proposed_test": null,
+        "selection_reason": null,
+        "status": "diagnosis_supported",
+        "supported_factors": [
+          "fresh_mean_disagreement",
+          "verifier_disagreement"
+        ],
+        "unresolved_factors": []
+      },
+      "fixture": {
+        "cheap_indices": [
+          0,
+          1
+        ],
+        "comparator": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "fresh": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "reference": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "replicate_offsets": [
+          0,
+          0
+        ],
+        "reported_offset": 0,
+        "setup": [
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "matches_planted_factors": true,
+      "next_action_proposals": [
+        "red_team_verifier_and_refresh_exposed_suite",
+        "propose_verifier_revision"
+      ],
+      "planted_factors_for_scoring_only": [
+        "fresh_mean_disagreement",
+        "verifier_disagreement"
+      ],
+      "revision_applied": false,
+      "scientific_claim_accepted": false,
+      "trace": [
+        {
+          "remaining_budget": 17,
+          "result": {
+            "compared_values": [
+              "0",
+              "3"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "cheap_matches_exact",
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "cheap_matches_exact",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement",
+              "verifier_disagreement"
+            ]
+          },
+          "test": "cheap_matches_exact"
+        },
+        {
+          "remaining_budget": 16,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [],
+            "cost": 1,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "implementation_match",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "implementation_match",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "implementation_match"
+        },
+        {
+          "remaining_budget": 14,
+          "result": {
+            "compared_values": [
+              "False",
+              "False"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "implementation_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "metric_rank_stable",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "metric_rank_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "goal_rank_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "metric_rank_stable"
+        },
+        {
+          "remaining_budget": 12,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement"
+            ],
+            "cost": 2,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "repeat_stable",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "repeat_stable",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "replicate_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "repeat_stable"
+        },
+        {
+          "remaining_budget": 9,
+          "result": {
+            "passed": true,
+            "unanimously_dominated": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 3,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "search_has_support",
+              "setup_transfers"
+            ],
+            "proposed_test": "search_has_support",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "algorithm_dominated",
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "search_has_support"
+        },
+        {
+          "remaining_budget": 5,
+          "result": {
+            "compared_values": [
+              "3",
+              "8"
+            ],
+            "passed": false
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 4,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "fresh_suite_transfer",
+              "setup_transfers"
+            ],
+            "proposed_test": "fresh_suite_transfer",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "fresh_mean_disagreement",
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "fresh_suite_transfer"
+        },
+        {
+          "remaining_budget": 0,
+          "result": {
+            "compared_values": [
+              "3",
+              "3"
+            ],
+            "passed": true
+          },
+          "selection": {
+            "cleared_factors": [
+              "algorithm_dominated",
+              "goal_rank_disagreement",
+              "implementation_disagreement",
+              "replicate_disagreement"
+            ],
+            "cost": 5,
+            "coverage_checked": false,
+            "limitations": [
+              "Supported factors are explicit failed-check indicators, not identified causes.",
+              "Coverage is limited to registered checks; unknown or check-invisible faults may remain.",
+              "No joint outcome signature or interaction is inferred from individual factors."
+            ],
+            "pending_tests": [
+              "setup_transfers"
+            ],
+            "proposed_test": "setup_transfers",
+            "selection_reason": "least_cost_unobserved_check",
+            "status": "test_proposed",
+            "supported_factors": [
+              "fresh_mean_disagreement",
+              "verifier_disagreement"
+            ],
+            "unresolved_factors": [
+              "setup_mean_disagreement"
+            ]
+          },
+          "test": "setup_transfers"
+        }
+      ]
+    }
+  ],
+  "factor_checks": {
+    "algorithm_dominated": "search_has_support",
+    "fresh_mean_disagreement": "fresh_suite_transfer",
+    "goal_rank_disagreement": "metric_rank_stable",
+    "implementation_disagreement": "implementation_match",
+    "replicate_disagreement": "repeat_stable",
+    "setup_mean_disagreement": "setup_transfers",
+    "verifier_disagreement": "cheap_matches_exact"
+  },
+  "legacy_single_fault_predictions": {
+    "algorithm": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": false,
+      "setup_transfers": true
+    },
+    "gaming": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": false,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": true
+    },
+    "goal": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": false,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": true
+    },
+    "implementation": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": false,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": true
+    },
+    "no_detected_fault": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": true
+    },
+    "noise": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": false,
+      "search_has_support": true,
+      "setup_transfers": true
+    },
+    "setup": {
+      "cheap_matches_exact": true,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": false
+    },
+    "verifier": {
+      "cheap_matches_exact": false,
+      "fresh_suite_transfer": true,
+      "implementation_match": true,
+      "metric_rank_stable": true,
+      "repeat_stable": true,
+      "search_has_support": true,
+      "setup_transfers": true
+    }
+  },
+  "limitations": [
+    "Not real-world validation, causal identification, or learned resource allocation.",
+    "All cases and tests are public; there is no hidden or independent final holdout.",
+    "Indicators support simultaneous observed check failures, not their causes or interactions.",
+    "Unknown or mean-preserving faults invisible to these checks may remain after coverage.",
+    "Equality checks and fixed replicate offsets do not quantify sampling uncertainty.",
+    "The reference is an exact finite-table average, not a real scientific oracle."
+  ],
+  "schema_version": "2.0",
+  "scope": "public finite loss tables and separately observable failed-check indicators",
+  "selection_rule": "least-cost unobserved check, then identifier; all registered checks required",
+  "test_cost_units": {
+    "cheap_matches_exact": 1,
+    "fresh_suite_transfer": 4,
+    "implementation_match": 1,
+    "metric_rank_stable": 2,
+    "repeat_stable": 2,
+    "search_has_support": 3,
+    "setup_transfers": 5
+  },
+  "verifier_comparison": {
+    "acceptance_threshold": 2,
+    "call_definition": "one candidate evaluation; 100 planned calls, not 100 executed trials",
+    "candidate_losses": {
+      "stable": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "tail_failure": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "weak": [
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "comparison_boundary": "exact verifier equals the reference by construction; not an equal-budget study",
+    "construction_status": "two prewritten mechanisms; no verifier synthesis executed",
+    "cost_basis": "declared illustrative units, not measured runtime",
+    "reference_scores": {
+      "stable": "2",
+      "tail_failure": "3",
+      "weak": "8"
+    },
+    "rows": [
+      {
+        "amortized_cost_units": "201/100",
+        "build_cost_units": 1,
+        "call_cost_units": 2,
+        "false_promotions": [
+          "tail_failure"
+        ],
+        "false_rejections": [],
+        "planned_calls": 100,
+        "reference_regret_of_selected": "1",
+        "scores": {
+          "stable": "2",
+          "tail_failure": "0",
+          "weak": "8"
+        },
+        "selected_candidate": "tail_failure",
+        "verifier": "prefix_screen"
+      },
+      {
+        "amortized_cost_units": "203/50",
+        "build_cost_units": 6,
+        "call_cost_units": 4,
+        "false_promotions": [],
+        "false_rejections": [],
+        "planned_calls": 100,
+        "reference_regret_of_selected": "0",
+        "scores": {
+          "stable": "2",
+          "tail_failure": "3",
+          "weak": "8"
+        },
+        "selected_candidate": "stable",
+        "verifier": "exact_enumeration"
+      }
+    ]
+  }
+}

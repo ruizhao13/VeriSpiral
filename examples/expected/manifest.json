@@ -2,7 +2,7 @@
   "artifacts": [
     {
       "path": "decision_packet.json",
-      "sha256": "f6edf0904ae84c60b4be5bf12ae7d578b5cfa63d5470a7ac7c2a23852840ab80"
+      "sha256": "2bd2d472d9a9572fce9f8f5f43d5d58f68ab83b1ecb244f4d990916150996996"
     }
   ],
   "candidate_sha256": "9814e75db275d4dc75122783d6c4958c0b0e0b2c6c40985bf27fcca9242f5966",

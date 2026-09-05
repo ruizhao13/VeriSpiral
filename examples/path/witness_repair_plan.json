@@ -1,0 +1,14 @@
+{
+  "plan_id": "path-witness-repair-development-v1",
+  "baseline_summary_sha256": "bc068d1774cfe52e4b0aa1a5860a4dd4764b072a039ea8ea20b35fb0c9cc96fd",
+  "trigger": "The complete edge checker made zero false acceptances but left 14 actually optimal greedy paths unverified on the 26 public graphs.",
+  "diagnosis": "Optimality and witness validity are separate: a bad potential vector does not establish that the submitted path is suboptimal.",
+  "change_class": "solution_witness_only",
+  "fixed_objects": ["original graph", "shortest-path objective", "greedy returned path", "complete certificate acceptance rule", "separate reference scorer"],
+  "repair": "Replace only the greedy path-prefix potential proposal with potentials produced by the existing topological exact solver.",
+  "expected_result": "All original greedy paths remain identical; optimal ones can now be certified, suboptimal ones cannot.",
+  "cost_obligation": "Charge both producers' input validation/indexing, the original greedy work and prefix witness, plus the exact solver's work as witness construction. Compare with running the exact solver directly.",
+  "checks": "Replay all 26 public graphs and add repaired-candidate checks on 27 complete three-node graphs with edge weights in {-2,0,3}.",
+  "exposure": "Follow-up chosen after inspecting development results; no unseen-test claim.",
+  "stop_rule": "Stop after coverage and soundness rechecks. Do not call witness repair algorithm improvement or a cheaper-solving result."
+}

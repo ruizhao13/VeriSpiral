@@ -1,0 +1,107 @@
+{
+  "adapter": "shortest_path_dag",
+  "adapter_proposal": {
+    "algorithm_frontier": [
+      "greedy_edge",
+      "topological_exact"
+    ],
+    "goal": {
+      "acceptance": "feasible path with an all-edges optimality certificate",
+      "objective": "minimum_path_weight",
+      "source": 0,
+      "target": 3
+    },
+    "scope": "Numbered DAGs with 2..12 nodes, integer edge weights, no parallel edges, and every node reachable from source 0; the supplied graph is the full model. No claim about omitted edges or real-world route validity.",
+    "setup": {
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          9
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ]
+      ],
+      "node_count": 4
+    },
+    "verifier_frontier": [
+      {
+        "id": "all_edges_certificate",
+        "recommended": true,
+        "role": "certification_gate"
+      },
+      {
+        "id": "path_edges_only",
+        "recommended": false,
+        "role": "diagnostic_only_screen"
+      },
+      {
+        "id": "feasibility_only",
+        "recommended": false,
+        "role": "diagnostic_only_screen"
+      }
+    ]
+  },
+  "base_specification_sha256": "18b74c01b48d383b8121ec736260a973531c4a3a77d2a4f1c79eb5c7c1d347bc",
+  "charter": {
+    "assumed": [
+      "The proposed finite graph is the complete model; it has no omitted-environment guarantee."
+    ],
+    "explicit": [
+      {
+        "characters": 326,
+        "interpretation": "Original prose remains the source of truth.",
+        "sha256": "c5591cd6ea34dba3a5f7a07c016152770d6d5220a209e57a3d061bd718845f81",
+        "source": "problem document"
+      }
+    ],
+    "inferred": [],
+    "semantic_extraction": "not_implemented; adapter proposals require explicit review",
+    "unknown": [
+      "User must confirm that this adapter goal and setup match the source document."
+    ]
+  },
+  "implementation": {
+    "diagnosis.py": "40b91fbb049b9f2f5187c5a4e6a4acbe5bdf1c6a4d27db57bd13fa8f4707ffb5",
+    "path_adapter.py": "635350250a7e8547690730ef09eb6feea80caa864c1f4114b0e3020875537798",
+    "path_reference.py": "0022c97b5c36c160a483cf486bb1e960361aea16225f30b4dbe6ca55c56b60e3",
+    "path_workflow.py": "1ee805b10f8ecc22cbd560f2bba845389caf2b54150bc3c996c963d01b017008",
+    "pipeline.py": "c253b7a83b736635ec97deb8c59f4a3d901211f6d5b8363f5ab69d20fe684fa2",
+    "research_workflow.py": "cf779e5be974be3b4f7415a6f0b8f97171f8390f6ee241e175f2373d02813765",
+    "schema.py": "f8e714d971675015fa96e911bb627a23cdbf8eff0d975000cff29e7951ce6adb"
+  },
+  "inputs": {
+    "problem": {
+      "locator": "repo:examples/workflow/problem.md",
+      "sha256": "c5591cd6ea34dba3a5f7a07c016152770d6d5220a209e57a3d061bd718845f81"
+    },
+    "setup": {
+      "locator": "repo:examples/workflow/setup.json",
+      "sha256": "a53765b009139a5d8f0c614179320f27c62e01d2f2662f32898f883e3fafe2f0"
+    }
+  },
+  "issues": [],
+  "kind": "research_workflow_proposal",
+  "parent": {
+    "locator": "workflow_report.json",
+    "sha256": "8b5fea41db29cbfbe5f2d917199e3f4a67edcb3db71335152c3e8b192dabadfb"
+  },
+  "permission_boundary": "Only a matching accepted decision freezes the proposed goal, setup and screen.",
+  "required_screen": "all_edges_certificate",
+  "schema_version": "1.0",
+  "status": "awaiting_decision",
+  "version": 2
+}

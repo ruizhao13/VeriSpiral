@@ -2,7 +2,29 @@
 
 VeriSpiral separates AI-assisted search from authority over the scientific
 problem. The system can organize evidence and propose changes; the user owns
-the research specification and the decision to revise it.
+the research specification and the decision to revise it. The research goal is
+joint problem, verifier, and algorithm design guided by evidence about where a
+failure arises. See the [research agenda](research-agenda.md) for the untested
+effectiveness hypothesis and [finite diagnosis](diagnosis-demo.md) for current
+mechanism evidence.
+
+## Diagnose before revising
+
+Keep algorithm, verifier, setup, goal, implementation, noise, and gaming
+explanations in competition. Choose checks whose possible outcomes imply
+different next actions, with construction, invocation, and recheck costs
+accounted for. Do not turn disagreement into an unqualified causal diagnosis.
+Unknown causes and multiple faults may remain unresolved.
+
+## Design the verifier as a research object
+
+Compare mathematical checking mechanisms as well as implementations. A cheap
+test needs a justified relation to its goal, an explicit soundness boundary,
+and a high-fidelity anchor. Evaluate selected-candidate transfer and both false
+promotion and false rejection. Include amortized construction costs and feedback
+usefulness; repeated search can exploit weaknesses unseen in random candidates.
+These are proposed workflow requirements, not capabilities established by the
+two prewritten finite verifiers.
 
 ## The user owns the research specification
 

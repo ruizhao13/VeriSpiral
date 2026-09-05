@@ -57,7 +57,7 @@
       "id": "E-ENTRYPOINT",
       "kind": "artifact",
       "locator": "Makefile",
-      "sha256": "737d75a15a12fd1bc46839f44baa788e627745fc47d44d7abb459613aed9e2cb"
+      "sha256": "790181d03ec6da80511c7662f72da571d6fd70da1e5c38db94f7c4b660015223"
     }
   ],
   "expected_value": {
@@ -178,7 +178,7 @@
       "receipt_id": "receipt-pipeline-contract-v1",
       "result": "passed",
       "semantic_sha256": "32ef2e5b38bfab564bf67c6c4532df0998ead4c463004717f2c957d39b42eea3",
-      "sha256": "e80a0143da4aaa8911799b9ca160ccdc8aaa911165b8da922dad6db04c3680aa",
+      "sha256": "7f6b2f3e5581d59e83209cb7f9fee8d31a5d167019537c27ddf1ffce15346d3c",
       "skill_blueprint_sha256": "0bdb31138cfb81e08b190f124921cd6351cca8aaba481113fa69de0d1d150906",
       "verifier_artifact_locator": "examples/verifiers/pipeline_contract.py",
       "verifier_artifact_sha256": "d7083fdacfef609907181797613a79d3bb69019d3de6f2b3e47275a072f3ccc3",

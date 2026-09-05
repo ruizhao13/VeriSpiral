@@ -13,7 +13,10 @@ def relative_files(root: Path) -> list[Path]:
         for path in root.rglob("*")
         if path.is_file()
         for relative in (path.relative_to(root),)
-        if relative.parts[0] not in {"minimax", "evolution", "research-specification"}
+        # Each sibling demo has its own byte-exact golden test.
+        if relative.parts[0] not in {
+            "minimax", "evolution", "research-specification", "diagnosis", "path-trial", "workflow",
+        }
     )
 
 

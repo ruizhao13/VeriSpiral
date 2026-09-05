@@ -1,13 +1,23 @@
 # Architecture
 
-VeriSpiral is a user-governed workflow for research-specification co-evolution
-and solution search. It separates AI assistance from scientific authority and
-separates changes to a candidate solution from changes to the problem or its
-evaluation contract.
+VeriSpiral studies how to jointly design Goal/Metric, Setup, Verifier, and
+Algorithm under a shared research budget. Its intended decision is which
+experiment or revision to attempt next when a failure may belong to the
+algorithm, evaluator, formulation, objective, or implementation. User authority,
+immutable specifications, and evidence scope constrain that search.
 
-The public repository implements four small deterministic demonstrations. The
-larger architecture in this document is a design contract, not a claim that an
-online autonomous research system already exists.
+There are two approximation boundaries: a real need is represented by a setup
+and measurable goal; an expensive goal assessment is approximated by a cheaper
+verifier. Both mappings require evidence beyond the component being optimized.
+The [research agenda](research-agenda.md) defines proposed hypotheses,
+comparisons, costs, transfer measures, and stopping rules. No measured benefit
+or autonomous research capability is claimed by this architecture.
+
+The public demonstrations remain small deterministic mechanisms. A
+[connected workflow](connected-workflow.md) now executes the supported small-DAG
+adapter from a recorded specification decision through checks, bounded repair,
+and a separately accepted screen revision. The broader architecture below
+remains a design contract; prose understanding and general synthesis are absent.
 
 ## System boundary
 
@@ -21,6 +31,50 @@ The repository contains:
 It contains no LLM integration, live literature search, real experiment
 runtime, algorithm generator, proof engine, persistent user model, automatic
 approval, or patch-application service.
+
+## Target architecture: diagnosis before revision
+
+The following roles describe responsibilities; they need not be separate
+models or agents, and are not implemented live services.
+
+| Role | Responsibility | Required limit |
+| --- | --- | --- |
+| Goal and setup designer | Propose measurable objectives, assumptions, task scope, and external anchors | The user selects trade-offs; changed targets create separate lineages |
+| Candidate searcher | Produce algorithms or other solutions within a frozen specification | Cannot redefine the accepted goal or evaluator to rescue a candidate |
+| Verifier synthesizer | Propose mathematical checking mechanisms, calibration, and promotion rules | Account for build cost, call cost, selected-candidate fidelity, and diagnostic feedback |
+| Verifier red-team auditor | Attack the contract and implementation with counterexamples and exploits | Separate audit context and evaluator access; role separation alone is not independent evidence |
+| Diagnostician | Maintain competing failure explanations and request distinguishing experiments | Preserve uncertainty, unknown causes, noise, and possible multiple faults |
+| Budget controller | Select affordable next checks, promote to higher fidelity, or stop | Charge construction, calls, failed experiments, rechecks, and human work |
+| Anchor evaluator | Assess selected and sampled rejected candidates against the declared target | Keep final evaluation feedback outside adaptation; preserve source scope |
+
+The implemented small-DAG adapter exposes a proposed goal and setup, prewritten
+candidate methods, check costs, observed results, and an exhaustive finite
+reference. General task adapters would additionally need domain-specific
+fidelity levels and external anchors. Controllers see permitted observations,
+not planted scoring labels or final-test answers. Adapters must state what their
+observations can distinguish and which causes remain outside their scope.
+
+```text
+accepted Goal/Metric + Setup + Verifier + budget
+    -> candidate and observed failure
+    -> competing explanations + affordable distinguishing experiments
+    -> chosen experiment -> observation -> remaining explanations
+    -> algorithm work / higher-fidelity check / revision discussion / unknown or stop
+    -> scoped evidence + costs + versioned user decision when required
+```
+
+Proposed state includes the four object versions, candidate identity, observed
+evidence, unresolved explanations, experiment history, remaining budget,
+promotion status, and final-evaluation exposure. A verifier revision requires
+affected-result tracking and re-evaluation; a goal or setup change preserves
+the original comparison and opens a separate target lineage. Cross-component
+proposals may be coordinated, but solution edits and specification revisions
+remain separately reviewable transactions.
+
+The general path is a research target. The specification replay below binds
+registered decisions and blocks later work under a superseded verifier. The
+connected DAG workflow rechecks its retained candidate under an accepted screen
+successor; neither path provides a general dependency graph for research results.
 
 ## Authority boundary
 
@@ -220,7 +274,60 @@ This is deterministic state-machine replay. It does not capture live user input,
 verify the actor's real-world identity, generate a solution or proof, or decide
 that the specification is scientifically sound.
 
+## Public demo 5: budgeted checks and simultaneous failure indicators
+
+The [diagnosis guide](diagnosis-demo.md) separates the
+[controllers](../src/verispiral/diagnosis.py) from a
+[finite adapter](../src/verispiral/diagnosis_demo.py). Its ten public cases cover
+seven individual failed-check patterns, one passing control, and two simultaneous
+patterns. The default controller maps each narrow failure indicator to a distinct
+observable check. It chooses the cheapest affordable unobserved check and retains
+all observed failures together, without assigning an exclusive cause.
+
+Supported completion requires every registered check; insufficient budget leaves
+pending checks and unresolved indicators explicit. The older signature API still
+ranks checks by equal-weight expected eliminations per cost, but even a singleton
+must undergo the remaining coverage checks. Contradictory supplied signatures
+produce model mismatch; indistinguishable complete signatures remain inconclusive.
+Neither API supplies calibrated causal probabilities or an optimal allocation claim.
+
+Planted labels are used only after execution for scoring. The
+[report](../examples/expected/diagnosis/diagnosis_report.json) and
+[tests](../tests/test_diagnosis.py) show these finite behaviors, including the
+additional coverage cost. Unknown and mean-preserving failures may remain invisible.
+This adapter always has a finite reference and does not change specifications or
+generate algorithms; its two simultaneous patterns are not general diagnostic validation.
+
+## Public connected workflow: reviewed DAG specification to rechecked successor
+
+The [workflow guide](connected-workflow.md),
+[implementation](../src/verispiral/research_workflow.py), and
+[demo summary](../examples/expected/workflow/demo_summary.json) define a separate,
+bounded execution path. A text document and typed DAG setup produce a reviewable
+adapter proposal. A matching recorded decision freezes it before any candidate
+execution. The runner invokes prewritten methods, observes four nonexclusive
+failure indicators, charges declared edge work, and repairs a candidate or witness
+within the accepted budget and round limit.
+
+A detected weak-screen disagreement remains visible after candidate repair and
+requires a recorded screen-revision decision. The successor preserves the goal
+and setup, retains the candidate, and reruns all registered checks under the new
+specification; old receipts cannot make it ready. Missing checks prevent readiness,
+and a checked candidate still awaits human acceptance. The public demo decisions
+are synthetic, and the runner cannot authenticate a human identity.
+
+This path supports numbered integer DAGs with 2–12 nodes and all nodes reachable
+from source zero. It does not interpret prose, synthesize new algorithms or
+verifiers, automate goal/setup revision, or validate real research effectiveness.
+
 ## Trust boundaries
+
+The [shortest-path trial](path-workflow-study.md) is a sixth executable path.
+It executes prewritten solvers and certificate checks with a separate exhaustive
+reference and path scorer. An outcome-triggered witness repair has its own plan
+bound to the initial summary; it changes neither the submitted path nor its goal.
+This supplies concrete development feedback for the iteration protocol, without
+implementing an LLM controller or demonstrating cheaper research.
 
 | Input or result | Default treatment | Required response |
 | --- | --- | --- |
@@ -238,14 +345,17 @@ that the specification is scientifically sound.
 
 The public runner demonstrates deterministic structure, executable receipt
 replay, a pending-human stop, process-patch non-application, verifier succession,
-and model-lineage branching from registered decision fixtures.
+model-lineage branching from registered decision fixtures, and budgeted
+nonexclusive failure checks. The connected DAG path additionally consumes a
+recorded decision file, runs prewritten candidate methods and repairs, and
+creates a screen-revision proposal whose accepted successor requires rechecks.
 It does not implement:
 
 - AI literature retrieval or coverage assessment;
-- live solution, theorem, proof, counterexample, experiment, or algorithm
-  generation;
-- live generation of model- or verifier-revision discussion packets;
-- live user-decision capture or human-identity verification;
+- prose understanding or general solution, theorem, proof, counterexample,
+  experiment, or algorithm synthesis;
+- general model- or verifier-revision synthesis beyond the declared DAG screen switch;
+- a live decision-capture interface or human-identity verification;
 - automatic authorization of specification changes or process-component
   application;
 - persistent user modeling, personalization, or long-term learning; or

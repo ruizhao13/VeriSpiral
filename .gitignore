@@ -18,6 +18,9 @@ build/
 !.env.example
 *.local
 
+# Optional local entry to source material stored outside this public repository.
+/ORIGIN.local.md
+
 # Generated demo output is reproducible and should not be committed.
 demo/output/
 

@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": "9665412ca513ff455f4548f444734066d640c3b02815318a0feb2ca3c2c0e675",
+  "human_acceptance": "not_requested_development_trial",
+  "plan_sha256": "3f6380d1cda0780872b77864f24d82b429bef1c650e16e59f253d2f33c7d3f26",
+  "repair_plan_sha256": "de466b2bd7252162e86999b278d16e465879f5ae1394ea4f75c7863e45fa6a8d",
+  "revision_applied": false,
+  "source_sha256": {
+    "path_reference.py": "0022c97b5c36c160a483cf486bb1e960361aea16225f30b4dbe6ca55c56b60e3",
+    "path_workflow.py": "1ee805b10f8ecc22cbd560f2bba845389caf2b54150bc3c996c963d01b017008"
+  }
+}

@@ -1,0 +1,7489 @@
+{
+  "artifact_type": "public_path_workflow_trial",
+  "cases": [
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            1,
+            0,
+            10
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 10,
+          "regret": 7,
+          "result": {
+            "cost": 10,
+            "edge_checks": 2,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 10,
+          "regret": 7,
+          "result": {
+            "cost": 10,
+            "edge_checks": 4,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 10,
+          "regret": 7,
+          "result": {
+            "cost": 10,
+            "edge_checks": 6,
+            "graph_scan_edges": 4,
+            "status": "unverified",
+            "violated_edge": [
+              2,
+              3,
+              1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 2,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 4,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 6,
+            "graph_scan_edges": 4,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            3,
+            9
+          ],
+          [
+            0,
+            2,
+            2
+          ],
+          [
+            2,
+            3,
+            1
+          ]
+        ],
+        "group": "development",
+        "id": "greedy_trap",
+        "n": 4
+      },
+      "graph_digest": "39a4274ff1d91f67563768c7c228b3011f0861f0ece97a4c6c1ada767407e5ec",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 8,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": 3,
+        "edge_visits": 4,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 4,
+      "reference_indexing_edge_visits": 4
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            2,
+            0,
+            4
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 4,
+          "indexing_edge_visits": 4,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            2,
+            4,
+            -1
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 5,
+          "result": {
+            "cost": 4,
+            "edge_checks": 2,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 5,
+          "result": {
+            "cost": 4,
+            "edge_checks": 4,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 5,
+          "result": {
+            "cost": 4,
+            "edge_checks": 6,
+            "graph_scan_edges": 4,
+            "status": "unverified",
+            "violated_edge": [
+              2,
+              3,
+              -5
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 2,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 4,
+            "graph_scan_edges": 4,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 6,
+            "graph_scan_edges": 4,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            3,
+            -5
+          ]
+        ],
+        "group": "development",
+        "id": "negative_edge",
+        "n": 4
+      },
+      "graph_digest": "26021aeda4d0c258d2040b01661861f400d167414cbbb6f03db53a76c60bb133",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 8,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -1,
+        "edge_visits": 4,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 4,
+      "reference_indexing_edge_visits": 4
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -5,
+            0,
+            -9
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 6,
+            "graph_scan_edges": 6,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            3,
+            -2
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            -4
+          ],
+          [
+            2,
+            3,
+            -6
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-0",
+        "n": 4
+      },
+      "graph_digest": "db3ee10cfa67dff3e536df2409473e1881d64a150d4ce73d963b173961cd3bdb",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -9,
+        "edge_visits": 7,
+        "path": [
+          0,
+          1,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            0,
+            -6,
+            -5
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            -6
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            11
+          ],
+          [
+            1,
+            3,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-1",
+        "n": 4
+      },
+      "graph_digest": "44878e10099a282b196235f6102794e31b777d03bae1f27c3b0654050d8caa35",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -5,
+        "edge_visits": 7,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            0,
+            1,
+            9
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 6,
+            "graph_scan_edges": 6,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 9,
+          "regret": 0,
+          "result": {
+            "cost": 9,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            9
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            12
+          ],
+          [
+            1,
+            2,
+            -1
+          ],
+          [
+            1,
+            3,
+            10
+          ],
+          [
+            2,
+            3,
+            8
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-2",
+        "n": 4
+      },
+      "graph_digest": "cba5b4a81152ef5d653123563fe59e979f5895ab6051a216696e1c68c4a60366",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": 9,
+        "edge_visits": 7,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -3,
+            0,
+            -5
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -3
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            3,
+            -2
+          ],
+          [
+            2,
+            3,
+            -4
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-3",
+        "n": 4
+      },
+      "graph_digest": "2033bfcd88867a7a09731ff78d007886eb765174bccab89bd5039a9cc87418ef",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -5,
+        "edge_visits": 7,
+        "path": [
+          0,
+          1,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            0,
+            -4,
+            -1
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 6,
+            "graph_scan_edges": 6,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -6
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            -4
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            1,
+            2,
+            -6
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            3
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-4",
+        "n": 4
+      },
+      "graph_digest": "1a9ea231908dee742723d67cb1e2048ef5249b269fa7fe67b37762e904dfad80",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -1,
+        "edge_visits": 7,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            3
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            -5
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 1
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            3
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 1,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 7,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 1,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -5,
+          "regret": 0,
+          "result": {
+            "cost": -5,
+            "edge_checks": 7,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            11
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            -5
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            12
+          ],
+          [
+            2,
+            3,
+            10
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-5",
+        "n": 4
+      },
+      "graph_digest": "0b3067cc41d98667a559b0b0efca1f1e79b026886a64ab456e07a488376b7b2f",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 2,
+      "reference": {
+        "cost": -5,
+        "edge_visits": 7,
+        "path": [
+          0,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -1,
+            0,
+            -1
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "unverified",
+            "violated_edge": [
+              2,
+              3,
+              -2
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -1
+          ],
+          [
+            0,
+            2,
+            10
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            1,
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            2,
+            3,
+            -2
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-6",
+        "n": 4
+      },
+      "graph_digest": "c7d78a3f23e7788197aab06aad4df98650bbfe044cd30bf217e98b875ef45277",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -1,
+        "edge_visits": 7,
+        "path": [
+          0,
+          1,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            0,
+            -2,
+            3
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 6,
+          "indexing_edge_visits": 6,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 6,
+            "graph_scan_edges": 6,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 2,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 4,
+            "graph_scan_edges": 6,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 3,
+          "regret": 0,
+          "result": {
+            "cost": 3,
+            "edge_checks": 8,
+            "graph_scan_edges": 6,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            2,
+            -2
+          ],
+          [
+            0,
+            3,
+            9
+          ],
+          [
+            1,
+            2,
+            -4
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            2,
+            3,
+            5
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-4-7",
+        "n": 4
+      },
+      "graph_digest": "68400088ec429642aeca7ee2e4936295ec9489d59d6cdfafde96d237c385388c",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 12,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": 3,
+        "edge_visits": 7,
+        "path": [
+          0,
+          2,
+          3
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 6,
+      "reference_indexing_edge_visits": 6
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -5,
+            0,
+            -9,
+            0,
+            -14
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9,
+            -6,
+            -14
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 9,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            3,
+            -2
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            -4
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            -1
+          ],
+          [
+            2,
+            3,
+            -6
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            5,
+            -3
+          ],
+          [
+            3,
+            4,
+            3
+          ],
+          [
+            3,
+            5,
+            -5
+          ],
+          [
+            4,
+            5,
+            12
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-0",
+        "n": 6
+      },
+      "graph_digest": "4b4f2c292b3309c914b0e81f17acbf8c23f1b5265ed4f67f2c5c33239c75b9f8",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -14,
+        "edge_visits": 31,
+        "path": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            -6,
+            -5,
+            0,
+            -3
+          ],
+          "solver_edge_visits": 10,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5,
+            -3,
+            -3
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 7,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              4,
+              -3
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            -6
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            -3
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            1,
+            2,
+            11
+          ],
+          [
+            1,
+            3,
+            3
+          ],
+          [
+            1,
+            4,
+            -5
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            2,
+            4,
+            12
+          ],
+          [
+            2,
+            5,
+            4
+          ],
+          [
+            3,
+            4,
+            10
+          ],
+          [
+            3,
+            5,
+            2
+          ],
+          [
+            4,
+            5,
+            0
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-1",
+        "n": 6
+      },
+      "graph_digest": "96b020d6e90f7be1fa244a9fe41c54141162c3638e27d7a804cca2a8af3f16f6",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -3,
+        "edge_visits": 31,
+        "path": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 1
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            5
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9,
+            1,
+            -4
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 1,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 2,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 7,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 1,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 2,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 16,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            9
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            12
+          ],
+          [
+            0,
+            4,
+            4
+          ],
+          [
+            0,
+            5,
+            -4
+          ],
+          [
+            1,
+            2,
+            -1
+          ],
+          [
+            1,
+            3,
+            10
+          ],
+          [
+            1,
+            4,
+            2
+          ],
+          [
+            1,
+            5,
+            -6
+          ],
+          [
+            2,
+            3,
+            8
+          ],
+          [
+            2,
+            4,
+            0
+          ],
+          [
+            2,
+            5,
+            11
+          ],
+          [
+            3,
+            4,
+            -2
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            4,
+            5,
+            7
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-2",
+        "n": 6
+      },
+      "graph_digest": "11ce09a9a276693deeec41c0945d138c1bcaf0aabc3b2bb5123369979719521b",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 2,
+      "reference": {
+        "cost": -4,
+        "edge_visits": 31,
+        "path": [
+          0,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -3,
+            0,
+            -5,
+            0,
+            -8
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5,
+            0,
+            -8
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -8,
+          "regret": 0,
+          "result": {
+            "cost": -8,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -3
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            4,
+            11
+          ],
+          [
+            0,
+            5,
+            3
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            3,
+            -2
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            1,
+            5,
+            1
+          ],
+          [
+            2,
+            3,
+            -4
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            -1
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            5,
+            -3
+          ],
+          [
+            4,
+            5,
+            -5
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-3",
+        "n": 6
+      },
+      "graph_digest": "a67752beaa982794663a9e2bd0b0b806c34fb8ffc326361255dde595d09aa1b5",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -8,
+        "edge_visits": 31,
+        "path": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            -4,
+            0,
+            -9,
+            -7
+          ],
+          "solver_edge_visits": 9,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1,
+            -9,
+            -7
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 9,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -6
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -7,
+          "regret": 0,
+          "result": {
+            "cost": -7,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            -4
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            -1
+          ],
+          [
+            0,
+            5,
+            10
+          ],
+          [
+            1,
+            2,
+            -6
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            -3
+          ],
+          [
+            1,
+            5,
+            8
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          [
+            2,
+            4,
+            -5
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            3,
+            4,
+            12
+          ],
+          [
+            3,
+            5,
+            4
+          ],
+          [
+            4,
+            5,
+            2
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-4",
+        "n": 6
+      },
+      "graph_digest": "4c0ac0783308c8efb211784ae68404024656d8581545f5ddc6c711c9e4c128af",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -7,
+        "edge_visits": 31,
+        "path": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            -5,
+            -5,
+            4
+          ],
+          "solver_edge_visits": 8,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            5
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5,
+            -5,
+            -3
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 7,
+          "result": {
+            "cost": 4,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 7,
+          "result": {
+            "cost": 4,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": 4,
+          "regret": 7,
+          "result": {
+            "cost": 4,
+            "edge_checks": 8,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              5,
+              -2
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 2,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 4,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -3,
+          "regret": 0,
+          "result": {
+            "cost": -3,
+            "edge_checks": 17,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            11
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            -5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            5,
+            -2
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            12
+          ],
+          [
+            1,
+            4,
+            4
+          ],
+          [
+            1,
+            5,
+            -4
+          ],
+          [
+            2,
+            3,
+            10
+          ],
+          [
+            2,
+            4,
+            2
+          ],
+          [
+            2,
+            5,
+            -6
+          ],
+          [
+            3,
+            4,
+            0
+          ],
+          [
+            3,
+            5,
+            11
+          ],
+          [
+            4,
+            5,
+            9
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-5",
+        "n": 6
+      },
+      "graph_digest": "6467f7206c6794cfcaa88c911b28b762f5739d57143e9e9027118f1d396f939c",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 5,
+      "reference": {
+        "cost": -3,
+        "edge_visits": 31,
+        "path": [
+          0,
+          2,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            -6,
+            -9
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1,
+            -6,
+            -9
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 2,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 4,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              1,
+              -1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 2,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 4,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -9,
+          "regret": 0,
+          "result": {
+            "cost": -9,
+            "edge_checks": 17,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -1
+          ],
+          [
+            0,
+            2,
+            10
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            4,
+            -6
+          ],
+          [
+            0,
+            5,
+            5
+          ],
+          [
+            1,
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            4,
+            11
+          ],
+          [
+            1,
+            5,
+            3
+          ],
+          [
+            2,
+            3,
+            -2
+          ],
+          [
+            2,
+            4,
+            9
+          ],
+          [
+            2,
+            5,
+            1
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            -1
+          ],
+          [
+            4,
+            5,
+            -3
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-6",
+        "n": 6
+      },
+      "graph_digest": "9c493671a12bf99fef98ae0293c2aa840d931cea609c616d0a87e9ca8646f066",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -9,
+        "edge_visits": 31,
+        "path": [
+          0,
+          4,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            0,
+            -2,
+            0,
+            -5,
+            -1
+          ],
+          "solver_edge_visits": 9,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 15,
+          "indexing_edge_visits": 15,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3,
+            -5,
+            -1
+          ],
+          "solver_edge_visits": 15,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 9,
+            "graph_scan_edges": 15,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 3,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 6,
+            "graph_scan_edges": 15,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 0,
+          "result": {
+            "cost": -1,
+            "edge_checks": 18,
+            "graph_scan_edges": 15,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            2,
+            -2
+          ],
+          [
+            0,
+            3,
+            9
+          ],
+          [
+            0,
+            4,
+            1
+          ],
+          [
+            0,
+            5,
+            12
+          ],
+          [
+            1,
+            2,
+            -4
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            -1
+          ],
+          [
+            1,
+            5,
+            10
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            -3
+          ],
+          [
+            2,
+            5,
+            8
+          ],
+          [
+            3,
+            4,
+            -5
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            4
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-6-7",
+        "n": 6
+      },
+      "graph_digest": "326e6a35fd05d9bc1d8247137286669080708136c26996e9f029231c26213dc7",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 30,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -1,
+        "edge_visits": 31,
+        "path": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 15,
+      "reference_indexing_edge_visits": 15
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -5,
+            0,
+            -9,
+            0,
+            -14,
+            0,
+            -20
+          ],
+          "solver_edge_visits": 19,
+          "witness_edge_visits": 4
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9,
+            -6,
+            -14,
+            -12,
+            -20
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 12,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -20,
+          "regret": 0,
+          "result": {
+            "cost": -20,
+            "edge_checks": 32,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            3,
+            -2
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            0,
+            7,
+            4
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            -4
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            1,
+            5,
+            -1
+          ],
+          [
+            1,
+            6,
+            10
+          ],
+          [
+            1,
+            7,
+            2
+          ],
+          [
+            2,
+            3,
+            -6
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            2,
+            5,
+            -3
+          ],
+          [
+            2,
+            6,
+            8
+          ],
+          [
+            2,
+            7,
+            0
+          ],
+          [
+            3,
+            4,
+            3
+          ],
+          [
+            3,
+            5,
+            -5
+          ],
+          [
+            3,
+            6,
+            6
+          ],
+          [
+            3,
+            7,
+            -2
+          ],
+          [
+            4,
+            5,
+            12
+          ],
+          [
+            4,
+            6,
+            4
+          ],
+          [
+            4,
+            7,
+            -4
+          ],
+          [
+            5,
+            6,
+            2
+          ],
+          [
+            5,
+            7,
+            -6
+          ],
+          [
+            6,
+            7,
+            11
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-0",
+        "n": 8
+      },
+      "graph_digest": "2fbb1d263928ab9aa8eb71f503e939260b6431c9550ee13e3992892a29349ccc",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 8,
+      "reference": {
+        "cost": -20,
+        "edge_visits": 127,
+        "path": [
+          0,
+          1,
+          3,
+          5,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            2,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            -6,
+            0,
+            0,
+            0,
+            -10,
+            -11
+          ],
+          "solver_edge_visits": 13,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            2,
+            3,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5,
+            -3,
+            -3,
+            -11,
+            -12
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 6,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 7,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              4,
+              -3
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 32,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            -6
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            -3
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            1,
+            2,
+            11
+          ],
+          [
+            1,
+            3,
+            3
+          ],
+          [
+            1,
+            4,
+            -5
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            1,
+            6,
+            -2
+          ],
+          [
+            1,
+            7,
+            9
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            2,
+            4,
+            12
+          ],
+          [
+            2,
+            5,
+            4
+          ],
+          [
+            2,
+            6,
+            -4
+          ],
+          [
+            2,
+            7,
+            7
+          ],
+          [
+            3,
+            4,
+            10
+          ],
+          [
+            3,
+            5,
+            2
+          ],
+          [
+            3,
+            6,
+            -6
+          ],
+          [
+            3,
+            7,
+            5
+          ],
+          [
+            4,
+            5,
+            0
+          ],
+          [
+            4,
+            6,
+            11
+          ],
+          [
+            4,
+            7,
+            3
+          ],
+          [
+            5,
+            6,
+            9
+          ],
+          [
+            5,
+            7,
+            1
+          ],
+          [
+            6,
+            7,
+            -1
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-1",
+        "n": 8
+      },
+      "graph_digest": "99e76f82e823d383c1e92b333daf479bb7d5930e7d4e21cb52b9b81c61800548",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 7,
+      "reference": {
+        "cost": -12,
+        "edge_visits": 127,
+        "path": [
+          0,
+          2,
+          3,
+          6,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            5,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            -4,
+            -7,
+            -1
+          ],
+          "solver_edge_visits": 10,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            2,
+            7
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9,
+            1,
+            -4,
+            -7,
+            -4
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 3,
+          "result": {
+            "cost": -1,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 3,
+          "result": {
+            "cost": -1,
+            "edge_checks": 6,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -1,
+          "regret": 3,
+          "result": {
+            "cost": -1,
+            "edge_checks": 11,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              1,
+              2,
+              -1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 0,
+          "result": {
+            "cost": -4,
+            "edge_checks": 30,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            9
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            12
+          ],
+          [
+            0,
+            4,
+            4
+          ],
+          [
+            0,
+            5,
+            -4
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            7,
+            -1
+          ],
+          [
+            1,
+            2,
+            -1
+          ],
+          [
+            1,
+            3,
+            10
+          ],
+          [
+            1,
+            4,
+            2
+          ],
+          [
+            1,
+            5,
+            -6
+          ],
+          [
+            1,
+            6,
+            5
+          ],
+          [
+            1,
+            7,
+            -3
+          ],
+          [
+            2,
+            3,
+            8
+          ],
+          [
+            2,
+            4,
+            0
+          ],
+          [
+            2,
+            5,
+            11
+          ],
+          [
+            2,
+            6,
+            3
+          ],
+          [
+            2,
+            7,
+            -5
+          ],
+          [
+            3,
+            4,
+            -2
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            3,
+            6,
+            1
+          ],
+          [
+            3,
+            7,
+            12
+          ],
+          [
+            4,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            -1
+          ],
+          [
+            4,
+            7,
+            10
+          ],
+          [
+            5,
+            6,
+            -3
+          ],
+          [
+            5,
+            7,
+            8
+          ],
+          [
+            6,
+            7,
+            6
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-2",
+        "n": 8
+      },
+      "graph_digest": "238bc89eae839756ee9ea154ab10d62169f80487ba1cb5d462cdc04f2e087a9c",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 5,
+      "reference": {
+        "cost": -4,
+        "edge_visits": 127,
+        "path": [
+          0,
+          2,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -5,
+            -11
+          ],
+          "solver_edge_visits": 8,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5,
+            0,
+            -8,
+            -5,
+            -12
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 1,
+          "result": {
+            "cost": -11,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              1,
+              -3
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -12,
+          "regret": 0,
+          "result": {
+            "cost": -12,
+            "edge_checks": 32,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -3
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            4,
+            11
+          ],
+          [
+            0,
+            5,
+            3
+          ],
+          [
+            0,
+            6,
+            -5
+          ],
+          [
+            0,
+            7,
+            6
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            1,
+            3,
+            -2
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            1,
+            5,
+            1
+          ],
+          [
+            1,
+            6,
+            12
+          ],
+          [
+            1,
+            7,
+            4
+          ],
+          [
+            2,
+            3,
+            -4
+          ],
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            -1
+          ],
+          [
+            2,
+            6,
+            10
+          ],
+          [
+            2,
+            7,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            5,
+            -3
+          ],
+          [
+            3,
+            6,
+            8
+          ],
+          [
+            3,
+            7,
+            0
+          ],
+          [
+            4,
+            5,
+            -5
+          ],
+          [
+            4,
+            6,
+            6
+          ],
+          [
+            4,
+            7,
+            -2
+          ],
+          [
+            5,
+            6,
+            4
+          ],
+          [
+            5,
+            7,
+            -4
+          ],
+          [
+            6,
+            7,
+            -6
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-3",
+        "n": 8
+      },
+      "graph_digest": "39c9be124e053839b27a2eb82d072ce1ac814730e59f3007597d012d0078539b",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -12,
+        "edge_visits": 127,
+        "path": [
+          0,
+          1,
+          3,
+          5,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -6
+          ],
+          "solver_edge_visits": 7,
+          "witness_edge_visits": 1
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            2,
+            4,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1,
+            -9,
+            -7,
+            -15,
+            -14
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 8,
+          "result": {
+            "cost": -6,
+            "edge_checks": 1,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 8,
+          "result": {
+            "cost": -6,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 8,
+          "result": {
+            "cost": -6,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              2,
+              -4
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -14,
+          "regret": 0,
+          "result": {
+            "cost": -14,
+            "edge_checks": 32,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            -4
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            -1
+          ],
+          [
+            0,
+            5,
+            10
+          ],
+          [
+            0,
+            6,
+            2
+          ],
+          [
+            0,
+            7,
+            -6
+          ],
+          [
+            1,
+            2,
+            -6
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            -3
+          ],
+          [
+            1,
+            5,
+            8
+          ],
+          [
+            1,
+            6,
+            0
+          ],
+          [
+            1,
+            7,
+            11
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          [
+            2,
+            4,
+            -5
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            -2
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            3,
+            4,
+            12
+          ],
+          [
+            3,
+            5,
+            4
+          ],
+          [
+            3,
+            6,
+            -4
+          ],
+          [
+            3,
+            7,
+            7
+          ],
+          [
+            4,
+            5,
+            2
+          ],
+          [
+            4,
+            6,
+            -6
+          ],
+          [
+            4,
+            7,
+            5
+          ],
+          [
+            5,
+            6,
+            11
+          ],
+          [
+            5,
+            7,
+            3
+          ],
+          [
+            6,
+            7,
+            1
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-4",
+        "n": 8
+      },
+      "graph_digest": "7d8950c41ddce73e2c92daa6faf1e82fcd99f87f0df876f9c4ff9d63909ee551",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 5,
+      "reference": {
+        "cost": -14,
+        "edge_visits": 127,
+        "path": [
+          0,
+          2,
+          4,
+          6,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            3,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            -5,
+            0,
+            0,
+            0,
+            -10
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 2
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            3,
+            7
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5,
+            -5,
+            -3,
+            -4,
+            -10
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 7,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              5,
+              -2
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -10,
+          "regret": 0,
+          "result": {
+            "cost": -10,
+            "edge_checks": 30,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            11
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            -5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            5,
+            -2
+          ],
+          [
+            0,
+            6,
+            9
+          ],
+          [
+            0,
+            7,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            12
+          ],
+          [
+            1,
+            4,
+            4
+          ],
+          [
+            1,
+            5,
+            -4
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            1,
+            7,
+            -1
+          ],
+          [
+            2,
+            3,
+            10
+          ],
+          [
+            2,
+            4,
+            2
+          ],
+          [
+            2,
+            5,
+            -6
+          ],
+          [
+            2,
+            6,
+            5
+          ],
+          [
+            2,
+            7,
+            -3
+          ],
+          [
+            3,
+            4,
+            0
+          ],
+          [
+            3,
+            5,
+            11
+          ],
+          [
+            3,
+            6,
+            3
+          ],
+          [
+            3,
+            7,
+            -5
+          ],
+          [
+            4,
+            5,
+            9
+          ],
+          [
+            4,
+            6,
+            1
+          ],
+          [
+            4,
+            7,
+            12
+          ],
+          [
+            5,
+            6,
+            -1
+          ],
+          [
+            5,
+            7,
+            10
+          ],
+          [
+            6,
+            7,
+            8
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-5",
+        "n": 8
+      },
+      "graph_digest": "153c188e035afa7024fd6c622b3729cb84e9a9c6e1ac41e2919e1af5e1d93a6e",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 4,
+      "reference": {
+        "cost": -10,
+        "edge_visits": 127,
+        "path": [
+          0,
+          3,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            4,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            -6,
+            -9,
+            0,
+            -11
+          ],
+          "solver_edge_visits": 12,
+          "witness_edge_visits": 3
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            4,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1,
+            -6,
+            -9,
+            -6,
+            -11
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 6,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              1,
+              -1
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [],
+          "unverified_optimal": true,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 6,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -11,
+          "regret": 0,
+          "result": {
+            "cost": -11,
+            "edge_checks": 31,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            -1
+          ],
+          [
+            0,
+            2,
+            10
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            4,
+            -6
+          ],
+          [
+            0,
+            5,
+            5
+          ],
+          [
+            0,
+            6,
+            -3
+          ],
+          [
+            0,
+            7,
+            8
+          ],
+          [
+            1,
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            4,
+            11
+          ],
+          [
+            1,
+            5,
+            3
+          ],
+          [
+            1,
+            6,
+            -5
+          ],
+          [
+            1,
+            7,
+            6
+          ],
+          [
+            2,
+            3,
+            -2
+          ],
+          [
+            2,
+            4,
+            9
+          ],
+          [
+            2,
+            5,
+            1
+          ],
+          [
+            2,
+            6,
+            12
+          ],
+          [
+            2,
+            7,
+            4
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            -1
+          ],
+          [
+            3,
+            6,
+            10
+          ],
+          [
+            3,
+            7,
+            2
+          ],
+          [
+            4,
+            5,
+            -3
+          ],
+          [
+            4,
+            6,
+            8
+          ],
+          [
+            4,
+            7,
+            0
+          ],
+          [
+            5,
+            6,
+            6
+          ],
+          [
+            5,
+            7,
+            -2
+          ],
+          [
+            6,
+            7,
+            -4
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-6",
+        "n": 8
+      },
+      "graph_digest": "af270b87fce678345966fe41497f2e9de07fb1f28448b1ec2b0b179da3c6f947",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 6,
+      "reference": {
+        "cost": -11,
+        "edge_visits": 127,
+        "path": [
+          0,
+          4,
+          5,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    },
+    {
+      "candidates": {
+        "greedy_edge": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            7
+          ],
+          "potentials": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "solver_edge_visits": 7,
+          "witness_edge_visits": 1
+        },
+        "topological_exact": {
+          "graph_scan_edges": 28,
+          "indexing_edge_visits": 28,
+          "path": [
+            0,
+            2,
+            4,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3,
+            -5,
+            -1,
+            -9,
+            -6
+          ],
+          "solver_edge_visits": 28,
+          "witness_edge_visits": 0
+        }
+      },
+      "evaluations": [
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 2,
+          "result": {
+            "cost": -4,
+            "edge_checks": 1,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": true,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 2,
+          "result": {
+            "cost": -4,
+            "edge_checks": 2,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal",
+            "verifier_false_acceptance"
+          ],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -4,
+          "regret": 2,
+          "result": {
+            "cost": -4,
+            "edge_checks": 3,
+            "graph_scan_edges": 28,
+            "status": "unverified",
+            "violated_edge": [
+              0,
+              2,
+              -2
+            ]
+          },
+          "solver": "greedy_edge",
+          "supported_findings": [
+            "algorithm_suboptimal"
+          ],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 0,
+          "result": {
+            "cost": -6,
+            "edge_checks": 4,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "feasibility_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 0,
+          "result": {
+            "cost": -6,
+            "edge_checks": 8,
+            "graph_scan_edges": 28,
+            "status": "accepted_by_weak_gate",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "path_edges_only"
+        },
+        {
+          "false_accept": false,
+          "false_reject": false,
+          "independently_scored_cost": -6,
+          "regret": 0,
+          "result": {
+            "cost": -6,
+            "edge_checks": 32,
+            "graph_scan_edges": 28,
+            "status": "certified_optimal",
+            "violated_edge": null
+          },
+          "solver": "topological_exact",
+          "supported_findings": [],
+          "unverified_optimal": false,
+          "verifier": "all_edges_certificate"
+        }
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            2,
+            -2
+          ],
+          [
+            0,
+            3,
+            9
+          ],
+          [
+            0,
+            4,
+            1
+          ],
+          [
+            0,
+            5,
+            12
+          ],
+          [
+            0,
+            6,
+            4
+          ],
+          [
+            0,
+            7,
+            -4
+          ],
+          [
+            1,
+            2,
+            -4
+          ],
+          [
+            1,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            -1
+          ],
+          [
+            1,
+            5,
+            10
+          ],
+          [
+            1,
+            6,
+            2
+          ],
+          [
+            1,
+            7,
+            -6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            -3
+          ],
+          [
+            2,
+            5,
+            8
+          ],
+          [
+            2,
+            6,
+            0
+          ],
+          [
+            2,
+            7,
+            11
+          ],
+          [
+            3,
+            4,
+            -5
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            6,
+            -2
+          ],
+          [
+            3,
+            7,
+            9
+          ],
+          [
+            4,
+            5,
+            4
+          ],
+          [
+            4,
+            6,
+            -4
+          ],
+          [
+            4,
+            7,
+            7
+          ],
+          [
+            5,
+            6,
+            -6
+          ],
+          [
+            5,
+            7,
+            5
+          ],
+          [
+            6,
+            7,
+            3
+          ]
+        ],
+        "group": "public_regression",
+        "id": "complete-8-7",
+        "n": 8
+      },
+      "graph_digest": "421609a3aede435c0eae8e43ef20af09f7366379ab07dd07345e7907e02dd6a9",
+      "independent_candidate_scoring": "one graph validation/index plus path traversal per candidate; separate evaluation overhead",
+      "independent_scoring_graph_edges": 56,
+      "independent_scoring_path_edges": 5,
+      "reference": {
+        "cost": -6,
+        "edge_visits": 127,
+        "path": [
+          0,
+          2,
+          4,
+          6,
+          7
+        ],
+        "status": "optimal"
+      },
+      "reference_graph_validation_and_index_edges": 28,
+      "reference_indexing_edge_visits": 28
+    }
+  ],
+  "cost_boundary": "Edge counters are a cost vector; validation, indexing, candidate generation and witness production are not free. No wall-time or equal-budget effectiveness claim.",
+  "iteration_result": "All-edge checks repair demonstrated weak-gate false acceptance; no efficiency benefit over direct DAG shortest-path solving is established.",
+  "limitations": [
+    "No LLM-generated algorithm or automatic verifier revision was executed.",
+    "All cases are exposed development/regression inputs, not hidden final tests.",
+    "The reference was separately authored by the same model family; this is implementation cross-checking, not fully independent evidence.",
+    "A rejected or missing certificate leaves optimality unverified; it does not prove suboptimality.",
+    "Graph omissions and real-world route validity are outside this finite mathematical goal."
+  ],
+  "plan_sha256": "3f6380d1cda0780872b77864f24d82b429bef1c650e16e59f253d2f33c7d3f26",
+  "scope": "26 public DAGs, two initial solvers and a witness-only follow-up; development evidence only",
+  "verifier_summary": {
+    "all_edges_certificate": {
+      "accepted_count": 30,
+      "candidate_evaluations": 52,
+      "false_accept_count": 0,
+      "false_reject_count": 0,
+      "max_accepted_regret": 0,
+      "unverified_optimal_count": 14
+    },
+    "feasibility_only": {
+      "accepted_count": 52,
+      "candidate_evaluations": 52,
+      "false_accept_count": 8,
+      "false_reject_count": 0,
+      "max_accepted_regret": 8,
+      "unverified_optimal_count": 0
+    },
+    "path_edges_only": {
+      "accepted_count": 52,
+      "candidate_evaluations": 52,
+      "false_accept_count": 8,
+      "false_reject_count": 0,
+      "max_accepted_regret": 8,
+      "unverified_optimal_count": 0
+    }
+  },
+  "witness_repair": {
+    "cases": [
+      {
+        "candidate": {
+          "graph_scan_edges": 8,
+          "indexing_edge_visits": 8,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 6
+        },
+        "graph_id": "greedy_trap",
+        "independent_scoring_graph_edges": 4,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 7,
+        "result": {
+          "cost": 10,
+          "edge_checks": 6,
+          "graph_scan_edges": 4,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 8,
+          "indexing_edge_visits": 8,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            2,
+            4,
+            -1
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 6
+        },
+        "graph_id": "negative_edge",
+        "independent_scoring_graph_edges": 4,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 5,
+        "result": {
+          "cost": 4,
+          "edge_checks": 6,
+          "graph_scan_edges": 4,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-0",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -9,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-1",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -5,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-2",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": 9,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-3",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -5,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-4",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -1,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            3
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5
+          ],
+          "solver_edge_visits": 3,
+          "witness_edge_visits": 7
+        },
+        "graph_id": "complete-4-5",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 1,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -5,
+          "edge_checks": 7,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            1,
+            3
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-6",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -1,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 12,
+          "indexing_edge_visits": 12,
+          "path": [
+            0,
+            2,
+            3
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3
+          ],
+          "solver_edge_visits": 4,
+          "witness_edge_visits": 8
+        },
+        "graph_id": "complete-4-7",
+        "independent_scoring_graph_edges": 6,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": 3,
+          "edge_checks": 8,
+          "graph_scan_edges": 6,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9,
+            -6,
+            -14
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-0",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -14,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5,
+            -3,
+            -3
+          ],
+          "solver_edge_visits": 10,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-1",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -3,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            5
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9,
+            1,
+            -4
+          ],
+          "solver_edge_visits": 5,
+          "witness_edge_visits": 16
+        },
+        "graph_id": "complete-6-2",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 1,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -4,
+          "edge_checks": 16,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5,
+            0,
+            -8
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-3",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -8,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1,
+            -9,
+            -7
+          ],
+          "solver_edge_visits": 9,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-4",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -7,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5,
+            -5,
+            -3
+          ],
+          "solver_edge_visits": 8,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-5",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 7,
+        "result": {
+          "cost": 4,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1,
+            -6,
+            -9
+          ],
+          "solver_edge_visits": 6,
+          "witness_edge_visits": 17
+        },
+        "graph_id": "complete-6-6",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -9,
+          "edge_checks": 17,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 30,
+          "indexing_edge_visits": 30,
+          "path": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3,
+            -5,
+            -1
+          ],
+          "solver_edge_visits": 9,
+          "witness_edge_visits": 18
+        },
+        "graph_id": "complete-6-7",
+        "independent_scoring_graph_edges": 15,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -1,
+          "edge_checks": 18,
+          "graph_scan_edges": 15,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -5,
+            -1,
+            -9,
+            -6,
+            -14,
+            -12,
+            -20
+          ],
+          "solver_edge_visits": 19,
+          "witness_edge_visits": 32
+        },
+        "graph_id": "complete-8-0",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 4,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -20,
+          "edge_checks": 32,
+          "graph_scan_edges": 28,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            2,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            2,
+            -6,
+            -5,
+            -3,
+            -3,
+            -11,
+            -12
+          ],
+          "solver_edge_visits": 13,
+          "witness_edge_visits": 31
+        },
+        "graph_id": "complete-8-1",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 1,
+        "result": {
+          "cost": -11,
+          "edge_checks": 31,
+          "graph_scan_edges": 28,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            5,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            9,
+            1,
+            9,
+            1,
+            -4,
+            -7,
+            -4
+          ],
+          "solver_edge_visits": 10,
+          "witness_edge_visits": 31
+        },
+        "graph_id": "complete-8-2",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 3,
+        "result": {
+          "cost": -1,
+          "edge_checks": 31,
+          "graph_scan_edges": 28,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            6,
+            7
+          ],
+          "potentials": [
+            0,
+            -3,
+            3,
+            -5,
+            0,
+            -8,
+            -5,
+            -12
+          ],
+          "solver_edge_visits": 8,
+          "witness_edge_visits": 30
+        },
+        "graph_id": "complete-8-3",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 1,
+        "result": {
+          "cost": -11,
+          "edge_checks": 30,
+          "graph_scan_edges": 28,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            7
+          ],
+          "potentials": [
+            0,
+            4,
+            -4,
+            -1,
+            -9,
+            -7,
+            -15,
+            -14
+          ],
+          "solver_edge_visits": 7,
+          "witness_edge_visits": 29
+        },
+        "graph_id": "complete-8-4",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 1,
+        "path_preserved": true,
+        "reference_regret": 8,
+        "result": {
+          "cost": -6,
+          "edge_checks": 29,
+          "graph_scan_edges": 28,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            3,
+            7
+          ],
+          "potentials": [
+            0,
+            11,
+            3,
+            -5,
+            -5,
+            -3,
+            -4,
+            -10
+          ],
+          "solver_edge_visits": 11,
+          "witness_edge_visits": 30
+        },
+        "graph_id": "complete-8-5",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 2,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -10,
+          "edge_checks": 30,
+          "graph_scan_edges": 28,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            4,
+            5,
+            7
+          ],
+          "potentials": [
+            0,
+            -1,
+            7,
+            -1,
+            -6,
+            -9,
+            -6,
+            -11
+          ],
+          "solver_edge_visits": 12,
+          "witness_edge_visits": 31
+        },
+        "graph_id": "complete-8-6",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 3,
+        "path_preserved": true,
+        "reference_regret": 0,
+        "result": {
+          "cost": -11,
+          "edge_checks": 31,
+          "graph_scan_edges": 28,
+          "status": "certified_optimal",
+          "violated_edge": null
+        }
+      },
+      {
+        "candidate": {
+          "graph_scan_edges": 56,
+          "indexing_edge_visits": 56,
+          "path": [
+            0,
+            7
+          ],
+          "potentials": [
+            0,
+            6,
+            -2,
+            3,
+            -5,
+            -1,
+            -9,
+            -6
+          ],
+          "solver_edge_visits": 7,
+          "witness_edge_visits": 29
+        },
+        "graph_id": "complete-8-7",
+        "independent_scoring_graph_edges": 28,
+        "independent_scoring_path_edges": 1,
+        "path_preserved": true,
+        "reference_regret": 2,
+        "result": {
+          "cost": -4,
+          "edge_checks": 29,
+          "graph_scan_edges": 28,
+          "status": "unverified",
+          "violated_edge": null
+        }
+      }
+    ],
+    "cost_result": "Potential generation runs the direct exact solver; this fixes certificate coverage but does not make greedy paths better or beat that solver's work.",
+    "plan_sha256": "de466b2bd7252162e86999b278d16e465879f5ae1394ea4f75c7863e45fa6a8d",
+    "summary": {
+      "candidate_evaluations": 26,
+      "certified_optimal_count": 18,
+      "false_accept_count": 0,
+      "paths_preserved": 26,
+      "unverified_optimal_count": 0
+    }
+  }
+}

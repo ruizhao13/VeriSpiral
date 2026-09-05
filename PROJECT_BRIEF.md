@@ -1,15 +1,58 @@
 # VeriSpiral: project brief
 
-**A user-governed, verifier-guided workflow for research-specification
-co-evolution and solution search.**
+**A user-governed workflow for Goal–Setup–Verifier–Algorithm co-design,
+guided by multi-fidelity evidence and failure diagnosis.**
 
-VeriSpiral explores a narrow question: how can AI help search a scientific
-problem while making it difficult to change the problem, its success criterion,
-or its verifier without the user's explicit decision?
+VeriSpiral asks: when a promising candidate fails a more faithful check, which
+experiment should the system buy next, and should the evidence lead to better
+algorithms, better verifiers, a better setup, or a reconsidered goal?
+
+The intended workflow has two approximation steps and a search step:
+
+```text
+real problem -> Goal + Setup -> affordable Verifier -> candidate Algorithm search
+      ^                ^                ^                       |
+      +------ higher-fidelity evidence and failure diagnosis ----+
+```
+
+The first step selects which real mechanisms and decision criteria to retain.
+The second seeks mathematical constructions that make an expensive goal cheap
+to check. Large candidate search then uses that checker, with promotion to
+stronger checks and explicit reconsideration when the layers disagree.
+
+The core research tasks are **verifier synthesis** and **budgeted diagnostic
+experiment selection**. A verifier proposal must account for construction cost,
+per-call cost, selected-candidate transfer, gaming, and actionable failure
+feedback. A diagnosis must distinguish competing explanations rather than
+choose a convenient story. These are research objectives, not established
+capabilities. The [research agenda](docs/research-agenda.md) defines a falsifiable
+hypothesis, comparable-budget baselines, metrics, and stopping criteria.
 
 The project changes external, inspectable artifacts rather than model weights.
 Its central object is a **research specification**: the accepted model,
 assumptions, target, verifier contract, and scientific judgment boundary.
+Goal/Metric maps to its target, Setup to its model and assumptions, and Verifier
+to its evaluation contract. User control and immutable versions make joint
+design reviewable; they support the research objective.
+
+## From a problem document to a workflow
+
+Use [problem compilation](prompts/protocols/problem_compilation.md) as the entry
+protocol. It separates explicit requirements, inferences, assumptions, and
+unknowns; checks that a trustworthy reference evaluator exists; and prepares
+goal choices, a setup ladder, and a verifier frontier before scored search.
+The reusable architecture is a common protocol plus a domain adapter plus a
+problem document. Private cases belong in separate workspaces.
+
+The [connected DAG workflow](docs/connected-workflow.md) now implements document
+intake plus explicit typed data, a recorded accept/reject decision, execution,
+concurrent checks, repair, and a verifier successor with fresh evidence. It
+requires the user to confirm the adapter's interpretation; general semantic
+extraction and broader domain adapters are not implemented.
+
+Start with structured analysis, then freeze a user-selected specification and
+search, then add diagnosis-led revision. Without a reference evaluator, the
+next deliverable is an anchor-building plan rather than a proxy success claim.
 
 ## Division of responsibility
 
@@ -68,7 +111,7 @@ decide whether either change is accepted, modified, rejected, or branched.
 
 ## What the public repository demonstrates
 
-The current repository contains deterministic, checked-in replays for four
+The current repository contains deterministic demonstrations for seven
 bounded mechanisms:
 
 1. **Five-stage candidate review.** The default fixture passes structural and
@@ -87,6 +130,26 @@ bounded mechanisms:
    human-decision fixture. An accepted verifier-only revision becomes an
    immutable successor on the same target lineage; a model revision creates a
    separate lineage whose work cannot solve the original target.
+5. **Finite failure diagnosis and verifier comparison.** A small loss-table
+   adapter executes seven registered checks on ten cases, including a no-fault
+   control and two concurrent-failure cases. A controller selects affordable
+   pending checks in cost order, preserves all observed failures and untested
+   factors, and requires complete registered coverage before finishing.
+   Two prewritten verifiers expose a selected-candidate false promotion and
+   different amortized costs. [Public evidence and limits](docs/diagnosis-demo.md)
+   describe why this is a mechanism test, not research-effectiveness evidence.
+6. **Problem-driven shortest-path trial.** Two prewritten solvers and three
+   checker variants run on 26 public DAGs, with a separately authored path
+   scorer and exhaustive reference. A follow-up repairs witness coverage while
+   preserving the paths and charging construction costs. The
+   [study](docs/path-workflow-study.md) reports both the soundness/coverage result
+   and the absence of an efficiency benefit over direct solving.
+7. **Connected problem-to-recheck workflow.** A problem document, typed DAG
+   setup, and matching decision drive candidate execution, four nonexclusive
+   checks, repair, a screen-revision proposal, and a rechecked successor on the
+   same target. [Public outputs and scope](docs/connected-workflow.md) demonstrate
+   this connection using synthetic decisions; final human acceptance remains
+   pending, and no general prose interpretation or new algorithm is claimed.
 
 Schemas, rejection tests, golden outputs, executable receipts, and content
 hashes make these replay claims inspectable. A receipt pass remains scoped to
@@ -95,8 +158,8 @@ success trace or activatable Skill.
 
 ## What the public repository does not implement
 
-It does not capture live user input, prove that a recorded decision came from a
-real person, or implement autonomous literature review, real algorithm
+It accepts caller-supplied decision files but does not authenticate a real
+person or implement autonomous literature review, new algorithm
 generation, theorem proving, personalization, a user profile, long-term
 learning, automatic specification revision, or unattended policy activation.
 The minimax candidates and hypotheses are pre-registered inputs, not discoveries
@@ -109,6 +172,9 @@ make demo
 make evolution-demo
 make minimax-demo
 make research-loop-demo
+make diagnosis-demo
+make path-trial
+make workflow-demo
 make test
 make golden-check
 make audit

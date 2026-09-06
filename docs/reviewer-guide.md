@@ -8,10 +8,11 @@ The finite demos establish mechanisms, not research effectiveness.
 ## Ten-minute reading path
 
 1. Read the [README](../README.md) for the bounded claim.
-2. Read [research agenda](research-agenda.md) for the proposed hypothesis and
-   comparable-budget evaluation, then [finite diagnosis](diagnosis-demo.md) for
-   the executable example and its limits. The [connected DAG workflow](connected-workflow.md)
-   shows the bounded execution and revision path.
+2. Read [the main case workflow](case-workflow.md) and its
+   [behavioral tests](../tests/test_case_workflow.py) for actual component execution,
+   feedback and replacement. The [research agenda](research-agenda.md) defines
+   hypotheses and comparable-budget evaluation. Earlier finite diagnosis and
+   DAG examples are supporting mechanisms, not the primary case interface.
 3. Inspect [architecture](architecture.md) and
    [specification co-evolution](research-specification-coevolution.md) for the
    authority model and its implementation boundaries.
@@ -51,6 +52,16 @@ change starts a separate lineage and cannot receive progress credit on the
 original target.
 
 ## Executable replay checks
+
+### Main problem-first case workflow
+
+- Does the host supply actual role work, clearly distinguished from public fixtures?
+- Are checker, solver and independently configured reference actually executed?
+- Do false passes, crashes and malformed outputs retain their real outcomes and costs?
+- Does diagnosis consume the latest run and preserve candidate/verifier disagreements?
+- Do component changes require appropriate decisions and fresh evaluation?
+- Are local execution permissions, unmeasured host/model costs and development-only
+  evidence stated without claiming scientific or hidden-test guarantees?
 
 ### Finite diagnosis
 

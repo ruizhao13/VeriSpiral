@@ -1,10 +1,11 @@
 # Protocol: Compile a problem into a research workflow
 
-This is an authored workflow proposal, not an implemented general research
-agent or a guarantee of scientific correctness. Existing deterministic demos
-exercise only their documented fixtures; `diagnosis-demo` tests finite,
-synthetic experiment selection and does not execute an LLM. These instructions
-do not extend the executable evidence schema or bypass its existing gates.
+This is the scientific design protocol used by the
+[host case workflow](run_case.md). The host invokes the roles; `verispiral case`
+executes their submitted programs and retains actual feedback. The runner does
+not implement general semantic understanding, a model provider or scientific
+correctness. Earlier deterministic demos exercise only their documented
+fixtures. These instructions do not bypass existing evidence boundaries.
 
 Reusable task invocation:
 

@@ -9,6 +9,16 @@ Maintain a run ledger: frozen specification and evaluation identity; budget
 remaining; candidates; reference checks; negative results; unresolved choices;
 and the next stage: freeze, search, promotion, diagnosis, or revision.
 
+Use the common [agent-learning contract](../../docs/agent-learning-architecture.md).
+Bind evaluated runs to role/Skill versions and a permitted experience snapshot.
+Record linked actions, observations, costs and remaining uncertainty across
+roles without multiplying one event into independent evidence. Keep final
+evaluation information and derived hints outside adaptation. Improve experiment
+selection and coordination within the accepted task; send persistent strategy
+changes to the bounded cross-task comparison managed by Meta-Optimizer.
+Neither controller experience nor a larger memory grants additional budget or
+changes the accepted scientific contract.
+
 When progress stalls or evidence conflicts:
 
 1. Enumerate plausible causes: algorithm limitation, verifier defect, setup

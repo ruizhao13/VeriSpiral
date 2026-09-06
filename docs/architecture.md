@@ -13,11 +13,14 @@ The [research agenda](research-agenda.md) defines proposed hypotheses,
 comparisons, costs, transfer measures, and stopping rules. No measured benefit
 or autonomous research capability is claimed by this architecture.
 
-The public demonstrations remain small deterministic mechanisms. A
-[connected workflow](connected-workflow.md) now executes the supported small-DAG
-adapter from a recorded specification decision through checks, bounded repair,
-and a separately accepted screen revision. The broader architecture below
-remains a design contract; prose understanding and general synthesis are absent.
+The primary [case workflow](case-workflow.md) now consumes host-invoked agent
+work and executes submitted solver, checker, audit and reference programs.
+It binds reviewed designs, actual feedback, diagnosis and revised runs without
+requiring a prewritten domain-method list or a candidate-to-Skill object.
+Natural-language understanding and mechanism synthesis remain host/agent work;
+the runner does not contain a model client or autonomous role scheduler.
+Earlier deterministic demonstrations, including the
+[small-DAG adapter](connected-workflow.md), remain optional component examples.
 
 ## System boundary
 
@@ -28,14 +31,22 @@ The repository contains:
 3. deterministic validation, transformation, replay, and audit code; and
 4. synthetic fixtures and tracked reference outputs.
 
-It contains no LLM integration, live literature search, real experiment
-runtime, algorithm generator, proof engine, persistent user model, automatic
-approval, or patch-application service.
+The new main modules are `case_workflow.py` (state, decisions and feedback)
+and `case_execution.py` (actual local program execution and receipts). They do
+not depend on the earlier candidate-review pipeline. The host protocol starts
+from a problem document and can consume actual newly generated programs.
+
+The repository has no built-in LLM integration, live literature service,
+algorithm-generating model, proof engine, persistent user model, automatic
+scientific approval, or process-policy patch-application service. Current case
+evaluation is development only; an external reference does not establish
+hidden-test isolation or scientific independence.
 
 ## Target architecture: diagnosis before revision
 
 The following roles describe responsibilities; they need not be separate
-models or agents, and are not implemented live services.
+models or resident services. Hosts invoke them and submit their work through
+the [case protocol](../prompts/protocols/run_case.md).
 
 | Role | Responsibility | Required limit |
 | --- | --- | --- |
@@ -71,7 +82,10 @@ the original comparison and opens a separate target lineage. Cross-component
 proposals may be coordinated, but solution edits and specification revisions
 remain separately reviewable transactions.
 
-The general path is a research target. The specification replay below binds
+The general scientific effectiveness of this path remains a research target.
+The case runner executes external programs and consumes actual run-bound
+diagnoses; it does not assess the truth of an agent's causal explanation.
+The earlier specification replay below binds
 registered decisions and blocks later work under a superseded verifier. The
 connected DAG workflow rechecks its retained candidate under an accepted screen
 successor; neither path provides a general dependency graph for research results.
@@ -149,6 +163,21 @@ user over time.
 
 Full transition semantics are in [research-specification
 co-evolution](research-specification-coevolution.md).
+
+## Cross-task agent learning
+
+The proposed [agent-learning architecture](agent-learning-architecture.md)
+adds a distinct timescale: improving how roles conduct later research. It uses
+the existing research roles, shared evidence with role-specific access, and
+Skill Distiller / Meta-Optimizer to propose and compare reusable methods.
+Research Controller continues to manage the current task. This does not add
+a separate learning agent for every role or change scientific authority.
+
+Runs would bind role policies and experience snapshots as well as the accepted
+specification. Updates require scoped evidence, local and end-to-end comparisons,
+and the applicable change-control path. Observations, proposed methods, and
+accepted policies remain distinct. The runner does not implement persistent
+retrieval, automatic activation, or longitudinal learning evaluation.
 
 ## Three non-interchangeable changes
 

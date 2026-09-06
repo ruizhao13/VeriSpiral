@@ -1,4 +1,9 @@
 PYTHON ?= python3
+.DEFAULT_GOAL := workflow
+
+.PHONY: workflow
+workflow:
+	PYTHONPATH=src $(PYTHON) -B -m verispiral case --help
 
 # Only the two generated public workflow directories may be replaced. Generation
 # finishes in a fresh directory first; ordinary workflow CLI outputs stay immutable.

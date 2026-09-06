@@ -22,6 +22,7 @@ from .research_spec import run_research_specification_loop
 from .diagnosis_demo import run_diagnosis_demo
 from .path_workflow import run_path_trial
 from .research_workflow import prepare_workflow, execute_workflow, run_workflow_demo
+from . import case_workflow
 
 
 def _resolve_from_root(value: str, root: Path) -> Path:
@@ -243,15 +244,82 @@ def cmd_workflow_demo(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_case(args: argparse.Namespace) -> int:
+    action = args.case_action
+    if action == "new":
+        path = case_workflow.create_case(args.problem, args.workspace, args.reference, args.reference_scope,
+                                        call_budget=args.calls, max_rounds=args.rounds, timeout_seconds=args.timeout)
+        print(f"Created research case: {path}")
+        print("Next: host invokes goal/setup and verifier design agents; submit their actual work with case design.")
+        return 0
+    if action == "design":
+        result = case_workflow.submit_design(args.workspace, args.input)
+    elif action == "audit":
+        result = case_workflow.audit_design(args.workspace, args.program,
+                                           case_workflow.read_json_object(Path(args.producer)))
+    elif action == "decide":
+        result = case_workflow.record_decision(args.workspace, args.input)
+    elif action == "run":
+        result = case_workflow.execute_round(args.workspace, args.program,
+                                            case_workflow.read_json_object(Path(args.producer)), recheck=args.recheck)
+    elif action == "diagnose":
+        result = case_workflow.submit_diagnosis(args.workspace, args.input)
+    else:
+        inspected = case_workflow.inspect_case(args.workspace)
+        print(f"Status: {inspected['status']}")
+        print(f"Next role: {inspected['next_role']}")
+        print(inspected["instruction"])
+        result = inspected["case"]
+    print(f"Case status: {result['status']} | program attempts: {result['calls_used']}/{result['call_budget']}")
+    if result.get("last_run"):
+        run = result["last_run"]
+        print(f"Round {run['round']}: checker={run['screen_verdict']}, reference={run['reference_verdict']}")
+        print(f"Observed: {', '.join(run['observations']) or 'no declared disagreement'}")
+    print(f"Evidence: {Path(args.workspace).resolve() / 'case.json'}")
+    print("DEVELOPMENT CASE | host invokes agents | submitted programs actually execute | no automatic scientific claim")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="verispiral",
         description=(
-            "Run VeriSpiral's deterministic, verifier-guided research-agent "
-            "workflow."
+            "Run problem-first research cases with host-driven agents and executable components. "
+            "Start with 'case'; older deterministic component demos remain available."
         ),
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    case_parser = subparsers.add_parser("case", help="main workflow: problem, design, audit, search, evidence and revision")
+    actions = case_parser.add_subparsers(dest="case_action", required=True)
+    new_case = actions.add_parser("new", help="create a local case from a problem and separately selected reference")
+    new_case.add_argument("--problem", required=True)
+    new_case.add_argument("--workspace", required=True)
+    new_case.add_argument("--reference", required=True)
+    new_case.add_argument("--reference-scope", required=True)
+    new_case.add_argument("--calls", type=int, default=20)
+    new_case.add_argument("--rounds", type=int, default=4)
+    new_case.add_argument("--timeout", type=float, default=10)
+    new_case.set_defaults(handler=cmd_case)
+    for name, help_text in (
+        ("design", "submit an agent-authored goal/setup/verifier design"),
+        ("audit", "execute a separately authored verifier audit"),
+        ("decide", "record an accepted or rejected design decision"),
+        ("run", "execute submitted solver, checker and reference"),
+        ("diagnose", "consume actual feedback and select search/revision/stop"),
+        ("next", "show the next host/agent action"),
+        ("report", "inspect current status and the local evidence ledger"),
+    ):
+        command = actions.add_parser(name, help=help_text)
+        command.add_argument("--workspace", required=True)
+        if name in {"design", "decide", "diagnose"}:
+            command.add_argument("--input", required=True)
+        if name in {"audit", "run"}:
+            command.add_argument("--program", required=name == "audit")
+            command.add_argument("--producer", required=True, help="JSON role/producer identity, declared by the host")
+        if name == "run":
+            command.add_argument("--recheck", action="store_true", help="re-evaluate the retained candidate under an accepted successor")
+        command.set_defaults(handler=cmd_case)
 
     validate_parser = subparsers.add_parser("validate", help="validate a JSON artifact")
     validate_parser.add_argument(
@@ -283,7 +351,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate_parser.add_argument("--input", required=True)
     validate_parser.set_defaults(handler=cmd_validate)
 
-    demo_parser = subparsers.add_parser("demo", help="run candidate-to-skill demo")
+    demo_parser = subparsers.add_parser("demo", help="legacy component demo: candidate-to-skill review")
     demo_parser.add_argument("--candidate", default="examples/candidate.json")
     demo_parser.add_argument("--output", default="demo/output")
     demo_parser.set_defaults(handler=cmd_demo)

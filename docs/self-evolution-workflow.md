@@ -1,8 +1,11 @@
 # Change-control workflow
 
-VeriSpiral uses “evolution” to mean an explicit, versioned proposal to change
-external agent or research state. The term does not mean model-weight training,
-automatic personalization, continuous learning, or silent policy rewriting.
+The implemented evolution demos render or validate explicit, versioned
+proposals to change external agent or research state. They do not implement
+model-weight training, automatic personalization, continuous learning, or
+silent policy rewriting. The proposed
+[cross-task agent-learning architecture](agent-learning-architecture.md)
+describes how all roles could improve their methods under these boundaries.
 
 There are two different change-control paths:
 
@@ -135,6 +138,14 @@ one live, verify human identity, or establish scientific correctness.
   or rollback; and
 - persistent personalization, longitudinal user modeling, or long-term
   learning.
+
+The proposed [common agent-learning contract](agent-learning-architecture.md)
+specifies shared observations, role-specific methods, versioned experience,
+strategy comparison and Skill proposals. The
+[verifier specialization](verifier-experience-learning.md) adds conditional
+mechanism retrieval, proof obligations and complete cost comparisons. Both
+extend the target design: no persistent learner, automatic activation or
+measured transfer gain is added by those documents.
 
 ## Invariants
 
